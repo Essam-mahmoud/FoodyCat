@@ -1,0 +1,241 @@
+//
+//  SharedData.swift
+//  CarWash
+//
+//  Created by Mohammad Farhan on 22/12/1710/11/17.
+//  Copyright © 2017 CarWash. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+
+class SharedData{
+
+    static let SharedInstans = SharedData()
+    let defaults = UserDefaults.standard
+    let IsLogin = "IsLogin"
+    let IsfinishOnBoarding = "FinishOnBoarding"
+    let IsActive = "IsActive"
+    let Language = "Language"
+    let Password = "password"
+    let Token = "Token"
+    let Name = "userName"
+    let UserId = "userId"
+    let Email = "email"
+    let Phone = "phone"
+    let AccountType = "accountType"
+    let CoverImagePath = "coverImage"
+    let imagePath = "image"
+    let Cusidentity = "identity"
+    let terms = "Terms"
+    let faq = "FAQ"
+    let avaliable = "Avaliable"
+
+    func SetIsLogin(_ isLogin:Bool){
+        defaults.set(isLogin, forKey: IsLogin)
+    }
+
+    func GetIsLogin()->Bool{
+        if (defaults.object(forKey: IsLogin) != nil) {
+            return defaults.bool(forKey: IsLogin)
+        }else{
+            return false
+        }
+    }
+
+    func setIsFinishOnboarding(_ finishOnBoarding:Bool){
+        defaults.set(finishOnBoarding, forKey: IsfinishOnBoarding)
+    }
+
+    func getIsFinishOnboarding()->Bool{
+        if (defaults.object(forKey: IsfinishOnBoarding) != nil) {
+            return defaults.bool(forKey: IsfinishOnBoarding)
+        }else{
+            return false
+        }
+    }
+
+    func SetIsActive(_ isActive:Bool){
+        defaults.set(isActive, forKey: IsActive)
+    }
+
+    func GetIsActive()->Bool{
+        if (defaults.object(forKey: IsActive) != nil) {
+            return defaults.bool(forKey: IsActive)
+        }else{
+            return false
+        }
+    }
+
+    func setLanguage(_ language:String){
+        defaults.set(language, forKey: Language)
+    }
+    func getLanguage()->String{
+        if (defaults.object(forKey: Language) != nil) {
+            return defaults.string(forKey: Language)!
+        }else{
+            return "en"
+        }
+    }
+
+    func settoken(_ token:String){
+        defaults.set(token, forKey: Token)
+    }
+    func gettoken()->String{
+        if (defaults.object(forKey: Token) != nil) {
+            return defaults.string(forKey: Token)!
+        }else{
+            return ""
+        }
+    }
+    func setUserName(_ userName:String){
+        defaults.set(userName, forKey: Name)
+    }
+    func getUserNAme()->String{
+        if (defaults.object(forKey: Name) != nil) {
+            return defaults.string(forKey: Name)!
+        }else{
+            return ""
+        }
+    }
+
+    func setPhone(_ phoneNumber:String){
+        defaults.set(phoneNumber, forKey: Phone)
+    }
+    func getphone()->String{
+        if (defaults.object(forKey: Phone) != nil) {
+            return defaults.string(forKey: Phone)!
+        }else{
+            return ""
+        }
+    }
+
+    func setPassWord(_ pass:String){
+        defaults.set(pass, forKey: Password)
+    }
+    func getPassWord()->String{
+        if (defaults.object(forKey: Password) != nil) {
+            return defaults.string(forKey: Password)!
+        }else{
+            return " "
+        }
+    }
+
+    func setEmail(_ userEmail:String){
+        defaults.set(userEmail, forKey: Email)
+    }
+    func getEmail()->String{
+        if (defaults.object(forKey: Email) != nil) {
+            return defaults.string(forKey: Email)!
+        }else{
+            return "nil"
+        }
+    }
+    func setUserId(_ userID:String){
+        defaults.set(userID, forKey: UserId)
+    }
+    func getUserId()->String{
+        if (defaults.object(forKey: UserId) != nil) {
+            return defaults.string(forKey: UserId)!
+        }else{
+            return " "
+        }
+    }
+
+    func setUserImage(_ userImagePath:String){
+        defaults.set(userImagePath, forKey: imagePath)
+    }
+    func getUserImage()->String{
+        if (defaults.object(forKey: imagePath) != nil) {
+            return defaults.string(forKey: imagePath)!
+        }else{
+            return " "
+        }
+    }
+
+    func setCoverImage(_ coverImagePath:String){
+        defaults.set(coverImagePath, forKey: CoverImagePath)
+    }
+    func getCoverImage()->String{
+        if (defaults.object(forKey: CoverImagePath) != nil) {
+            return defaults.string(forKey: CoverImagePath)!
+        }else{
+            return " "
+        }
+    }
+
+    func setAccountType(_ type:String){
+        defaults.set(type, forKey: AccountType)
+    }
+    func getAccountType()->String{
+        if (defaults.object(forKey: AccountType) != nil) {
+            return defaults.string(forKey: AccountType)!
+        }else{
+            return " "
+        }
+    }
+
+    func setCusidentity(_ cusidentity:String){
+        defaults.set(cusidentity, forKey: Cusidentity)
+    }
+    func getCusidentity()->String{
+        if (UserDefaults.standard.object(forKey: Cusidentity) != nil) {
+            return defaults.string(forKey: Cusidentity)!
+        }else{
+            return ""
+        }
+    }
+
+    func setTermsURL(_ cusidentity:String){
+        defaults.set(cusidentity, forKey: terms)
+    }
+    func getTermsURL()->String{
+        if (UserDefaults.standard.object(forKey: terms) != nil) {
+            return defaults.string(forKey: terms)!
+        }else{
+            return ""
+        }
+    }
+
+    func setFAQURL(_ cusidentity:String){
+        defaults.set(cusidentity, forKey: faq)
+    }
+    func getFAQURL()->String{
+        if (UserDefaults.standard.object(forKey: faq) != nil) {
+            return defaults.string(forKey: faq)!
+        }else{
+            return ""
+        }
+    }
+
+    func setIsAvaliable(_ isAvaliable:Bool){
+        defaults.set(isAvaliable, forKey: avaliable)
+    }
+
+    func getIsAvaliable()->Bool{
+        if (defaults.object(forKey: avaliable) != nil) {
+            return defaults.bool(forKey: avaliable)
+        }else{
+            return false
+        }
+    }
+
+
+    func removeUserData(){
+        defaults.removeObject(forKey: IsLogin)
+        defaults.removeObject(forKey: Name)
+        defaults.removeObject(forKey: Email)
+        defaults.removeObject(forKey: Phone)
+        defaults.removeObject(forKey: AccountType)
+        defaults.removeObject(forKey: CoverImagePath)
+        defaults.removeObject(forKey: imagePath)
+        defaults.removeObject(forKey: UserId)
+    }
+
+    func getHeader() -> HTTPHeaders {
+        let lang = LanguageManager.isArabic() ? "1" : "0"
+        let token = SharedData.SharedInstans.gettoken()
+        let playerId = UserDefaults.standard.string(forKey: "GT_PLAYER_ID") ?? ""
+        return HTTPHeaders(["Content-Type":"application/json", "Authorization":"Bearer \(token)", "device": "1", "lang": lang, "playerid": playerId])
+    }
+}

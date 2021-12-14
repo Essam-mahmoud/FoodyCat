@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CDa-AN-hWI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Landing PageVC-->
+        <scene sceneID="Baw-ib-ebb">
+            <objects>
+                <viewController storyboardIdentifier="LandingPageVC" id="CDa-AN-hWI" customClass="LandingPageVC" customModule="FoodyCat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WF8-XU-UY9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXv-mt-ImK" customClass="GradientView" customModule="FoodyCat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="grj-6l-psd">
+                                        <rect key="frame" x="128.5" y="353" width="157" height="190.5"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="grj-6l-psd" firstAttribute="centerX" secondItem="tXv-mt-ImK" secondAttribute="centerX" id="6TP-VV-XC5"/>
+                                    <constraint firstItem="grj-6l-psd" firstAttribute="centerY" secondItem="tXv-mt-ImK" secondAttribute="centerY" id="Qad-fr-ehg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                        <color key="value" red="0.53725490200000003" green="0.0" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                        <color key="value" red="0.21960784310000001" green="0.12549019610000001" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="gradientLocation">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5X4-TF-p5D"/>
+                        <color key="backgroundColor" name="Purple"/>
+                        <constraints>
+                            <constraint firstItem="tXv-mt-ImK" firstAttribute="top" secondItem="WF8-XU-UY9" secondAttribute="top" id="Edd-EY-mFr"/>
+                            <constraint firstItem="tXv-mt-ImK" firstAttribute="leading" secondItem="WF8-XU-UY9" secondAttribute="leading" id="INZ-IU-qI1"/>
+                            <constraint firstAttribute="bottom" secondItem="tXv-mt-ImK" secondAttribute="bottom" id="Vhl-MG-if9"/>
+                            <constraint firstItem="5X4-TF-p5D" firstAttribute="trailing" secondItem="tXv-mt-ImK" secondAttribute="trailing" id="u4U-4T-Dw8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="tXv-mt-ImK" id="dO1-2w-bLP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5dp-05-LjQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228.98550724637684" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LogoWhite" width="157" height="190.5"/>
+        <namedColor name="Purple">
+            <color red="0.42745098039215684" green="0.066666666666666666" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

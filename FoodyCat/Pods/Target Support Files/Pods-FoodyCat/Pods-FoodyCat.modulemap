@@ -1,0 +1,6 @@
+framework module Pods_FoodyCat {
+  umbrella header "Pods-FoodyCat-umbrella.h"
+
+  export *
+  module * { export * }
+}

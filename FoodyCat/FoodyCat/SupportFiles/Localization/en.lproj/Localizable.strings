@@ -1,0 +1,24 @@
+
+//Auth
+"User name"="User name";
+"Password"="Password";
+"Forgot password!"="Forgot password!";
+"Sign In"="Sign In";
+"You don’t have an account?"="You don’t have an account? ";
+"Sign up"="Sign up";
+"Create New Account"="Create New Account";
+"Full name"="Full name";
+"Email"="Email";
+"Phone number"="Phone number";
+"Your location"="Your location";
+"Date of Birth"="Date of Birth";
+"Continue"="Continue";
+"Forgot Password"="Forgot Password";
+"Please enter your Email"="Please enter your Email so we can help you recover your password.";
+"Next"="Next";
+"Logged in Successfully"="Logged in Successfully";
+"Phone Number"="Phone Number";
+"Create Account"="Create Account";
+"Account Created Successfully"="Account Created Successfully";
+"Something went wrong try again later"="Something went wrong try again later";
+"New password send to your email"="New password send to your email";

@@ -1,0 +1,33 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'FoodyCat' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for FoodyCat
+
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'MOLH'
+  pod 'Kingfisher'
+  pod 'NVActivityIndicatorView/Extended'
+  pod 'Localize-Swift'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
+  pod 'IQKeyboardManagerSwift'
+  pod 'iOSDropDown'
+  pod 'AKSideMenu'
+  pod 'TransitionButton'
+  pod 'UITextView+Placeholder'
+  pod 'Cosmos', '~> 23.0'
+
+  target 'FoodyCatTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'FoodyCatUITests' do
+    # Pods for testing
+  end
+
+end
