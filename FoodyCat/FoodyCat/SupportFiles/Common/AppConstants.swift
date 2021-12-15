@@ -56,5 +56,13 @@ class AppConstant: NSObject {
         static public var getRestaurant: String {
             return "\(apiDomain)Vendors/"
         }
+
+        static public var getBanners: String {
+            return "\(apiDomain)Banners/"
+        }
+
+        static public var getMenuItems: String {
+            return "\(apiDomain)shop/Branches/"
+        }
     }
 }

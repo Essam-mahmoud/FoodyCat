@@ -29,13 +29,18 @@ class HomeVC: UIViewController {
 
     //MARK:- Properities
     var homeVM = HomeVM()
-    
+    var timer: Timer?
+    var counter = 0
     fileprivate let bannerCell = "SliderCell"
     fileprivate let celebritiesCell = "CelebritiesCell"
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         loadCelebrities()
+        loadFirstBanner()
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeFirstBanner), userInfo: nil, repeats: true)
+        }
     }
 
     func registerCells() {
@@ -46,10 +51,6 @@ class HomeVC: UIViewController {
         celebritiesCollectionView.delegate = self
         celebritiesCollectionView.dataSource = self
         celebritiesCollectionView.register(UINib(nibName: celebritiesCell, bundle: nil), forCellWithReuseIdentifier: celebritiesCell)
-    }
-
-    func loadBanner() {
-
     }
 
     func loadCelebrities() {
@@ -64,6 +65,34 @@ class HomeVC: UIViewController {
             }
         }
     }
+
+    @objc func changeFirstBanner() {
+        if counter < homeVM.bannerModel?.data?.count ?? 0 {
+            bannerCollectionView.scrollToItem(at: IndexPath(item: counter, section: 0), at: .centeredHorizontally, animated: true)
+            bannerPageControl.currentPage = counter
+            counter += 1
+        } else {
+            counter = 0
+            bannerCollectionView.scrollToItem(at: IndexPath(item: counter, section: 0), at: .centeredHorizontally, animated: true)
+            bannerPageControl.currentPage = counter
+            counter = 1
+        }
+    }
+
+    func loadFirstBanner() {
+        homeVM.getBannarData(type: 0, areaId: -1) { (errMsg, errRes, status) in
+            switch status {
+            case .populated:
+                self.bannerCollectionView.reloadData()
+                self.bannerPageControl.numberOfPages = self.homeVM.bannerModel?.data?.count ?? 0
+            case .error:
+                AppCommon.sharedInstance.showBanner(title: self.homeVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
+            default:
+                break
+            }
+        }
+    }
+
     @IBAction func openInprogressButtonDidPress(_ sender: UIButton) {
     }
     @IBAction func sideMenuButtonDidPress(_ sender: UIButton) {
@@ -74,6 +103,9 @@ class HomeVC: UIViewController {
     @IBAction func filterButtonDidPress(_ sender: UIButton) {
     }
     @IBAction func openAllCelebritiesButtonDidPress(_ sender: UIButton) {
+        let allCelebrityVc = AllCelebrityVC.instantiate(fromAppStoryboard: .Home)
+        allCelebrityVc.modalPresentationStyle = .fullScreen
+        present(allCelebrityVc, animated: true, completion: nil)
     }
 
 }
@@ -81,7 +113,7 @@ class HomeVC: UIViewController {
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1000 {
-            return 3
+            return homeVM.bannerModel?.data?.count ?? 0
         } else {
             return homeVM.celeberitiesModel?.data?.count ?? 0
         }
@@ -90,7 +122,9 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 1000 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: bannerCell, for: indexPath) as? SliderCell else {return UICollectionViewCell()}
-            cell.setupCell()
+            if let banner = homeVM.bannerModel?.data?[indexPath.row] {
+                cell.setupCell(data: banner)
+            }
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: celebritiesCell, for: indexPath) as? CelebritiesCell else {return UICollectionViewCell()}
@@ -111,13 +145,17 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
-        if let celebrity = homeVM.celeberitiesModel?.data?[indexPath.row] {
-            let celebrityVC = CelebritiesVC.instantiate(fromAppStoryboard: .Home)
-            celebrityVC.celebrityId = celebrity.id ?? 0
-            celebrityVC.celebrityImageURL = celebrity.mediaFullPath ?? ""
-            celebrityVC.celebrityName = celebrity.name ?? ""
-            celebrityVC.modalPresentationStyle = .fullScreen
-            present(celebrityVC, animated: true, completion: nil)
+        if collectionView.tag == 1000 {
+
+        } else {
+            if let celebrity = homeVM.celeberitiesModel?.data?[indexPath.row] {
+                let celebrityVC = CelebritiesVC.instantiate(fromAppStoryboard: .Home)
+                celebrityVC.celebrityId = celebrity.id ?? 0
+                celebrityVC.celebrityImageURL = celebrity.mediaFullPath ?? ""
+                celebrityVC.celebrityName = celebrity.name ?? ""
+                celebrityVC.modalPresentationStyle = .fullScreen
+                present(celebrityVC, animated: true, completion: nil)
+            }
         }
     }
 }

@@ -22,4 +22,8 @@ class TabsCell: UICollectionViewCell {
             indicatorView.backgroundColor = isSelected ? #colorLiteral(red: 0.968627451, green: 0.5960784314, blue: 0.1411764706, alpha: 1) : #colorLiteral(red: 0.9294117647, green: 0.9450980392, blue: 0.968627451, alpha: 1)
         }
     }
+
+    func setupCell(data: ItemsData) {
+        tabeNameLabel.text = data.title
+    }
 }

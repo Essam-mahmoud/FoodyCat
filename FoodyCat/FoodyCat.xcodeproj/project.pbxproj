@@ -112,6 +112,12 @@
 		96E0A3052767D39200CF8EB7 /* MealsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E0A3032767D39200CF8EB7 /* MealsCell.xib */; };
 		96E0A30B27680EFD00CF8EB7 /* TabsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0A30927680EFD00CF8EB7 /* TabsCell.swift */; };
 		96E0A30C27680EFD00CF8EB7 /* TabsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E0A30A27680EFD00CF8EB7 /* TabsCell.xib */; };
+		96FBBCE82768F19000C30E55 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBBCE62768F19000C30E55 /* MenuItemCell.swift */; };
+		96FBBCE92768F19000C30E55 /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FBBCE72768F19000C30E55 /* MenuItemCell.xib */; };
+		96FBBCEE2769411800C30E55 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBBCED2769411800C30E55 /* BannerModel.swift */; };
+		96FBBCF327694F3D00C30E55 /* MenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBBCF227694F3D00C30E55 /* MenuItemModel.swift */; };
+		96FBBCF8276951D100C30E55 /* VendorVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBBCF7276951D100C30E55 /* VendorVM.swift */; };
+		96FBBCFD27695C3900C30E55 /* AllCelebrityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBBCFC27695C3900C30E55 /* AllCelebrityVC.swift */; };
 		DD7EF0F3D3DA9DC7C6EA3649 /* Pods_FoodyCatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38482B9284058554376DB84F /* Pods_FoodyCatTests.framework */; };
 		EA368885838DFBCC2687762D /* Pods_FoodyCat_FoodyCatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593CB988FA8E1AC52E25EE04 /* Pods_FoodyCat_FoodyCatUITests.framework */; };
 /* End PBXBuildFile section */
@@ -252,6 +258,12 @@
 		96E0A3032767D39200CF8EB7 /* MealsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealsCell.xib; sourceTree = "<group>"; };
 		96E0A30927680EFD00CF8EB7 /* TabsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCell.swift; sourceTree = "<group>"; };
 		96E0A30A27680EFD00CF8EB7 /* TabsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabsCell.xib; sourceTree = "<group>"; };
+		96FBBCE62768F19000C30E55 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		96FBBCE72768F19000C30E55 /* MenuItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
+		96FBBCED2769411800C30E55 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		96FBBCF227694F3D00C30E55 /* MenuItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemModel.swift; sourceTree = "<group>"; };
+		96FBBCF7276951D100C30E55 /* VendorVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorVM.swift; sourceTree = "<group>"; };
+		96FBBCFC27695C3900C30E55 /* AllCelebrityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCelebrityVC.swift; sourceTree = "<group>"; };
 		D2FFC76C8D32B5706D263B59 /* Pods-FoodyCatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCatTests.release.xcconfig"; path = "Target Support Files/Pods-FoodyCatTests/Pods-FoodyCatTests.release.xcconfig"; sourceTree = "<group>"; };
 		D31397C0F159CD4EF69A65F2 /* Pods-FoodyCat-FoodyCatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCat-FoodyCatUITests.debug.xcconfig"; path = "Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -427,6 +439,7 @@
 				96BB12862764DDF300D85FFF /* ForgetPasswordVM.swift */,
 				960BA1692766665200AF1A4B /* HomeVM.swift */,
 				96E0A2E32767645600CF8EB7 /* CelebritiesRestaurantVM.swift */,
+				96FBBCF7276951D100C30E55 /* VendorVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -643,6 +656,7 @@
 				96BB12A02764E43E00D85FFF /* RootViewController.swift */,
 				96BB6DFC2766BEAC00C22403 /* CelebritiesVC.swift */,
 				96E0A2FD27677A4700CF8EB7 /* VendorVC.swift */,
+				96FBBCFC27695C3900C30E55 /* AllCelebrityVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -652,6 +666,8 @@
 			children = (
 				96BB6DF72766738300C22403 /* CeleberitiesModel.swift */,
 				96E0A2DE2767642D00CF8EB7 /* CelibritiesRestaurantModel.swift */,
+				96FBBCED2769411800C30E55 /* BannerModel.swift */,
+				96FBBCF227694F3D00C30E55 /* MenuItemModel.swift */,
 			);
 			path = HomePageModels;
 			sourceTree = "<group>";
@@ -661,6 +677,8 @@
 			children = (
 				96BB6E022766C29000C22403 /* RestaurantCell.swift */,
 				96BB6E032766C29000C22403 /* RestaurantCell.xib */,
+				96FBBCE62768F19000C30E55 /* MenuItemCell.swift */,
+				96FBBCE72768F19000C30E55 /* MenuItemCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -788,6 +806,7 @@
 				9666C7722762639A00C9482D /* AvertaStd-Black.ttf in Resources */,
 				9666C7762762639A00C9482D /* AvertaStd-LightItalic.ttf in Resources */,
 				9666C77A2762639A00C9482D /* AvertaStd-Light.ttf in Resources */,
+				96FBBCE92768F19000C30E55 /* MenuItemCell.xib in Resources */,
 				965BEBCA276248F900952500 /* Auth.storyboard in Resources */,
 				96E0A30C27680EFD00CF8EB7 /* TabsCell.xib in Resources */,
 				965BEBD02762512000952500 /* LandingPage.storyboard in Resources */,
@@ -966,8 +985,10 @@
 				9666C7462762639A00C9482D /* JKCircleView.swift in Sources */,
 				96BB12A22764E43E00D85FFF /* RootViewController.swift in Sources */,
 				96BB6DFD2766BEAC00C22403 /* CelebritiesVC.swift in Sources */,
+				96FBBCEE2769411800C30E55 /* BannerModel.swift in Sources */,
 				962233162765394B00E09B97 /* SliderCell.swift in Sources */,
 				9666C76D2762639A00C9482D /* NearByEnum.swift in Sources */,
+				96FBBCF8276951D100C30E55 /* VendorVM.swift in Sources */,
 				965BEB93276247C400952500 /* AppDelegate.swift in Sources */,
 				9666C7402762639A00C9482D /* CollectionViewHieght.swift in Sources */,
 				9666C7482762639A00C9482D /* TextFieldExtension.swift in Sources */,
@@ -983,6 +1004,7 @@
 				9666C7492762639A00C9482D /* CGRect+Extension.swift in Sources */,
 				9666C7652762639A00C9482D /* Alias.swift in Sources */,
 				96E0A2FE27677A4700CF8EB7 /* VendorVC.swift in Sources */,
+				96FBBCE82768F19000C30E55 /* MenuItemCell.swift in Sources */,
 				96BB6DF82766738300C22403 /* CeleberitiesModel.swift in Sources */,
 				9666C7432762639A00C9482D /* Ex+UIViewController.swift in Sources */,
 				96BB12932764DE6000D85FFF /* CreateAccountModel.swift in Sources */,
@@ -997,11 +1019,13 @@
 				9666C74D2762639A00C9482D /* CodableHandler.swift in Sources */,
 				9666C75A2762639A00C9482D /* CustomButton.swift in Sources */,
 				9666C7692762639A00C9482D /* AppConstants.swift in Sources */,
+				96FBBCFD27695C3900C30E55 /* AllCelebrityVC.swift in Sources */,
 				9666C7412762639A00C9482D /* Date+Extension.swift in Sources */,
 				9666C7702762639A00C9482D /* OtpViewManager.swift in Sources */,
 				964E02F42764BBB100868A8A /* SignInModel.swift in Sources */,
 				9666C7572762639A00C9482D /* StartupManager.swift in Sources */,
 				9666C7502762639A00C9482D /* ImagePickerManager.swift in Sources */,
+				96FBBCF327694F3D00C30E55 /* MenuItemModel.swift in Sources */,
 				9666C75F2762639A00C9482D /* CustomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

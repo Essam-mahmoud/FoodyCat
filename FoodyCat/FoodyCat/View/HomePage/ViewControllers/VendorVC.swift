@@ -22,6 +22,8 @@ class VendorVC: UIViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var mealsCollectionView: UICollectionView!
     @IBOutlet weak var tabsCollectionView: UICollectionView!
+    @IBOutlet weak var menuTableView: ContentSizedTableView!
+    @IBOutlet weak var menuTableViewHightConstrains: NSLayoutConstraint!
     
     //MARK:- Properity
 
@@ -31,13 +33,16 @@ class VendorVC: UIViewController {
     var vendorNameLable = ""
     var vendorSpeciality = ""
     var vendorRating = 0
-    var tabsArray = ["tab1","tab2","tab3","tab4","tab2","tab3","tab4","tab2","tab3","tab4"]
+    var vendorId = 0
+    var vendorVM = VendorVM()
     fileprivate let mealCellName = "MealsCell"
     fileprivate let tabCellName = "TabsCell"
+    fileprivate let menuItemCellName = "MenuItemCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        getMenuItems()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +52,11 @@ class VendorVC: UIViewController {
             mainView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         } else {
         }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tabsCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
     }
 
     func setupUI() {
@@ -67,11 +77,26 @@ class VendorVC: UIViewController {
         tabsCollectionView.delegate = self
         tabsCollectionView.dataSource = self
         tabsCollectionView.register(UINib(nibName: tabCellName, bundle: nil), forCellWithReuseIdentifier: tabCellName)
+
+        menuTableView.delegate = self
+        menuTableView.dataSource = self
+        menuTableView.register(UINib(nibName: menuItemCellName, bundle: nil), forCellReuseIdentifier: menuItemCellName)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tabsCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
+    func getMenuItems() {
+        vendorId = 1859
+        vendorVM.getRestaurantData(vendorId: vendorId) { (errMsg, errRes, status) in
+            switch status {
+            case .populated:
+                self.tabsCollectionView.reloadData()
+                self.menuTableView.reloadData()
+
+            case .error:
+                AppCommon.sharedInstance.showBanner(title: self.vendorVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
+            default:
+                break
+            }
+        }
     }
 
     @IBAction func backButtonDidPress(_ sender: UIButton) {
@@ -82,9 +107,9 @@ class VendorVC: UIViewController {
 extension VendorVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 2000 {
-            return 10
+            return 5
         } else {
-            return tabsArray.count
+            return vendorVM.itemsResult?.data?.count ?? 0
         }
     }
 
@@ -94,24 +119,50 @@ extension VendorVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tabCellName, for: indexPath) as? TabsCell else {return UICollectionViewCell()}
+            if let mainItem = vendorVM.itemsResult?.data?[indexPath.item] {
+                cell.setupCell(data: mainItem)
+            }
             return cell
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        menuTableView.scrollToRow(at: IndexPath(row: 0, section: indexPath.item), at: .top, animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.tag == 2000 {
             return CGSize(width: 182, height: 300)
         } else {
-            let item = tabsArray[indexPath.row]
+            let item = vendorVM.itemsResult?.data?[indexPath.row].title ?? ""
             let itemSize = item.size(withAttributes: [
                 NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)
             ])
-            return CGSize(width: collectionView.frame.width / 4, height: 40)
+            return CGSize(width: itemSize.width + 30, height: 40)
         }
+    }
+}
+
+extension VendorVC: UITableViewDelegate, UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return vendorVM.itemsResult?.data?.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return vendorVM.itemsResult?.data?[section].title
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vendorVM.itemsResult?.data?[section].items?.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: menuItemCellName, for: indexPath) as?  MenuItemCell else {return UITableViewCell()}
+        if let item = vendorVM.itemsResult?.data?[indexPath.section].items?[indexPath.row] {
+            cell.setupCell(data: item)
+        }
+        return cell
     }
 }
 
