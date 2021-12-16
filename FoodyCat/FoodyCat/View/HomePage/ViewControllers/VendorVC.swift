@@ -98,6 +98,11 @@ class VendorVC: UIViewController {
             }
         }
     }
+    func addItemTapped(index: Int) {
+        let toppingVC = ExtraToppingVC.instantiate(fromAppStoryboard: .Home)
+        toppingVC.modalPresentationStyle = .overCurrentContext
+        self.present(toppingVC, animated: true, completion: nil)
+    }
 
     @IBAction func backButtonDidPress(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -161,6 +166,10 @@ extension VendorVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: menuItemCellName, for: indexPath) as?  MenuItemCell else {return UITableViewCell()}
         if let item = vendorVM.itemsResult?.data?[indexPath.section].items?[indexPath.row] {
             cell.setupCell(data: item)
+        }
+        cell.addTapped = { [weak self] (selectedCell) in
+            self?.addItemTapped(index: indexPath.row
+            )
         }
         return cell
     }

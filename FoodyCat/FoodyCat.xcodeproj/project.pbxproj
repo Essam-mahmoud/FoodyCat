@@ -105,6 +105,9 @@
 		96BB6DFD2766BEAC00C22403 /* CelebritiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6DFC2766BEAC00C22403 /* CelebritiesVC.swift */; };
 		96BB6E042766C29000C22403 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB6E022766C29000C22403 /* RestaurantCell.swift */; };
 		96BB6E052766C29000C22403 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96BB6E032766C29000C22403 /* RestaurantCell.xib */; };
+		96C8C582276BD3B1009B4741 /* ExtraToppingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8C581276BD3B1009B4741 /* ExtraToppingVC.swift */; };
+		96C8C588276BF737009B4741 /* ExtaToppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8C586276BF737009B4741 /* ExtaToppingCell.swift */; };
+		96C8C589276BF737009B4741 /* ExtaToppingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C8C587276BF737009B4741 /* ExtaToppingCell.xib */; };
 		96E0A2DF2767642D00CF8EB7 /* CelibritiesRestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0A2DE2767642D00CF8EB7 /* CelibritiesRestaurantModel.swift */; };
 		96E0A2E42767645600CF8EB7 /* CelebritiesRestaurantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0A2E32767645600CF8EB7 /* CelebritiesRestaurantVM.swift */; };
 		96E0A2FE27677A4700CF8EB7 /* VendorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0A2FD27677A4700CF8EB7 /* VendorVC.swift */; };
@@ -251,6 +254,9 @@
 		96BB6DFC2766BEAC00C22403 /* CelebritiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebritiesVC.swift; sourceTree = "<group>"; };
 		96BB6E022766C29000C22403 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		96BB6E032766C29000C22403 /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
+		96C8C581276BD3B1009B4741 /* ExtraToppingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraToppingVC.swift; sourceTree = "<group>"; };
+		96C8C586276BF737009B4741 /* ExtaToppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtaToppingCell.swift; sourceTree = "<group>"; };
+		96C8C587276BF737009B4741 /* ExtaToppingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtaToppingCell.xib; sourceTree = "<group>"; };
 		96E0A2DE2767642D00CF8EB7 /* CelibritiesRestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelibritiesRestaurantModel.swift; sourceTree = "<group>"; };
 		96E0A2E32767645600CF8EB7 /* CelebritiesRestaurantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebritiesRestaurantVM.swift; sourceTree = "<group>"; };
 		96E0A2FD27677A4700CF8EB7 /* VendorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorVC.swift; sourceTree = "<group>"; };
@@ -657,6 +663,7 @@
 				96BB6DFC2766BEAC00C22403 /* CelebritiesVC.swift */,
 				96E0A2FD27677A4700CF8EB7 /* VendorVC.swift */,
 				96FBBCFC27695C3900C30E55 /* AllCelebrityVC.swift */,
+				96C8C581276BD3B1009B4741 /* ExtraToppingVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -679,6 +686,8 @@
 				96BB6E032766C29000C22403 /* RestaurantCell.xib */,
 				96FBBCE62768F19000C30E55 /* MenuItemCell.swift */,
 				96FBBCE72768F19000C30E55 /* MenuItemCell.xib */,
+				96C8C586276BF737009B4741 /* ExtaToppingCell.swift */,
+				96C8C587276BF737009B4741 /* ExtaToppingCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -799,6 +808,7 @@
 				9666C75E2762639A00C9482D /* BannerView.xib in Resources */,
 				9666C7B52762697500C9482D /* Home.storyboard in Resources */,
 				9666C7792762639A00C9482D /* AvertaStd-Semibold.ttf in Resources */,
+				96C8C589276BF737009B4741 /* ExtaToppingCell.xib in Resources */,
 				9666C7752762639A00C9482D /* AvertaStd-Bold.ttf in Resources */,
 				96E0A3052767D39200CF8EB7 /* MealsCell.xib in Resources */,
 				96BB6E052766C29000C22403 /* RestaurantCell.xib in Resources */,
@@ -945,7 +955,9 @@
 				96BB6E042766C29000C22403 /* RestaurantCell.swift in Sources */,
 				9666C7582762639A00C9482D /* GTButton.swift in Sources */,
 				9666C73F2762639A00C9482D /* UIColor+Extension.swift in Sources */,
+				96C8C582276BD3B1009B4741 /* ExtraToppingVC.swift in Sources */,
 				9666C7AA2762659E00C9482D /* NormalResponse.swift in Sources */,
+				96C8C588276BF737009B4741 /* ExtaToppingCell.swift in Sources */,
 				960BA16A2766665200AF1A4B /* HomeVM.swift in Sources */,
 				9666C75D2762639A00C9482D /* BannerView.swift in Sources */,
 				9666C7602762639A00C9482D /* GTLabel.swift in Sources */,
