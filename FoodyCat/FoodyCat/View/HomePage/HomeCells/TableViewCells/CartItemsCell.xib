@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="KGk-i7-Jjw" customClass="CartItemsCell" customModule="FoodyCat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWf-Q0-TWR">
+                        <rect key="frame" x="1" y="10" width="318" height="90"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="g69-wQ-Dht">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="AQa-Tz-d7o"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mused morning drink" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxP-sy-PTK">
+                                <rect key="frame" x="100" y="5" width="152" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" name="dark"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lemon Juice Fresh is valuable to stock for cooking, cleaning." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozs-EY-uDt">
+                                <rect key="frame" x="100" y="28" width="202" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="blueyGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KDW 4.500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS4-bS-ZQj">
+                                <rect key="frame" x="100" y="64" width="82" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" name="mango"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Dzc-lC-BRh">
+                                <rect key="frame" x="229.5" y="59" width="88.5" height="28"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDw-Uc-aua">
+                                        <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                        <state key="normal" image="minus"/>
+                                        <connections>
+                                            <action selector="decreaseButtonDidPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SZf-Tz-uJK"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXe-Df-vrI">
+                                        <rect key="frame" x="40" y="0.0" width="8.5" height="28"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgF-DS-h6L">
+                                        <rect key="frame" x="60.5" y="0.0" width="28" height="28"/>
+                                        <state key="normal" image="addToBasket"/>
+                                        <connections>
+                                            <action selector="increaseButtonDidPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hnP-N8-m5D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DE0-g0-nnD">
+                                <rect key="frame" x="294.5" y="4" width="15.5" height="22"/>
+                                <state key="normal" image="delete"/>
+                                <connections>
+                                    <action selector="deleteButtonDidPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="d3q-Cy-564"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="7e6-BP-HFe"/>
+                            <constraint firstItem="DE0-g0-nnD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IxP-sy-PTK" secondAttribute="trailing" constant="16" id="97Q-4k-DrC"/>
+                            <constraint firstItem="ozs-EY-uDt" firstAttribute="top" secondItem="IxP-sy-PTK" secondAttribute="bottom" constant="5" id="Bnn-Ue-pRf"/>
+                            <constraint firstItem="DE0-g0-nnD" firstAttribute="top" secondItem="SWf-Q0-TWR" secondAttribute="top" constant="4" id="E39-tf-uKR"/>
+                            <constraint firstAttribute="trailing" secondItem="ozs-EY-uDt" secondAttribute="trailing" constant="16" id="HyZ-oE-sK7"/>
+                            <constraint firstAttribute="trailing" secondItem="DE0-g0-nnD" secondAttribute="trailing" constant="8" id="IPL-Oh-RLR"/>
+                            <constraint firstItem="xS4-bS-ZQj" firstAttribute="leading" secondItem="ozs-EY-uDt" secondAttribute="leading" id="KMj-zi-5GL"/>
+                            <constraint firstItem="IxP-sy-PTK" firstAttribute="top" secondItem="g69-wQ-Dht" secondAttribute="top" constant="5" id="KcE-lP-p1K"/>
+                            <constraint firstItem="g69-wQ-Dht" firstAttribute="top" secondItem="SWf-Q0-TWR" secondAttribute="top" id="V3K-un-AO2"/>
+                            <constraint firstItem="ozs-EY-uDt" firstAttribute="leading" secondItem="IxP-sy-PTK" secondAttribute="leading" id="VT3-2d-2CI"/>
+                            <constraint firstItem="g69-wQ-Dht" firstAttribute="leading" secondItem="SWf-Q0-TWR" secondAttribute="leading" id="aUF-Kc-53g"/>
+                            <constraint firstAttribute="trailing" secondItem="Dzc-lC-BRh" secondAttribute="trailing" id="d8n-Ze-4vV"/>
+                            <constraint firstAttribute="bottom" secondItem="g69-wQ-Dht" secondAttribute="bottom" id="lSh-px-U75"/>
+                            <constraint firstItem="IxP-sy-PTK" firstAttribute="leading" secondItem="g69-wQ-Dht" secondAttribute="trailing" constant="10" id="vlU-Mn-VUR"/>
+                            <constraint firstItem="Dzc-lC-BRh" firstAttribute="centerY" secondItem="xS4-bS-ZQj" secondAttribute="centerY" id="z0C-nW-4Mo"/>
+                            <constraint firstItem="xS4-bS-ZQj" firstAttribute="top" secondItem="ozs-EY-uDt" secondAttribute="bottom" constant="7" id="zgF-0w-0CY"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="_cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="SWf-Q0-TWR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="IoP-zm-ZS0"/>
+                    <constraint firstAttribute="bottom" secondItem="SWf-Q0-TWR" secondAttribute="bottom" constant="10" id="cBD-Id-WgM"/>
+                    <constraint firstAttribute="trailing" secondItem="SWf-Q0-TWR" secondAttribute="trailing" constant="1" id="czB-Gb-KHM"/>
+                    <constraint firstItem="SWf-Q0-TWR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="1" id="mcR-Z3-7TR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="itemCounterLabel" destination="FXe-Df-vrI" id="F0C-gW-5xA"/>
+                <outlet property="itemDescriptionLabel" destination="ozs-EY-uDt" id="fiN-Oz-8SD"/>
+                <outlet property="itemNameLabel" destination="IxP-sy-PTK" id="0dM-eb-NBs"/>
+                <outlet property="itemPriceLabel" destination="xS4-bS-ZQj" id="cbO-dU-vWD"/>
+            </connections>
+            <point key="canvasLocation" x="128.98550724637681" y="112.83482142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="addToBasket" width="28" height="28"/>
+        <image name="delete" width="15.5" height="20"/>
+        <image name="minus" width="28" height="28"/>
+        <image name="placeholder" width="450" height="338"/>
+        <namedColor name="blueyGrey">
+            <color red="0.5607843137254902" green="0.60784313725490191" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="dark">
+            <color red="0.13333333333333333" green="0.16862745098039217" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mango">
+            <color red="0.96862745098039216" green="0.59607843137254901" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

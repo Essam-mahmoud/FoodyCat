@@ -108,6 +108,12 @@ class HomeVC: UIViewController {
         present(allCelebrityVc, animated: true, completion: nil)
     }
 
+    @IBAction func openCartDidPress(_ sender: UIButton) {
+        let cartVc = CartVC.instantiate(fromAppStoryboard: .Home)
+        cartVc.modalPresentationStyle = .fullScreen
+        self.present(cartVc, animated: true, completion: nil)
+    }
+
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

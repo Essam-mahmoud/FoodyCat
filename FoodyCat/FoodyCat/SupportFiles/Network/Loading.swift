@@ -15,7 +15,8 @@ class Loading: UIViewController,NVActivityIndicatorViewable {
     }
     
     func loading (){
-        let size = CGSize(width: 30, height: 30)
-        startAnimating(size, message: "", type: NVActivityIndicatorType.lineScale)
+        let size = CGSize(width: 50, height: 50)
+        //startAnimating(size, message: "", type: NVActivityIndicatorType.ballClipRotate)
+        startAnimating(size, message: "Loading...".localized(), type: NVActivityIndicatorType.ballClipRotate, color: #colorLiteral(red: 0.4274509804, green: 0.06666666667, blue: 0.568627451, alpha: 1))
     }
 }

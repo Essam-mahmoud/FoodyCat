@@ -24,6 +24,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAG-eX-kI5">
                                 <rect key="frame" x="0.0" y="10" width="25" height="25"/>
                                 <state key="normal" image="uncheck"/>
+                                <connections>
+                                    <action selector="selectButtonDidPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kg1-Up-5Vt"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftm-Pd-cVd">
                                 <rect key="frame" x="40" y="13.5" width="39" height="18"/>
@@ -58,6 +61,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="itemButton" destination="lAG-eX-kI5" id="dWg-Ie-hJg"/>
+                <outlet property="itemNameLabel" destination="ftm-Pd-cVd" id="Wur-VV-8Wl"/>
+                <outlet property="itemPriceLabel" destination="gUg-UJ-0Ji" id="01c-R6-eJi"/>
+            </connections>
             <point key="canvasLocation" x="128.2608695652174" y="92.745535714285708"/>
         </tableViewCell>
     </objects>

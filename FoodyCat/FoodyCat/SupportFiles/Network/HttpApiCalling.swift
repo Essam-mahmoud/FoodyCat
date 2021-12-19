@@ -11,6 +11,7 @@ import Foundation
 import SwiftyJSON
 import NotificationBannerSwift
 import Alamofire
+
 struct Resource<T: Codable> {
     var url: String
     var httpMethod: HTTPMethod
@@ -47,7 +48,9 @@ class HttpApiCallingWithRep{
 //                URLEncoding.default
         }
         let loadview = Loading()
-        loadview.loading()
+        DispatchQueue.main.async {
+            loadview.loading()
+        }
         print(resource.url)
         
 
@@ -57,7 +60,10 @@ class HttpApiCallingWithRep{
             debugPrint(response)
             print("d",JSON(response.data as Any))
             print("r",JSON(response.result as Any))
+            DispatchQueue.main.async {
                 loadview.stopAnimating()
+            }
+
             // nil response
             if response.response == nil {
                 DispatchQueue.main.async {

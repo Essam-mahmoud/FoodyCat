@@ -98,8 +98,10 @@ class VendorVC: UIViewController {
             }
         }
     }
-    func addItemTapped(index: Int) {
+    func addItemTapped(index: IndexPath) {
+        guard let item = vendorVM.itemsResult?.data?[index.section].items?[index.row] else {return}
         let toppingVC = ExtraToppingVC.instantiate(fromAppStoryboard: .Home)
+        toppingVC.item = item
         toppingVC.modalPresentationStyle = .overCurrentContext
         self.present(toppingVC, animated: true, completion: nil)
     }
@@ -168,8 +170,7 @@ extension VendorVC: UITableViewDelegate, UITableViewDataSource {
             cell.setupCell(data: item)
         }
         cell.addTapped = { [weak self] (selectedCell) in
-            self?.addItemTapped(index: indexPath.row
-            )
+            self?.addItemTapped(index: indexPath)
         }
         return cell
     }
