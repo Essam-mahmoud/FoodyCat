@@ -9,7 +9,7 @@
 import UIKit
 enum AppStoryboard : String {
 
-    case LandingPage , Auth , Home
+    case LandingPage , Auth , Home, CheckOut
     var instance : UIStoryboard {
         return UIStoryboard(name: self.rawValue , bundle: Bundle.main)
     }

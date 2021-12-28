@@ -34,6 +34,7 @@ class ExtraToppingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         realmModel.delegate = self
+        realmModel.fetchItems()
         topView.darkBlurView()
         let tap = UITapGestureRecognizer(target: self, action: #selector(closeView))
         topView.addGestureRecognizer(tap)
@@ -156,7 +157,8 @@ class ExtraToppingVC: UIViewController {
         cartItem.itemName = item?.name ?? ""
         cartItem.itemNote = noteTextView.text
         cartItem.quantity = itemCounter
-        cartItem.itemPrice = totalPrice
+        cartItem.itemPrice = item?.price ?? 0.0
+        cartItem.itemtotalPrice = totalPrice
         cartItem.topping = topping
         realmModel.saveItem(item: cartItem)
     }
@@ -189,5 +191,14 @@ extension ExtraToppingVC: UITableViewDelegate, UITableViewDataSource {
 extension ExtraToppingVC: RealmViewModelDelegate {
     func recordSaved() {
         AppCommon.sharedInstance.showBanner(title: "Item added", subtitle: "", style: .success)
+    }
+
+    func recordFetch(items: [ItemOrderModel]) {
+        var totalPrice = 0.0
+        cardItemCount.text = "\(items.count) " + "ITEM".localized()
+        for item in items {
+            totalPrice += item.itemtotalPrice
+        }
+        cardTotalPrice.text = String(format: "%.2f", totalPrice)
     }
 }

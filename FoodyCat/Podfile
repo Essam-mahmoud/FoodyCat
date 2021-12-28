@@ -21,6 +21,7 @@ target 'FoodyCat' do
   pod 'UITextView+Placeholder'
   pod 'Cosmos', '~> 23.0'
   pod 'RealmSwift', '~>10'
+  pod 'GoogleMaps'
 
   target 'FoodyCatTests' do
     inherit! :search_paths

@@ -24,6 +24,8 @@ class VendorVC: UIViewController {
     @IBOutlet weak var tabsCollectionView: UICollectionView!
     @IBOutlet weak var menuTableView: ContentSizedTableView!
     @IBOutlet weak var menuTableViewHightConstrains: NSLayoutConstraint!
+    @IBOutlet weak var totalPriceCartLabel: UILabel!
+    @IBOutlet weak var numberOfItemsInCardLabel: UILabel!
     
     //MARK:- Properity
 
@@ -35,18 +37,22 @@ class VendorVC: UIViewController {
     var vendorRating = 0
     var vendorId = 0
     var vendorVM = VendorVM()
+    var realmModel = LocalCartItemsVM()
     fileprivate let mealCellName = "MealsCell"
     fileprivate let tabCellName = "TabsCell"
     fileprivate let menuItemCellName = "MenuItemCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        realmModel.delegate = self
+        realmModel.fetchItems()
         setupUI()
         getMenuItems()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        realmModel.fetchItems()
         mainView.layer.cornerRadius = 15
         if #available(iOS 11.0, *) {
             mainView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -108,6 +114,12 @@ class VendorVC: UIViewController {
 
     @IBAction func backButtonDidPress(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func openCartDidPress(_ sender: UIButton) {
+        let cartVc = CartVC.instantiate(fromAppStoryboard: .Home)
+        cartVc.modalPresentationStyle = .fullScreen
+        self.present(cartVc, animated: true, completion: nil)
     }
 }
 
@@ -173,6 +185,18 @@ extension VendorVC: UITableViewDelegate, UITableViewDataSource {
             self?.addItemTapped(index: indexPath)
         }
         return cell
+    }
+}
+
+extension VendorVC: RealmViewModelDelegate {
+    func recordFetch(items: [ItemOrderModel]) {
+        var totalPrice = 0.0
+        numberOfItemsInCardLabel.text = "\(items.count) " + "ITEM".localized()
+        for item in items {
+            totalPrice += item.itemtotalPrice
+        }
+
+        totalPriceCartLabel.text = String(format: "%.2f", totalPrice)
     }
 }
 

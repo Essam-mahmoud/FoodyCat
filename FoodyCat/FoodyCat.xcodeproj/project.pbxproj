@@ -13,6 +13,7 @@
 		960BA16A2766665200AF1A4B /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960BA1692766665200AF1A4B /* HomeVM.swift */; };
 		962233162765394B00E09B97 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962233142765394B00E09B97 /* SliderCell.swift */; };
 		962233172765394B00E09B97 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962233152765394B00E09B97 /* SliderCell.xib */; };
+		962449AC276FF2EA005781D8 /* GetUserLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */; };
 		962B42B0276CB74F00BA5AB1 /* ExtraToppingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B42AF276CB74F00BA5AB1 /* ExtraToppingModel.swift */; };
 		962B42B5276CB8CA00BA5AB1 /* ExtraToppingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B42B4276CB8CA00BA5AB1 /* ExtraToppingVM.swift */; };
 		964E02EF2764B8E500868A8A /* SignInVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E02EE2764B8E500868A8A /* SignInVM.swift */; };
@@ -29,6 +30,8 @@
 		965BEBD02762512000952500 /* LandingPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965BEBCF2762512000952500 /* LandingPage.storyboard */; };
 		965BEBD5276252CA00952500 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965BEBD4276252CA00952500 /* LandingPageVC.swift */; };
 		965BEBDB2762530E00952500 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965BEBDA2762530E00952500 /* SignInVC.swift */; };
+		965F4375277286B400A1CE90 /* AddNewAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F4374277286B400A1CE90 /* AddNewAddressVC.swift */; };
+		965F437A27728F6400A1CE90 /* PaymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F437927728F6400A1CE90 /* PaymentMethodVC.swift */; };
 		9666C73E2762639A00C9482D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666C6F42762639A00C9482D /* UIImageView+Extension.swift */; };
 		9666C73F2762639A00C9482D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666C6F52762639A00C9482D /* UIColor+Extension.swift */; };
 		9666C7402762639A00C9482D /* CollectionViewHieght.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666C6F62762639A00C9482D /* CollectionViewHieght.swift */; };
@@ -98,6 +101,10 @@
 		9666C7C327626A6C00C9482D /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666C7C227626A6C00C9482D /* CreateAccountVC.swift */; };
 		9666C7C827626F4200C9482D /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666C7C727626F4200C9482D /* ForgetPasswordVC.swift */; };
 		966B2A892764CEAF005AAD1D /* CreateAccountVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B2A882764CEAF005AAD1D /* CreateAccountVM.swift */; };
+		969A388127726ED4001D529A /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969A388027726ED4001D529A /* CheckOut.storyboard */; };
+		969A388627726F11001D529A /* SelectAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A388527726F11001D529A /* SelectAddressVC.swift */; };
+		969A388F27727177001D529A /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A388D27727177001D529A /* AddressCell.swift */; };
+		969A389027727177001D529A /* AddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969A388E27727177001D529A /* AddressCell.xib */; };
 		96BB12872764DDF300D85FFF /* ForgetPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB12862764DDF300D85FFF /* ForgetPasswordVM.swift */; };
 		96BB12932764DE6000D85FFF /* CreateAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB12922764DE6000D85FFF /* CreateAccountModel.swift */; };
 		96BB12982764DE6D00D85FFF /* ForgetPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB12972764DE6D00D85FFF /* ForgetPasswordModel.swift */; };
@@ -163,6 +170,7 @@
 		960BA1692766665200AF1A4B /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		962233142765394B00E09B97 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		962233152765394B00E09B97 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
+		962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserLocationVC.swift; sourceTree = "<group>"; };
 		962B42AF276CB74F00BA5AB1 /* ExtraToppingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraToppingModel.swift; sourceTree = "<group>"; };
 		962B42B4276CB8CA00BA5AB1 /* ExtraToppingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraToppingVM.swift; sourceTree = "<group>"; };
 		964E02EE2764B8E500868A8A /* SignInVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVM.swift; sourceTree = "<group>"; };
@@ -185,6 +193,8 @@
 		965BEBCF2762512000952500 /* LandingPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LandingPage.storyboard; sourceTree = "<group>"; };
 		965BEBD4276252CA00952500 /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
 		965BEBDA2762530E00952500 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		965F4374277286B400A1CE90 /* AddNewAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAddressVC.swift; sourceTree = "<group>"; };
+		965F437927728F6400A1CE90 /* PaymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVC.swift; sourceTree = "<group>"; };
 		9666C6F42762639A00C9482D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		9666C6F52762639A00C9482D /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		9666C6F62762639A00C9482D /* CollectionViewHieght.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHieght.swift; sourceTree = "<group>"; };
@@ -255,6 +265,10 @@
 		9666C7C227626A6C00C9482D /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		9666C7C727626F4200C9482D /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		966B2A882764CEAF005AAD1D /* CreateAccountVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVM.swift; sourceTree = "<group>"; };
+		969A388027726ED4001D529A /* CheckOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckOut.storyboard; sourceTree = "<group>"; };
+		969A388527726F11001D529A /* SelectAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressVC.swift; sourceTree = "<group>"; };
+		969A388D27727177001D529A /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
+		969A388E27727177001D529A /* AddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressCell.xib; sourceTree = "<group>"; };
 		96BB12862764DDF300D85FFF /* ForgetPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVM.swift; sourceTree = "<group>"; };
 		96BB12922764DE6000D85FFF /* CreateAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountModel.swift; sourceTree = "<group>"; };
 		96BB12972764DE6D00D85FFF /* ForgetPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordModel.swift; sourceTree = "<group>"; };
@@ -446,6 +460,7 @@
 		965BEBC6276248B900952500 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				969A387327726EA0001D529A /* CheckOut */,
 				9666C7B32762696600C9482D /* HomePage */,
 				965BEBCE2762510C00952500 /* LandingPage */,
 				965BEBC8276248E100952500 /* Auth */,
@@ -685,6 +700,36 @@
 				96FBBCFC27695C3900C30E55 /* AllCelebrityVC.swift */,
 				96C8C581276BD3B1009B4741 /* ExtraToppingVC.swift */,
 				96C20846276DF85F0014ACA3 /* CartVC.swift */,
+				962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		969A387327726EA0001D529A /* CheckOut */ = {
+			isa = PBXGroup;
+			children = (
+				969A387A27726EB6001D529A /* Cells */,
+				969A387E27726EBD001D529A /* ViewControllers */,
+				969A388027726ED4001D529A /* CheckOut.storyboard */,
+			);
+			path = CheckOut;
+			sourceTree = "<group>";
+		};
+		969A387A27726EB6001D529A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				969A388D27727177001D529A /* AddressCell.swift */,
+				969A388E27727177001D529A /* AddressCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		969A387E27726EBD001D529A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				969A388527726F11001D529A /* SelectAddressVC.swift */,
+				965F4374277286B400A1CE90 /* AddNewAddressVC.swift */,
+				965F437927728F6400A1CE90 /* PaymentMethodVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -736,6 +781,7 @@
 				965BEB8C276247C400952500 /* Frameworks */,
 				965BEB8D276247C400952500 /* Resources */,
 				16C656D13EAAA6C2785BF892 /* [CP] Embed Pods Frameworks */,
+				B26C9C31660E7CC2D576A0F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -774,6 +820,7 @@
 				965BEBAD276247CF00952500 /* Frameworks */,
 				965BEBAE276247CF00952500 /* Resources */,
 				3D1CB448CD200BB7C5BC6753 /* [CP] Embed Pods Frameworks */,
+				131403949F241CC87E93A03D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -837,6 +884,7 @@
 				9666C7772762639A00C9482D /* CircularStd-Medium.ttf in Resources */,
 				9666C7732762639A00C9482D /* CircularStd-Book.ttf in Resources */,
 				9666C7782762639A00C9482D /* AvertaStd-Regular.ttf in Resources */,
+				969A389027727177001D529A /* AddressCell.xib in Resources */,
 				9666C75E2762639A00C9482D /* BannerView.xib in Resources */,
 				9666C7B52762697500C9482D /* Home.storyboard in Resources */,
 				9666C7792762639A00C9482D /* AvertaStd-Semibold.ttf in Resources */,
@@ -853,6 +901,7 @@
 				965BEBCA276248F900952500 /* Auth.storyboard in Resources */,
 				96E0A30C27680EFD00CF8EB7 /* TabsCell.xib in Resources */,
 				965BEBD02762512000952500 /* LandingPage.storyboard in Resources */,
+				969A388127726ED4001D529A /* CheckOut.storyboard in Resources */,
 				9666C7742762639A00C9482D /* CircularStd-Bold.ttf in Resources */,
 				965BEB9F276247CF00952500 /* LaunchScreen.storyboard in Resources */,
 				9666C77B2762639A00C9482D /* Localizable.strings in Resources */,
@@ -878,6 +927,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		131403949F241CC87E93A03D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		16C656D13EAAA6C2785BF892 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -956,6 +1022,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B26C9C31660E7CC2D576A0F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat/Pods-FoodyCat-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat/Pods-FoodyCat-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodyCat/Pods-FoodyCat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F1D1E386FBBD682E40B7851F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1019,11 +1102,13 @@
 				9666C7672762639A00C9482D /* CardWithShadow.swift in Sources */,
 				9666C7C827626F4200C9482D /* ForgetPasswordVC.swift in Sources */,
 				96C208A2276E200F0014ACA3 /* LocalCartItemsVM.swift in Sources */,
+				965F437A27728F6400A1CE90 /* PaymentMethodVC.swift in Sources */,
 				962B42B5276CB8CA00BA5AB1 /* ExtraToppingVM.swift in Sources */,
 				9666C7442762639A00C9482D /* Ex+Storyboard.swift in Sources */,
 				964E02EF2764B8E500868A8A /* SignInVM.swift in Sources */,
 				9666C76B2762639A00C9482D /* Enum.swift in Sources */,
 				9666C7552762639A00C9482D /* LocationsManager.swift in Sources */,
+				962449AC276FF2EA005781D8 /* GetUserLocationVC.swift in Sources */,
 				96E0A2DF2767642D00CF8EB7 /* CelibritiesRestaurantModel.swift in Sources */,
 				9666C74B2762639A00C9482D /* HttpApiCalling.swift in Sources */,
 				9666C7632762639A00C9482D /* SwiftSpinner.swift in Sources */,
@@ -1036,6 +1121,7 @@
 				96FBBCEE2769411800C30E55 /* BannerModel.swift in Sources */,
 				962233162765394B00E09B97 /* SliderCell.swift in Sources */,
 				9666C76D2762639A00C9482D /* NearByEnum.swift in Sources */,
+				969A388F27727177001D529A /* AddressCell.swift in Sources */,
 				96FBBCF8276951D100C30E55 /* VendorVM.swift in Sources */,
 				965BEB93276247C400952500 /* AppDelegate.swift in Sources */,
 				9666C7402762639A00C9482D /* CollectionViewHieght.swift in Sources */,
@@ -1053,6 +1139,7 @@
 				9666C7422762639A00C9482D /* SpinerLayer.swift in Sources */,
 				9666C7492762639A00C9482D /* CGRect+Extension.swift in Sources */,
 				9666C7652762639A00C9482D /* Alias.swift in Sources */,
+				965F4375277286B400A1CE90 /* AddNewAddressVC.swift in Sources */,
 				96E0A2FE27677A4700CF8EB7 /* VendorVC.swift in Sources */,
 				962B42B0276CB74F00BA5AB1 /* ExtraToppingModel.swift in Sources */,
 				96FBBCE82768F19000C30E55 /* MenuItemCell.swift in Sources */,
@@ -1063,6 +1150,7 @@
 				9666C7452762639A00C9482D /* ShapeUIView.swift in Sources */,
 				96E0A3042767D39200CF8EB7 /* MealsCell.swift in Sources */,
 				9666C75B2762639A00C9482D /* GTTextField.swift in Sources */,
+				969A388627726F11001D529A /* SelectAddressVC.swift in Sources */,
 				9666C7532762639A00C9482D /* LocationBean.swift in Sources */,
 				9666C74C2762639A00C9482D /* Reachability.swift in Sources */,
 				966B2A892764CEAF005AAD1D /* CreateAccountVM.swift in Sources */,

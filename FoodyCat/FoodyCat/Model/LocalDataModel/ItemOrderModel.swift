@@ -16,6 +16,7 @@ class ItemOrderModel: Object{
     @objc dynamic var itemName: String = ""
     @objc dynamic var itemDescription: String = ""
     @objc dynamic var itemPrice: Double = 0.0
+    @objc dynamic var itemtotalPrice: Double = 0.0
     @objc dynamic var itemNote: String = ""
     var topping = RealmSwift.List<ItemTopping>()
 }

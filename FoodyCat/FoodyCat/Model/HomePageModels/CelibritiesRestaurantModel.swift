@@ -45,7 +45,7 @@ class VendorsData: Codable {
     let vendorOpen: Bool?
     let openingStatus: Int?
     let busy: Bool?
-    let minimumOrder: Int?
+ // let minimumOrder: Int?
     let acceptOrders: Bool?
     let deliveryCharge: Double?
     let averageDeliveryTime: Int?
@@ -67,7 +67,7 @@ class VendorsData: Codable {
         case vendorOpen = "open"
         case openingStatus = "openingStatus"
         case busy = "busy"
-        case minimumOrder = "minimumOrder"
+   //   case minimumOrder = "minimumOrder"
         case acceptOrders = "acceptOrders"
         case deliveryCharge = "deliveryCharge"
         case averageDeliveryTime = "averageDeliveryTime"
@@ -91,7 +91,7 @@ class VendorsData: Codable {
         vendorOpen = try value.decodeIfPresent(Bool.self, forKey: .vendorOpen)
         openingStatus = try value.decodeIfPresent(Int.self, forKey: .openingStatus)
         busy = try value.decodeIfPresent(Bool.self, forKey: .busy)
-        minimumOrder = try value.decodeIfPresent(Int.self, forKey: .minimumOrder)
+    //  minimumOrder = try value.decodeIfPresent(Int.self, forKey: .minimumOrder)
         acceptOrders = try value.decodeIfPresent(Bool.self, forKey: .acceptOrders)
         deliveryCharge = try value.decodeIfPresent(Double.self, forKey: .deliveryCharge)
         averageDeliveryTime = try value.decodeIfPresent(Int.self, forKey: .averageDeliveryTime)

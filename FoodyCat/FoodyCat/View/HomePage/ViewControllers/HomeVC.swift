@@ -26,21 +26,30 @@ class HomeVC: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var inProgressImage: UIImageView!
     @IBOutlet weak var celebritiesCollectionView: UICollectionView!
-
+    @IBOutlet weak var totalCartPriceLabel: UILabel!
+    @IBOutlet weak var numberOfItemsInCartLabel: UILabel!
+    
     //MARK:- Properities
     var homeVM = HomeVM()
+    var realmModel = LocalCartItemsVM()
     var timer: Timer?
     var counter = 0
     fileprivate let bannerCell = "SliderCell"
     fileprivate let celebritiesCell = "CelebritiesCell"
     override func viewDidLoad() {
         super.viewDidLoad()
+        realmModel.delegate = self
         registerCells()
         loadCelebrities()
         loadFirstBanner()
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeFirstBanner), userInfo: nil, repeats: true)
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        realmModel.fetchItems()
     }
 
     func registerCells() {
@@ -95,13 +104,17 @@ class HomeVC: UIViewController {
 
     @IBAction func openInprogressButtonDidPress(_ sender: UIButton) {
     }
+
     @IBAction func sideMenuButtonDidPress(_ sender: UIButton) {
         sideMenuViewController?.presentLeftMenuViewController()
     }
+
     @IBAction func profileButtonDidPress(_ sender: UIButton) {
     }
+
     @IBAction func filterButtonDidPress(_ sender: UIButton) {
     }
+
     @IBAction func openAllCelebritiesButtonDidPress(_ sender: UIButton) {
         let allCelebrityVc = AllCelebrityVC.instantiate(fromAppStoryboard: .Home)
         allCelebrityVc.modalPresentationStyle = .fullScreen
@@ -163,5 +176,17 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                 present(celebrityVC, animated: true, completion: nil)
             }
         }
+    }
+}
+
+extension HomeVC: RealmViewModelDelegate {
+    func recordFetch(items: [ItemOrderModel]) {
+        var totalPrice = 0.0
+        numberOfItemsLabel.text = "\(items.count) " + "ITEM".localized()
+        for item in items {
+            totalPrice += item.itemtotalPrice
+        }
+
+        totalCartPriceLabel.text = String(format: "%.2f", totalPrice)
     }
 }
