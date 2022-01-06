@@ -43,4 +43,11 @@ extension SelectAddressVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: addressCellName, for: indexPath) as? AddressCell else {return UITableViewCell()}
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let paymentVc = PaymentMethodVC.instantiate(fromAppStoryboard: .CheckOut)
+        paymentVc.modalPresentationStyle = .fullScreen
+        self.present(paymentVc, animated: true, completion: nil)
+    }
 }

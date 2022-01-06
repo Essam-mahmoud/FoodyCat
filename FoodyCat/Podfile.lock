@@ -2,6 +2,7 @@ PODS:
   - AKSideMenu (1.4.6)
   - Alamofire (5.4.4)
   - Cosmos (23.0.0)
+  - FSPagerView (0.8.3)
   - GoogleMaps (6.0.1):
     - GoogleMaps/Maps (= 6.0.1)
   - GoogleMaps/Base (6.0.1)
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - AKSideMenu
   - Alamofire
   - Cosmos (~> 23.0)
+  - FSPagerView
   - GoogleMaps
   - iOSDropDown
   - IQKeyboardManagerSwift
@@ -56,6 +58,7 @@ SPEC REPOS:
     - AKSideMenu
     - Alamofire
     - Cosmos
+    - FSPagerView
     - GoogleMaps
     - iOSDropDown
     - IQKeyboardManagerSwift
@@ -76,6 +79,7 @@ SPEC CHECKSUMS:
   AKSideMenu: 1f2b261a82b89f980624dda4b3385544fbf178e0
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GoogleMaps: c213fc2334b7374144cede914da779b99be0ab74
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
@@ -92,6 +96,6 @@ SPEC CHECKSUMS:
   TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 30889ac4442a86f08bac7de0645c71dace2fd6e3
+PODFILE CHECKSUM: 378939eebb91eb66e4001231fc967e8ebc1a94e5
 
 COCOAPODS: 1.10.1

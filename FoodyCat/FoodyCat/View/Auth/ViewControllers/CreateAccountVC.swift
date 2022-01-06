@@ -21,6 +21,7 @@ class CreateAccountVC: UIViewController {
     var isValidEmail = false
     var isValidPassWord = false
     var isValidPhone = false
+    var cameFromOrder = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +47,15 @@ class CreateAccountVC: UIViewController {
             createAccountVM.register(phone: phone, email: email, name: fullName, password: password, datOfBirth: dateOfBirth) { (errMsg, errRes, status) in
                 switch status {
                 case .populated:
-                    SharedData.SharedInstans.SetIsLogin(true)
-                    AppCommon.sharedInstance.showBanner(title: self.createAccountVM.result?.message ?? "", subtitle: "", style: .success, customColor: UIColor(named: "tealish"))
-                    let homeVC = HomeVC.instantiate(fromAppStoryboard: .Home)
-                    homeVC.modalPresentationStyle = .fullScreen
-                    self.present(homeVC, animated: true, completion: nil)
+                    if self.cameFromOrder {
+                        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                    } else {
+                        SharedData.SharedInstans.SetIsLogin(true)
+                        AppCommon.sharedInstance.showBanner(title: self.createAccountVM.result?.message ?? "", subtitle: "", style: .success, customColor: UIColor(named: "tealish"))
+                        let homeVC = HomeVC.instantiate(fromAppStoryboard: .Home)
+                        homeVC.modalPresentationStyle = .fullScreen
+                        self.present(homeVC, animated: true, completion: nil)
+                    }
                 case .error:
                     AppCommon.sharedInstance.showBanner(title: self.createAccountVM.result?.message ?? "", subtitle: "", style: .danger)
                 default:

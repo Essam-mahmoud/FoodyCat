@@ -22,10 +22,31 @@ class AddNewAddressVC: UIViewController {
 
     }
 
+    func addAddress() -> Bool{
+        guard let area = areaTF.text else {return false}
+        guard let block = blockTF.text else {return false}
+        guard let street = streetTF.text else {return false}
+        guard let buildingNo = buildingNoTF.text else {return false}
+        guard let floor = floorTF.text else {return false}
+        guard let apartmentNo = apartmentNoTF.text else {return false}
+        guard let additionalInfo = additionDirectionsTV.text else {return false}
+
+        if area != "" && block != "" && street != "" && buildingNo != "" && floor != "" && apartmentNo != "" {
+
+        } else {
+            return false
+        }
+        return true
+    }
+
     @IBAction func completeButtonDidPress(_ sender: UIButton) {
-        let paymentVc = PaymentMethodVC.instantiate(fromAppStoryboard: .CheckOut)
-        paymentVc.modalPresentationStyle = .fullScreen
-        self.present(paymentVc, animated: true, completion: nil)
+        if addAddress() {
+            let paymentVc = PaymentMethodVC.instantiate(fromAppStoryboard: .CheckOut)
+            paymentVc.modalPresentationStyle = .fullScreen
+            self.present(paymentVc, animated: true, completion: nil)
+        } else {
+            AppCommon.sharedInstance.showBanner(title: "Please fill all Data to continue...".localized(), subtitle: "", style: .danger)
+        }
     }
 
     @IBAction func backButtonDidPress(_ sender: UIButton) {

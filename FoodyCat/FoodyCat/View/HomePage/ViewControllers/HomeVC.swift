@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FSPagerView
 
 class HomeVC: UIViewController {
 
@@ -28,7 +29,30 @@ class HomeVC: UIViewController {
     @IBOutlet weak var celebritiesCollectionView: UICollectionView!
     @IBOutlet weak var totalCartPriceLabel: UILabel!
     @IBOutlet weak var numberOfItemsInCartLabel: UILabel!
-    
+    @IBOutlet weak var pagerView: FSPagerView! {
+        didSet {
+            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+            self.pagerView.itemSize = FSPagerView.automaticSize
+            self.pagerView.automaticSlidingInterval = .init(3)
+            self.pagerView.layer.cornerRadius = 15
+            self.pagerView.clipsToBounds = true
+
+        }
+    }
+    @IBOutlet weak var pagerControl: FSPageControl! {
+        didSet {
+            self.pagerControl.numberOfPages = 3
+            self.pagerControl.contentHorizontalAlignment = .right
+            self.pagerControl.contentInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+            self.pagerControl.backgroundColor = .clear
+            self.pagerControl.setFillColor(#colorLiteral(red: 0.968627451, green: 0.5960784314, blue: 0.1411764706, alpha: 1), for: .selected)
+            self.pagerControl.setFillColor(#colorLiteral(red: 0.968627451, green: 0.5960784314, blue: 0.1411764706, alpha: 0.2), for: .normal)
+            self.pagerControl.contentHorizontalAlignment = .center
+            self.pagerControl.itemSpacing = 7
+
+        }
+    }
+
     //MARK:- Properities
     var homeVM = HomeVM()
     var realmModel = LocalCartItemsVM()
@@ -39,6 +63,8 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         realmModel.delegate = self
+        pagerView.delegate = self
+        pagerView.dataSource = self
         registerCells()
         loadCelebrities()
         loadFirstBanner()
@@ -190,3 +216,36 @@ extension HomeVC: RealmViewModelDelegate {
         totalCartPriceLabel.text = String(format: "%.2f", totalPrice)
     }
 }
+
+extension HomeVC: FSPagerViewDataSource,FSPagerViewDelegate{
+    // MARK:- FSPagerView DataSource
+
+    public func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return 3
+    }
+
+    public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        cell.imageView?.image = UIImage(named: "placeholder")
+        cell.imageView?.contentMode = .scaleAspectFill
+        cell.imageView?.clipsToBounds = true
+        cell.textLabel?.text = ""
+        return cell
+    }
+
+    // MARK:- FSPagerView Delegate
+
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        pagerView.deselectItem(at: index, animated: true)
+        pagerView.scrollToItem(at: index, animated: true)
+    }
+
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        self.pagerControl.currentPage = targetIndex
+    }
+
+    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
+        self.pagerControl.currentPage = pagerView.currentIndex
+    }
+}
+

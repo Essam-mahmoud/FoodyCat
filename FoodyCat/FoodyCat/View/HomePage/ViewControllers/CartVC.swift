@@ -80,9 +80,16 @@ class CartVC: UIViewController {
     }
 
     @IBAction func checkOutButtonDidPress(_ sender: UIButton) {
-        let selectAddressVc = SelectAddressVC.instantiate(fromAppStoryboard: .CheckOut)
-        selectAddressVc.modalPresentationStyle = .fullScreen
-        self.present(selectAddressVc, animated: true, completion: nil)
+        if SharedData.SharedInstans.GetIsLogin() {
+            let selectAddressVc = SelectAddressVC.instantiate(fromAppStoryboard: .CheckOut)
+            selectAddressVc.modalPresentationStyle = .fullScreen
+            self.present(selectAddressVc, animated: true, completion: nil)
+        } else {
+            let loginVC = SignInVC.instantiate(fromAppStoryboard: .Auth)
+            loginVC.cameFromOrder = true
+            loginVC.modalPresentationStyle = .fullScreen
+            self.present(loginVC, animated: true, completion: nil)
+        }
     }
 }
 

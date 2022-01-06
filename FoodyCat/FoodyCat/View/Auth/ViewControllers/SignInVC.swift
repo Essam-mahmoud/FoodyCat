@@ -16,6 +16,7 @@ class SignInVC: UIViewController {
     var signInVM = SignInVM()
     var isValidEmail = false
     var isValidPassWord = false
+    var cameFromOrder = false
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -40,11 +41,15 @@ class SignInVC: UIViewController {
         signInVM.UserLogin(phone: phoneNumber, password: password) { (errMsg, errRes, status) in
             switch status {
             case .populated:
-                SharedData.SharedInstans.SetIsLogin(true)
-                AppCommon.sharedInstance.showBanner(title: "Logged in Successfully".localized(), subtitle: "", style: .success, customColor: UIColor(named: "tealish"))
-                let homeVC = RootViewController.instantiate(fromAppStoryboard: .Home)
-                homeVC.modalPresentationStyle = .fullScreen
-                self.present(homeVC, animated: true, completion: nil)
+                if self.cameFromOrder {
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    SharedData.SharedInstans.SetIsLogin(true)
+                    AppCommon.sharedInstance.showBanner(title: "Logged in Successfully".localized(), subtitle: "", style: .success, customColor: UIColor(named: "tealish"))
+                    let homeVC = RootViewController.instantiate(fromAppStoryboard: .Home)
+                    homeVC.modalPresentationStyle = .fullScreen
+                    self.present(homeVC, animated: true, completion: nil)
+                }
             case .error:
                 AppCommon.sharedInstance.showBanner(title: self.signInVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
             default:
@@ -54,6 +59,7 @@ class SignInVC: UIViewController {
     }
     @IBAction func signUpDidPress(_ sender: UIButton) {
         let createAccountVC = CreateAccountVC.instantiate(fromAppStoryboard: .Auth)
+        createAccountVC.cameFromOrder = cameFromOrder
         createAccountVC.modalPresentationStyle = .fullScreen
         self.present(createAccountVC, animated: true, completion: nil)
     }

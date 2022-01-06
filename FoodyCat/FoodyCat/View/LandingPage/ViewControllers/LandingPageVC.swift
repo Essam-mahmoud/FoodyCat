@@ -17,10 +17,16 @@ class LandingPageVC: UIViewController {
     }
 
     func routeViewController() {
-        //if SharedData.SharedInstans.GetIsLogin() {
+        if SharedData.SharedInstans.getIsFinishOnboarding() {
             guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
             UIApplication.shared.windows.first?.rootViewController = homeVC
             UIApplication.shared.windows.first?.makeKeyAndVisible()
+        } else {
+            //if SharedData.SharedInstans.GetIsLogin() {}
+            guard let homeVC = UIStoryboard.init(name:"Auth", bundle: nil).instantiateViewController(withIdentifier: "OnboardingVC") as? OnboardingVC else {return}
+            UIApplication.shared.windows.first?.rootViewController = homeVC
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
 
 
 //        guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "GetUserLocationVC") as? GetUserLocationVC else {return}

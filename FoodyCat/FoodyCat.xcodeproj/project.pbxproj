@@ -130,6 +130,9 @@
 		96E0A3052767D39200CF8EB7 /* MealsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E0A3032767D39200CF8EB7 /* MealsCell.xib */; };
 		96E0A30B27680EFD00CF8EB7 /* TabsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E0A30927680EFD00CF8EB7 /* TabsCell.swift */; };
 		96E0A30C27680EFD00CF8EB7 /* TabsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E0A30A27680EFD00CF8EB7 /* TabsCell.xib */; };
+		96F817E12781E22900A8808D /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F817E02781E22900A8808D /* OnboardingVC.swift */; };
+		96F818052782457A00A8808D /* PaymentMethodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F818032782457A00A8808D /* PaymentMethodsCell.swift */; };
+		96F818062782457A00A8808D /* PaymentMethodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F818042782457A00A8808D /* PaymentMethodsCell.xib */; };
 		96FBBCE82768F19000C30E55 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBBCE62768F19000C30E55 /* MenuItemCell.swift */; };
 		96FBBCE92768F19000C30E55 /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FBBCE72768F19000C30E55 /* MenuItemCell.xib */; };
 		96FBBCEE2769411800C30E55 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBBCED2769411800C30E55 /* BannerModel.swift */; };
@@ -294,6 +297,9 @@
 		96E0A3032767D39200CF8EB7 /* MealsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealsCell.xib; sourceTree = "<group>"; };
 		96E0A30927680EFD00CF8EB7 /* TabsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCell.swift; sourceTree = "<group>"; };
 		96E0A30A27680EFD00CF8EB7 /* TabsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabsCell.xib; sourceTree = "<group>"; };
+		96F817E02781E22900A8808D /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		96F818032782457A00A8808D /* PaymentMethodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsCell.swift; sourceTree = "<group>"; };
+		96F818042782457A00A8808D /* PaymentMethodsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodsCell.xib; sourceTree = "<group>"; };
 		96FBBCE62768F19000C30E55 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		96FBBCE72768F19000C30E55 /* MenuItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
 		96FBBCED2769411800C30E55 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
@@ -516,6 +522,7 @@
 				965BEBDA2762530E00952500 /* SignInVC.swift */,
 				9666C7C227626A6C00C9482D /* CreateAccountVC.swift */,
 				9666C7C727626F4200C9482D /* ForgetPasswordVC.swift */,
+				96F817E02781E22900A8808D /* OnboardingVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -720,6 +727,8 @@
 			children = (
 				969A388D27727177001D529A /* AddressCell.swift */,
 				969A388E27727177001D529A /* AddressCell.xib */,
+				96F818032782457A00A8808D /* PaymentMethodsCell.swift */,
+				96F818042782457A00A8808D /* PaymentMethodsCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -881,6 +890,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				962233172765394B00E09B97 /* SliderCell.xib in Resources */,
+				96F818062782457A00A8808D /* PaymentMethodsCell.xib in Resources */,
 				9666C7772762639A00C9482D /* CircularStd-Medium.ttf in Resources */,
 				9666C7732762639A00C9482D /* CircularStd-Book.ttf in Resources */,
 				9666C7782762639A00C9482D /* AvertaStd-Regular.ttf in Resources */,
@@ -1145,6 +1155,7 @@
 				96FBBCE82768F19000C30E55 /* MenuItemCell.swift in Sources */,
 				96BB6DF82766738300C22403 /* CeleberitiesModel.swift in Sources */,
 				96C20847276DF85F0014ACA3 /* CartVC.swift in Sources */,
+				96F817E12781E22900A8808D /* OnboardingVC.swift in Sources */,
 				9666C7432762639A00C9482D /* Ex+UIViewController.swift in Sources */,
 				96BB12932764DE6000D85FFF /* CreateAccountModel.swift in Sources */,
 				9666C7452762639A00C9482D /* ShapeUIView.swift in Sources */,
@@ -1160,6 +1171,7 @@
 				9666C75A2762639A00C9482D /* CustomButton.swift in Sources */,
 				9666C7692762639A00C9482D /* AppConstants.swift in Sources */,
 				96FBBCFD27695C3900C30E55 /* AllCelebrityVC.swift in Sources */,
+				96F818052782457A00A8808D /* PaymentMethodsCell.swift in Sources */,
 				9666C7412762639A00C9482D /* Date+Extension.swift in Sources */,
 				9666C7702762639A00C9482D /* OtpViewManager.swift in Sources */,
 				964E02F42764BBB100868A8A /* SignInModel.swift in Sources */,
