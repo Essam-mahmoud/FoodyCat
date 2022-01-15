@@ -9,6 +9,11 @@ import UIKit
 
 class PaymentMethodsCell: UITableViewCell {
 
+    @IBOutlet weak var selectedButton: UIButton!
+    @IBOutlet weak var paymentImage: UIImageView!
+    @IBOutlet weak var paymentNameLabel: UILabel!
+
+    var selectedTapped: ((PaymentMethodsCell) -> Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +24,14 @@ class PaymentMethodsCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+    func setupCell(data: PaymentMethods, isSelected: Bool) {
+        selectedButton.setImage(isSelected ? UIImage(named: "check") : UIImage(named: "uncheck") , for: .normal)
+        paymentImage.loadImageFromUrl(imgUrl: data.icon, defString: "imageplaceholdera`")
+        paymentNameLabel.text = data.title
+    }
     
+    @IBAction func selectedButtonDidPress(_ sender: UIButton) {
+        selectedTapped?(self)
+    }
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UMv-XN-gV2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UMv-XN-gV2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -206,7 +207,7 @@
                                                         <cells/>
                                                     </collectionView>
                                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kGU-su-rhp">
-                                                        <rect key="frame" x="146" y="172.5" width="122.5" height="27.5"/>
+                                                        <rect key="frame" x="149.5" y="174" width="115.5" height="26"/>
                                                         <color key="pageIndicatorTintColor" red="0.96862745098039216" green="0.59607843137254901" blue="0.14117647058823529" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <color key="currentPageIndicatorTintColor" name="mango"/>
                                                     </pageControl>
@@ -418,7 +419,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfx-yn-Wn3">
-                                        <rect key="frame" x="284" y="17" width="80" height="20.5"/>
+                                        <rect key="frame" x="284.5" y="17" width="79.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1102,7 +1103,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add to Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6y-Dj-MKf">
-                                                <rect key="frame" x="270.5" y="17" width="93.5" height="20.5"/>
+                                                <rect key="frame" x="271" y="17" width="93" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1218,7 +1219,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Du-u5-Bmu">
-                                                <rect key="frame" x="15" y="50" width="53" height="31.5"/>
+                                                <rect key="frame" x="15" y="50" width="53.5" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                 <color key="textColor" name="dark"/>
                                                 <nil key="highlightedColor"/>
@@ -1277,7 +1278,7 @@
                                         <rect key="frame" x="0.0" y="663" width="414" height="200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-cH-7Xq">
-                                                <rect key="frame" x="16" y="8" width="116.5" height="31.5"/>
+                                                <rect key="frame" x="16" y="8" width="117" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                 <color key="textColor" name="dark"/>
                                                 <nil key="highlightedColor"/>
@@ -1567,30 +1568,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkB-mI-5Pa">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hbh-qf-bnE">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                    </mapView>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="hbh-qf-bnE" firstAttribute="top" secondItem="IkB-mI-5Pa" secondAttribute="top" id="Lor-2p-pvK"/>
-                                    <constraint firstAttribute="trailing" secondItem="hbh-qf-bnE" secondAttribute="trailing" id="pD0-ke-yP0"/>
-                                    <constraint firstAttribute="bottom" secondItem="hbh-qf-bnE" secondAttribute="bottom" id="tBO-cO-wGw"/>
-                                    <constraint firstItem="hbh-qf-bnE" firstAttribute="leading" secondItem="IkB-mI-5Pa" secondAttribute="leading" id="xvc-Xq-qua"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASP-aw-zpf">
                                 <rect key="frame" x="0.0" y="746" width="414" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ht3-mg-R49">
-                                        <rect key="frame" x="184.5" y="16" width="45" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ht3-mg-R49">
+                                        <rect key="frame" x="20" y="16" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlp-e2-oMY">
-                                        <rect key="frame" x="20" y="67" width="374" height="46"/>
+                                        <rect key="frame" x="20" y="66.5" width="374" height="46"/>
                                         <color key="backgroundColor" name="Purple"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="Uea-3l-hK7"/>
@@ -1612,11 +1602,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="ht3-mg-R49" firstAttribute="top" secondItem="ASP-aw-zpf" secondAttribute="top" constant="16" id="0Ta-H4-Ryz"/>
+                                    <constraint firstItem="ht3-mg-R49" firstAttribute="leading" secondItem="ASP-aw-zpf" secondAttribute="leading" constant="20" id="1w0-L6-2SF"/>
                                     <constraint firstItem="xlp-e2-oMY" firstAttribute="top" secondItem="ht3-mg-R49" secondAttribute="bottom" constant="30" id="6pK-4o-k4W"/>
                                     <constraint firstItem="xlp-e2-oMY" firstAttribute="leading" secondItem="ASP-aw-zpf" secondAttribute="leading" constant="20" id="AAe-Zu-dgk"/>
-                                    <constraint firstAttribute="height" constant="150" id="ICR-Le-ike"/>
                                     <constraint firstAttribute="trailing" secondItem="xlp-e2-oMY" secondAttribute="trailing" constant="20" id="Yr0-aS-Cun"/>
-                                    <constraint firstItem="ht3-mg-R49" firstAttribute="centerX" secondItem="ASP-aw-zpf" secondAttribute="centerX" id="dDA-Mn-8mZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ht3-mg-R49" secondAttribute="trailing" constant="20" id="Z0m-Uj-DY3"/>
+                                    <constraint firstAttribute="bottom" secondItem="xlp-e2-oMY" secondAttribute="bottom" constant="37.5" id="rY5-dX-K92"/>
                                 </constraints>
                             </view>
                         </subviews>

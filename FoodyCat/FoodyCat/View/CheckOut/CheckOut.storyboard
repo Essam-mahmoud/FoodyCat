@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -490,14 +491,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KvC-Dq-AFi">
-                                                        <rect key="frame" x="12" y="163" width="22" height="21"/>
+                                                        <rect key="frame" x="12" y="163" width="22" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="Eor-Ec-Tpv"/>
                                                             <constraint firstAttribute="width" constant="22" id="ZJ6-8P-6Q1"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g5-82-k07">
-                                                        <rect key="frame" x="46" y="162" width="186.5" height="36"/>
+                                                        <rect key="frame" x="46" y="162" width="322" height="36"/>
                                                         <string key="text">Block 3, 4Street, 17 , 6 ,18
 Salmiya, Kuwait.</string>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -537,13 +538,14 @@ Salmiya, Kuwait.</string>
                                                     <constraint firstItem="nd7-bd-yQH" firstAttribute="leading" secondItem="KvC-Dq-AFi" secondAttribute="leading" id="A5J-si-nZH"/>
                                                     <constraint firstItem="D8R-Z0-hx8" firstAttribute="leading" secondItem="yc9-X4-nls" secondAttribute="trailing" constant="12" id="AtH-nQ-elm"/>
                                                     <constraint firstItem="AFO-2W-oIR" firstAttribute="top" secondItem="nd7-bd-yQH" secondAttribute="top" id="Az4-2r-dVY"/>
-                                                    <constraint firstItem="D8R-Z0-hx8" firstAttribute="top" secondItem="yc9-X4-nls" secondAttribute="top" id="CQC-LL-zqh"/>
                                                     <constraint firstItem="KvC-Dq-AFi" firstAttribute="top" secondItem="7tA-Lr-yIR" secondAttribute="bottom" constant="12" id="DD8-x0-fd9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0g5-82-k07" secondAttribute="trailing" constant="16" id="Neb-kP-d7r"/>
                                                     <constraint firstItem="0g5-82-k07" firstAttribute="leading" secondItem="KvC-Dq-AFi" secondAttribute="trailing" constant="12" id="PZl-2n-5nQ"/>
                                                     <constraint firstItem="yc9-X4-nls" firstAttribute="leading" secondItem="nd7-bd-yQH" secondAttribute="leading" id="RhO-x2-rdH"/>
-                                                    <constraint firstItem="D8R-Z0-hx8" firstAttribute="top" secondItem="AFO-2W-oIR" secondAttribute="bottom" constant="8" id="SIV-yo-NdK"/>
                                                     <constraint firstAttribute="height" constant="262" id="YOg-G2-bo4"/>
+                                                    <constraint firstItem="yc9-X4-nls" firstAttribute="top" secondItem="nd7-bd-yQH" secondAttribute="bottom" constant="4" id="cUK-SN-AuG"/>
                                                     <constraint firstItem="AFO-2W-oIR" firstAttribute="top" secondItem="0g5-82-k07" secondAttribute="bottom" constant="12" id="e6R-IE-gQA"/>
+                                                    <constraint firstItem="D8R-Z0-hx8" firstAttribute="top" secondItem="yc9-X4-nls" secondAttribute="top" id="fmh-Mw-TdF"/>
                                                     <constraint firstItem="0g5-82-k07" firstAttribute="top" secondItem="KvC-Dq-AFi" secondAttribute="top" id="pyZ-yF-4We"/>
                                                     <constraint firstItem="KvC-Dq-AFi" firstAttribute="leading" secondItem="Hjb-OV-wdR" secondAttribute="leading" constant="12" id="rKe-6G-NFf"/>
                                                     <constraint firstItem="AFO-2W-oIR" firstAttribute="leading" secondItem="nd7-bd-yQH" secondAttribute="trailing" constant="12" id="yNX-uc-JMy"/>
@@ -583,7 +585,7 @@ Salmiya, Kuwait.</string>
                                         <rect key="frame" x="15" y="696" width="384" height="220"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ow-Dk-web">
-                                                <rect key="frame" x="8" y="8" width="116.5" height="31.5"/>
+                                                <rect key="frame" x="8" y="8" width="117" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                 <color key="textColor" name="dark"/>
                                                 <nil key="highlightedColor"/>
@@ -735,6 +737,7 @@ Salmiya, Kuwait.</string>
                         <outlet property="phoneLabel" destination="D8R-Z0-hx8" id="pGE-vj-Oj0"/>
                         <outlet property="serviceChargeLAbel" destination="qXw-Xf-tLe" id="IlG-Q8-qqJ"/>
                         <outlet property="subtotalLabel" destination="Keh-dc-Nul" id="TSh-8z-K5G"/>
+                        <outlet property="topTitleLabel" destination="7tA-Lr-yIR" id="Xqx-uK-yy8"/>
                         <outlet property="totalAmountLabel" destination="0gj-5w-msR" id="Gt4-RT-Grw"/>
                     </connections>
                 </viewController>

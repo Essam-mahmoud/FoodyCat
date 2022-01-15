@@ -106,10 +106,26 @@ class VendorVC: UIViewController {
     }
     func addItemTapped(index: IndexPath) {
         guard let item = vendorVM.itemsResult?.data?[index.section].items?[index.row] else {return}
-        let toppingVC = ExtraToppingVC.instantiate(fromAppStoryboard: .Home)
-        toppingVC.item = item
-        toppingVC.modalPresentationStyle = .overCurrentContext
-        self.present(toppingVC, animated: true, completion: nil)
+        if item.hasExtraTopping ?? false{
+            let toppingVC = ExtraToppingVC.instantiate(fromAppStoryboard: .Home)
+            toppingVC.vendorId = self.vendorId
+            toppingVC.item = item
+            toppingVC.modalPresentationStyle = .overCurrentContext
+            self.present(toppingVC, animated: true, completion: nil)
+        } else {
+            let cartItem = ItemOrderModel()
+            cartItem.Id = item.id ?? 0
+            cartItem.itemDescription = item.itemDescription ?? ""
+            cartItem.itemImageURL = item.imgFullPath ?? ""
+            cartItem.itemName = item.name ?? ""
+            cartItem.quantity = 1
+            cartItem.itemPrice = item.price ?? 0.0
+            cartItem.itemtotalPrice = item.price ?? 0.0
+            realmModel.saveItem(item: cartItem)
+            realmModel.fetchItems()
+            SharedData.SharedInstans.setVendorId("\(vendorId)")
+        }
+
     }
 
     @IBAction func backButtonDidPress(_ sender: UIButton) {
@@ -197,6 +213,10 @@ extension VendorVC: RealmViewModelDelegate {
         }
 
         totalPriceCartLabel.text = String(format: "%.2f", totalPrice)
+    }
+
+    func recordSaved() {
+        AppCommon.sharedInstance.showBanner(title: "Item Added".localized(), subtitle: "", style: .success)
     }
 }
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -28,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IKn-R9-W8f">
-                                <rect key="frame" x="12" y="43" width="22" height="21"/>
+                                <rect key="frame" x="12" y="43" width="22" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="OYd-O0-M9P"/>
                                     <constraint firstAttribute="width" constant="22" id="mbO-Uk-EQ7"/>
@@ -43,24 +44,20 @@ Salmiya, Kuwait.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iy0-KY-MFP">
-                                <rect key="frame" x="12" y="90.5" width="22" height="21"/>
+                                <rect key="frame" x="12" y="86.5" width="22" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="hf1-UX-z80"/>
                                     <constraint firstAttribute="height" constant="22" id="vqu-94-l4a"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diyaa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kez-ao-nDd">
-                                <rect key="frame" x="46" y="90" width="39" height="18"/>
+                                <rect key="frame" x="46" y="86" width="39" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" name="lightGreyBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-QR-BA6">
-                                <rect key="frame" x="12" y="117.5" width="22" height="19.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="C67-jc-sYh"/>
-                                    <constraint firstAttribute="height" constant="22" id="NEz-G1-SKi"/>
-                                </constraints>
+                                <rect key="frame" x="12" y="117.5" width="19.5" height="17.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+965 55305808" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clR-UM-2j1">
                                 <rect key="frame" x="46" y="116" width="117.5" height="18"/>
@@ -73,19 +70,19 @@ Salmiya, Kuwait.</string>
                         <constraints>
                             <constraint firstItem="IKn-R9-W8f" firstAttribute="top" secondItem="8TZ-nE-bQ3" secondAttribute="bottom" constant="12" id="0ik-Go-Bgk"/>
                             <constraint firstAttribute="height" constant="148" id="47m-4G-PQH"/>
-                            <constraint firstItem="LeD-QR-BA6" firstAttribute="leading" secondItem="FaY-AL-Jni" secondAttribute="leading" constant="12" id="5PF-tm-7Iq"/>
+                            <constraint firstItem="clR-UM-2j1" firstAttribute="top" secondItem="LeD-QR-BA6" secondAttribute="top" id="8rJ-jf-lNh"/>
                             <constraint firstItem="8TZ-nE-bQ3" firstAttribute="top" secondItem="FaY-AL-Jni" secondAttribute="top" constant="12" id="CYa-gB-mcl"/>
-                            <constraint firstItem="Kez-ao-nDd" firstAttribute="top" secondItem="sFY-Hm-djS" secondAttribute="bottom" constant="12" id="Cas-RU-bIv"/>
+                            <constraint firstItem="Kez-ao-nDd" firstAttribute="top" secondItem="sFY-Hm-djS" secondAttribute="bottom" constant="8" id="Cas-RU-bIv"/>
                             <constraint firstItem="IKn-R9-W8f" firstAttribute="leading" secondItem="8TZ-nE-bQ3" secondAttribute="leading" id="Gdq-qN-bJy"/>
                             <constraint firstItem="sFY-Hm-djS" firstAttribute="top" secondItem="IKn-R9-W8f" secondAttribute="top" id="N2z-e3-olD"/>
+                            <constraint firstItem="LeD-QR-BA6" firstAttribute="top" secondItem="iy0-KY-MFP" secondAttribute="bottom" constant="8" id="WXQ-iN-bDW"/>
                             <constraint firstAttribute="trailing" secondItem="sFY-Hm-djS" secondAttribute="trailing" constant="8" id="Wmr-P3-tPF"/>
+                            <constraint firstItem="clR-UM-2j1" firstAttribute="leading" secondItem="LeD-QR-BA6" secondAttribute="trailing" constant="14.5" id="ZVD-Jp-hF4"/>
                             <constraint firstItem="Kez-ao-nDd" firstAttribute="top" secondItem="iy0-KY-MFP" secondAttribute="top" id="aeh-TC-iou"/>
-                            <constraint firstItem="clR-UM-2j1" firstAttribute="leading" secondItem="LeD-QR-BA6" secondAttribute="trailing" constant="12" id="d4F-mI-VPP"/>
-                            <constraint firstItem="clR-UM-2j1" firstAttribute="top" secondItem="LeD-QR-BA6" secondAttribute="top" id="ohi-Jn-fbY"/>
                             <constraint firstItem="iy0-KY-MFP" firstAttribute="leading" secondItem="FaY-AL-Jni" secondAttribute="leading" constant="12" id="qku-AR-KaV"/>
-                            <constraint firstItem="clR-UM-2j1" firstAttribute="top" secondItem="Kez-ao-nDd" secondAttribute="bottom" constant="8" id="qxE-XQ-zqS"/>
                             <constraint firstItem="8TZ-nE-bQ3" firstAttribute="leading" secondItem="FaY-AL-Jni" secondAttribute="leading" constant="12" id="rbl-YT-W79"/>
                             <constraint firstItem="Kez-ao-nDd" firstAttribute="leading" secondItem="iy0-KY-MFP" secondAttribute="trailing" constant="12" id="soi-Mu-FXn"/>
+                            <constraint firstItem="LeD-QR-BA6" firstAttribute="leading" secondItem="FaY-AL-Jni" secondAttribute="leading" constant="12" id="xky-xK-aCa"/>
                             <constraint firstItem="sFY-Hm-djS" firstAttribute="leading" secondItem="IKn-R9-W8f" secondAttribute="trailing" constant="12" id="zry-r9-93Q"/>
                         </constraints>
                     </view>

@@ -61,16 +61,16 @@ class OnboardingVC: UIViewController {
 
     @IBAction func skipButtonDidPress(_ sender: UIButton) {
         SharedData.SharedInstans.setIsFinishOnboarding(true)
-        guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
-        UIApplication.shared.windows.first?.rootViewController = homeVC
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        let locationVc = GetUserLocationVC.instantiate(fromAppStoryboard: .Home)
+        locationVc.modalPresentationStyle = .fullScreen
+        self.present(locationVc, animated: true, completion: nil)
     }
     
     @IBAction func letsStartButtonDidPress(_ sender: UIButton) {
         SharedData.SharedInstans.setIsFinishOnboarding(true)
-        guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
-        UIApplication.shared.windows.first?.rootViewController = homeVC
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        let locationVc = GetUserLocationVC.instantiate(fromAppStoryboard: .Home)
+        locationVc.modalPresentationStyle = .fullScreen
+        self.present(locationVc, animated: true, completion: nil)
     }
 }
 

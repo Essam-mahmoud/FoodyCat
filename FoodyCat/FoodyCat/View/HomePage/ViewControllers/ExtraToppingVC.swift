@@ -29,6 +29,7 @@ class ExtraToppingVC: UIViewController {
     var extraToppingCellName = "ExtaToppingCell"
     var extraToppingVM = ExtraToppingVM()
     var item: Item?
+    var vendorId = 0
     var realmModel = LocalCartItemsVM()
 
     override func viewDidLoad() {
@@ -161,6 +162,7 @@ class ExtraToppingVC: UIViewController {
         cartItem.itemtotalPrice = totalPrice
         cartItem.topping = topping
         realmModel.saveItem(item: cartItem)
+        SharedData.SharedInstans.setVendorId("\(vendorId)")
     }
 }
 

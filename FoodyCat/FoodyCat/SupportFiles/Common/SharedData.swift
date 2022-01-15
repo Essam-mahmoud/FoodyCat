@@ -30,6 +30,45 @@ class SharedData{
     let terms = "Terms"
     let faq = "FAQ"
     let avaliable = "Avaliable"
+    let areaId = "AreaID"
+    let ShowMap = "ShowMap"
+    let vendorId = "VendorId"
+
+    func setVendorId(_ id:String){
+        defaults.set(id, forKey: vendorId)
+    }
+
+    func getVendorId()->String{
+        if (defaults.object(forKey: vendorId) != nil) {
+            return defaults.string(forKey: vendorId) ?? ""
+        }else{
+            return ""
+        }
+    }
+
+    func setAreaId(_ id:String){
+        defaults.set(id, forKey: areaId)
+    }
+
+    func getAreaId()->String{
+        if (defaults.object(forKey: areaId) != nil) {
+            return defaults.string(forKey: areaId) ?? ""
+        }else{
+            return ""
+        }
+    }
+
+    func SetShowMap(_ showMap:Bool){
+        defaults.set(showMap, forKey: ShowMap)
+    }
+
+    func GetShowMap()->Bool{
+        if (defaults.object(forKey: ShowMap) != nil) {
+            return defaults.bool(forKey: ShowMap)
+        }else{
+            return false
+        }
+    }
 
     func SetIsLogin(_ isLogin:Bool){
         defaults.set(isLogin, forKey: IsLogin)

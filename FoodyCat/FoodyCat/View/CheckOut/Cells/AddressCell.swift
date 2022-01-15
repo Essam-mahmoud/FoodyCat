@@ -18,9 +18,9 @@ class AddressCell: UITableViewCell {
         // Initialization code
     }
 
-    func setupCell() {
-        addressTitleLabel.text = ""
-        addressLabel.text = ""
+    func setupCell(data: AddressData) {
+        addressTitleLabel.text = data.name
+        addressLabel.text = data.addressLineOne
         userNameLabel.text = ""
         phoneNumberLabel.text = ""
     }

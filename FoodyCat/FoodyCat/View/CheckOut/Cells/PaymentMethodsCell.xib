@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,6 +24,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCk-Fg-Yg1">
                                 <rect key="frame" x="8" y="7.5" width="25" height="25"/>
                                 <state key="normal" image="uncheck"/>
+                                <connections>
+                                    <action selector="selectedButtonDidPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xXU-s9-OH4"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="knet" translatesAutoresizingMaskIntoConstraints="NO" id="Dji-uw-euh">
                                 <rect key="frame" x="41" y="8.5" width="37" height="23"/>
@@ -60,6 +64,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="paymentImage" destination="Dji-uw-euh" id="ui1-Nr-MCD"/>
+                <outlet property="paymentNameLabel" destination="8HL-ty-sLa" id="vWC-Ye-XoI"/>
+                <outlet property="selectedButton" destination="JCk-Fg-Yg1" id="HeA-k2-WYT"/>
+            </connections>
             <point key="canvasLocation" x="128.98550724637681" y="94.754464285714278"/>
         </tableViewCell>
     </objects>

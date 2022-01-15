@@ -64,5 +64,17 @@ class AppConstant: NSObject {
         static public var getMenuItems: String {
             return "\(apiDomain)shop/Branches/"
         }
+
+        static public var getAreaId: String {
+            return "\(apiDomain)Coverage/GetLocation"
+        }
+
+        static public var getAddresses: String {
+            return "\(apiDomain)Customer/Address"
+        }
+
+        static public var getPayments: String {
+            return "\(apiDomain)Vendors/"
+        }
     }
 }

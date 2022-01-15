@@ -6,21 +6,38 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SelectAddressVC: UIViewController {
 
     @IBOutlet weak var addressesTableView: UITableView!
 
     fileprivate let addressCellName = "AddressCell"
+    var getAddressesVM = GetAddressesVM()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
+        getAddresses()
     }
 
     func registerCells() {
         addressesTableView.delegate = self
         addressesTableView.dataSource = self
         addressesTableView.register(UINib(nibName: addressCellName, bundle: nil), forCellReuseIdentifier: addressCellName)
+    }
+
+    func getAddresses() {
+        getAddressesVM.getAddresses(page: 1) { (errMsg, errRes, status) in
+            switch status {
+            case .populated:
+                self.addressesTableView.reloadData()
+            case .error:
+                AppCommon.sharedInstance.showBanner(title: self.getAddressesVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
+            default:
+                break
+            }
+        }
     }
 
     @IBAction func backButtonDidPress(_ sender: UIButton) {
@@ -36,18 +53,24 @@ class SelectAddressVC: UIViewController {
 
 extension SelectAddressVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return getAddressesVM.addressesResult?.data?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: addressCellName, for: indexPath) as? AddressCell else {return UITableViewCell()}
+        if let address = getAddressesVM.addressesResult?.data?[indexPath.row] {
+            cell.setupCell(data: address)
+        }
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let paymentVc = PaymentMethodVC.instantiate(fromAppStoryboard: .CheckOut)
-        paymentVc.modalPresentationStyle = .fullScreen
-        self.present(paymentVc, animated: true, completion: nil)
+        if let address = getAddressesVM.addressesResult?.data?[indexPath.row] {
+            paymentVc.address = address
+            paymentVc.modalPresentationStyle = .fullScreen
+            self.present(paymentVc, animated: true, completion: nil)
+        }
     }
 }

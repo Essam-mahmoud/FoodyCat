@@ -48,6 +48,7 @@ class CreateAccountVC: UIViewController {
                 switch status {
                 case .populated:
                     if self.cameFromOrder {
+                        SharedData.SharedInstans.SetIsLogin(true)
                         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
                     } else {
                         SharedData.SharedInstans.SetIsLogin(true)

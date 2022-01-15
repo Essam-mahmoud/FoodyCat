@@ -50,38 +50,6 @@
             endingLineNumber = "94"
             landmarkName = "getMenuItems()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6BAA6170-BF5C-43AE-8997-C9AE0B9A71B7 - bfc2dc20e18af01c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FoodyCat.VendorVC.getMenuItems() -&gt; ()"
-                  moduleName = "FoodyCat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/essamorabi/Documents/GitHub/FoodyCat/FoodyCat/FoodyCat/View/HomePage/ViewControllers/VendorVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "65">
-               </Location>
-               <Location
-                  uuid = "6BAA6170-BF5C-43AE-8997-C9AE0B9A71B7 - 46284895c334819d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;FoodyCat.ResponseModel&gt;, FoodyCat.State) -&gt; () in FoodyCat.VendorVC.getMenuItems() -&gt; ()"
-                  moduleName = "FoodyCat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/essamorabi/Documents/GitHub/FoodyCat/FoodyCat/FoodyCat/View/HomePage/ViewControllers/VendorVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "59">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -178,69 +146,53 @@
             endingLineNumber = "19"
             landmarkName = "getRestaurantData(id:onComplete:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3589C10A-972C-43EE-857F-42775D275274 - e3f27f0b9554d369"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FoodyCat.CelebritiesRestaurantVM.getRestaurantData(id: Swift.Int, onComplete: (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;FoodyCat.ResponseModel&gt;, FoodyCat.State) -&gt; ()) -&gt; ()"
-                  moduleName = "FoodyCat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/essamorabi/Documents/GitHub/FoodyCat/FoodyCat/FoodyCat/ViewModel/CelebritiesRestaurantVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "1147">
-               </Location>
-               <Location
-                  uuid = "3589C10A-972C-43EE-857F-42775D275274 - c2de6fdd735a4fec"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FoodyCat.VendorsModel&gt;, Swift.Int, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;FoodyCat.ResponseModel&gt;) -&gt; () in FoodyCat.CelebritiesRestaurantVM.getRestaurantData(id: Swift.Int, onComplete: (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;FoodyCat.ResponseModel&gt;, FoodyCat.State) -&gt; ()) -&gt; ()"
-                  moduleName = "FoodyCat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/essamorabi/Documents/GitHub/FoodyCat/FoodyCat/FoodyCat/ViewModel/CelebritiesRestaurantVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "334">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C6CB4588-4116-4CB3-83F1-2B3C71F1933F"
+            uuid = "37C120DE-5598-40DD-A809-605FE66A1452"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodyCat/SupportFiles/Network/HttpApiCalling.swift"
+            filePath = "FoodyCat/View/HomePage/ViewControllers/GetUserLocationVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "requestWithBody(resource:Result:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "confirmButtonDidPress(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ABD850A6-F7E0-4DA8-9278-F5ED7B3F0BED"
+            uuid = "88AAB939-ECA0-44ED-B355-93EBBDA23F3D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodyCat/SupportFiles/Network/HttpApiCalling.swift"
+            filePath = "FoodyCat/View/HomePage/ViewControllers/GetUserLocationVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "requestWithBody(resource:Result:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "confirmButtonDidPress(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E176DD22-FB4C-4C98-A9C1-ECC191757CAF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodyCat/View/HomePage/ViewControllers/CelebritiesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -42,6 +42,7 @@ class SignInVC: UIViewController {
             switch status {
             case .populated:
                 if self.cameFromOrder {
+                    SharedData.SharedInstans.SetIsLogin(true)
                     self.dismiss(animated: true, completion: nil)
                 } else {
                     SharedData.SharedInstans.SetIsLogin(true)
