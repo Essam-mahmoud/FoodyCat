@@ -13,7 +13,7 @@ class SelectAddressVC: UIViewController {
     @IBOutlet weak var addressesTableView: UITableView!
 
     fileprivate let addressCellName = "AddressCell"
-    var getAddressesVM = GetAddressesVM()
+    var getAddressesVM = AddressesVM()
 
     override func viewDidLoad() {
         super.viewDidLoad()

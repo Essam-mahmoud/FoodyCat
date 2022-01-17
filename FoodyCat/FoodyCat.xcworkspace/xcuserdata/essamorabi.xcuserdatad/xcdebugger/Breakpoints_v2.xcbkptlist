@@ -46,8 +46,8 @@
             filePath = "FoodyCat/View/HomePage/ViewControllers/VendorVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "getMenuItems()"
             landmarkType = "7">
          </BreakpointContent>
@@ -145,38 +145,6 @@
             startingLineNumber = "19"
             endingLineNumber = "19"
             landmarkName = "getRestaurantData(id:onComplete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "37C120DE-5598-40DD-A809-605FE66A1452"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodyCat/View/HomePage/ViewControllers/GetUserLocationVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "confirmButtonDidPress(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "88AAB939-ECA0-44ED-B355-93EBBDA23F3D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodyCat/View/HomePage/ViewControllers/GetUserLocationVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "confirmButtonDidPress(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

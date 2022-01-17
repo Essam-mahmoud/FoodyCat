@@ -40,6 +40,7 @@ class AddressData: Codable {
     let addressLineTwo: String?
     let id, areaID: Int?
     let areaName: String?
+    let phone: String?
 
     enum CodingKeys: String, CodingKey {
         case lat = "lat"
@@ -50,6 +51,7 @@ class AddressData: Codable {
         case id = "id"
         case areaID = "areaID"
         case areaName = "areaName"
+        case phone = "phone"
     }
 
     required init(from decoder: Decoder) throws {
@@ -62,5 +64,6 @@ class AddressData: Codable {
         id = try value.decodeIfPresent(Int.self, forKey: .id)
         areaID = try value.decodeIfPresent(Int.self, forKey: .areaID)
         areaName = try value.decodeIfPresent(String.self, forKey: .areaName)
+        phone = try value.decodeIfPresent(String.self, forKey: .phone)
     }
 }

@@ -30,6 +30,7 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IKn-R9-W8f">
                                 <rect key="frame" x="12" y="43" width="22" height="20.5"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="OYd-O0-M9P"/>
                                     <constraint firstAttribute="width" constant="22" id="mbO-Uk-EQ7"/>
@@ -45,6 +46,7 @@ Salmiya, Kuwait.</string>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iy0-KY-MFP">
                                 <rect key="frame" x="12" y="86.5" width="22" height="21"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="hf1-UX-z80"/>
                                     <constraint firstAttribute="height" constant="22" id="vqu-94-l4a"/>
@@ -58,6 +60,7 @@ Salmiya, Kuwait.</string>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-QR-BA6">
                                 <rect key="frame" x="12" y="117.5" width="19.5" height="17.5"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+965 55305808" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clR-UM-2j1">
                                 <rect key="frame" x="46" y="116" width="117.5" height="18"/>

@@ -111,6 +111,8 @@
 		969A388627726F11001D529A /* SelectAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A388527726F11001D529A /* SelectAddressVC.swift */; };
 		969A388F27727177001D529A /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A388D27727177001D529A /* AddressCell.swift */; };
 		969A389027727177001D529A /* AddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969A388E27727177001D529A /* AddressCell.xib */; };
+		96AC993D279615F00063AC2C /* SubmitOrderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC993C279615F00063AC2C /* SubmitOrderVM.swift */; };
+		96AC993F2796165F0063AC2C /* SubmitOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC993E2796165F0063AC2C /* SubmitOrderModel.swift */; };
 		96BB12872764DDF300D85FFF /* ForgetPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB12862764DDF300D85FFF /* ForgetPasswordVM.swift */; };
 		96BB12932764DE6000D85FFF /* CreateAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB12922764DE6000D85FFF /* CreateAccountModel.swift */; };
 		96BB12982764DE6D00D85FFF /* ForgetPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB12972764DE6D00D85FFF /* ForgetPasswordModel.swift */; };
@@ -284,6 +286,8 @@
 		969A388527726F11001D529A /* SelectAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressVC.swift; sourceTree = "<group>"; };
 		969A388D27727177001D529A /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		969A388E27727177001D529A /* AddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressCell.xib; sourceTree = "<group>"; };
+		96AC993C279615F00063AC2C /* SubmitOrderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitOrderVM.swift; sourceTree = "<group>"; };
+		96AC993E2796165F0063AC2C /* SubmitOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitOrderModel.swift; sourceTree = "<group>"; };
 		96BB12862764DDF300D85FFF /* ForgetPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVM.swift; sourceTree = "<group>"; };
 		96BB12922764DE6000D85FFF /* CreateAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountModel.swift; sourceTree = "<group>"; };
 		96BB12972764DE6D00D85FFF /* ForgetPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordModel.swift; sourceTree = "<group>"; };
@@ -402,6 +406,7 @@
 			children = (
 				9643330A27934F70006C39AB /* AddressModel.swift */,
 				9643330E27935C1F006C39AB /* PaymentMethodsModel.swift */,
+				96AC993E2796165F0063AC2C /* SubmitOrderModel.swift */,
 			);
 			path = CheckOutModels;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 				9643330727930EAE006C39AB /* GetAreaIdVM.swift */,
 				9643330C2793532B006C39AB /* GetAddressesVM.swift */,
 				9643331027935E31006C39AB /* PaymentsMethodVM.swift */,
+				96AC993C279615F00063AC2C /* SubmitOrderVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1201,8 +1207,10 @@
 				9666C7662762639A00C9482D /* SelfSizedTableView.swift in Sources */,
 				9666C74D2762639A00C9482D /* CodableHandler.swift in Sources */,
 				9666C75A2762639A00C9482D /* CustomButton.swift in Sources */,
+				96AC993D279615F00063AC2C /* SubmitOrderVM.swift in Sources */,
 				9666C7692762639A00C9482D /* AppConstants.swift in Sources */,
 				96FBBCFD27695C3900C30E55 /* AllCelebrityVC.swift in Sources */,
+				96AC993F2796165F0063AC2C /* SubmitOrderModel.swift in Sources */,
 				96F818052782457A00A8808D /* PaymentMethodsCell.swift in Sources */,
 				9666C7412762639A00C9482D /* Date+Extension.swift in Sources */,
 				9666C7702762639A00C9482D /* OtpViewManager.swift in Sources */,

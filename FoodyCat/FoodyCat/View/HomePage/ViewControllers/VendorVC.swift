@@ -36,6 +36,7 @@ class VendorVC: UIViewController {
     var vendorSpeciality = ""
     var vendorRating = 0
     var vendorId = 0
+    var deliveryCharge = 0.0
     var vendorVM = VendorVM()
     var realmModel = LocalCartItemsVM()
     fileprivate let mealCellName = "MealsCell"
@@ -109,6 +110,7 @@ class VendorVC: UIViewController {
         if item.hasExtraTopping ?? false{
             let toppingVC = ExtraToppingVC.instantiate(fromAppStoryboard: .Home)
             toppingVC.vendorId = self.vendorId
+            toppingVC.deliveryCharge = self.deliveryCharge
             toppingVC.item = item
             toppingVC.modalPresentationStyle = .overCurrentContext
             self.present(toppingVC, animated: true, completion: nil)
@@ -123,6 +125,7 @@ class VendorVC: UIViewController {
             cartItem.itemtotalPrice = item.price ?? 0.0
             realmModel.saveItem(item: cartItem)
             realmModel.fetchItems()
+            SharedData.SharedInstans.setDeliveryCharge(deliveryCharge)
             SharedData.SharedInstans.setVendorId("\(vendorId)")
         }
 

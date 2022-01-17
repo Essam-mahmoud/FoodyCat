@@ -19,7 +19,6 @@ class CartVC: UIViewController {
 
     var itemsCellName = "CartItemsCell"
     var totalPrice = 0.0
-    var delveryFees = 1.5
     var realmModel = LocalCartItemsVM()
     var cartItems = [ItemOrderModel]()
 
@@ -46,8 +45,8 @@ class CartVC: UIViewController {
             totalPrice += item.itemtotalPrice
         }
         subTotalLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice)
-        serviceChageLabel.text = "KWD".localized() + " " + String(format: "%.2f", delveryFees)
-        totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + delveryFees)
+        serviceChageLabel.text = "KWD".localized() + " " + String(format: "%.2f", SharedData.SharedInstans.getDeliveryCharge())
+        totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge())
     }
 
     func increaseCounter(index: Int) {

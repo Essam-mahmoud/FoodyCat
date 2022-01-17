@@ -33,6 +33,59 @@ class SharedData{
     let areaId = "AreaID"
     let ShowMap = "ShowMap"
     let vendorId = "VendorId"
+    let deliveryCharge = "deliveryCharge"
+    let lat = "Lat"
+    let long = "Lng"
+    let addres = "Address"
+
+    func setLat(_ latit:String){
+        defaults.set(latit, forKey: lat)
+    }
+
+    func getLat()->String{
+        if (defaults.object(forKey: lat) != nil) {
+            return defaults.string(forKey: lat) ?? ""
+        }else{
+            return ""
+        }
+    }
+
+    func setLng(_ lng:String){
+        defaults.set(lng, forKey: long)
+    }
+
+    func getLng()->String{
+        if (defaults.object(forKey: long) != nil) {
+            return defaults.string(forKey: long) ?? ""
+        }else{
+            return ""
+        }
+    }
+
+    func setAddress(_ address:String){
+        defaults.set(address, forKey: addres)
+    }
+
+    func getAddres()->String{
+        if (defaults.object(forKey: addres) != nil) {
+            return defaults.string(forKey: addres) ?? ""
+        }else{
+            return ""
+        }
+    }
+
+
+    func setDeliveryCharge(_ charge:Double){
+        defaults.set(charge, forKey: deliveryCharge)
+    }
+
+    func getDeliveryCharge()->Double{
+        if (defaults.object(forKey: deliveryCharge) != nil) {
+            return defaults.double(forKey: deliveryCharge)
+        }else{
+            return 0.0
+        }
+    }
 
     func setVendorId(_ id:String){
         defaults.set(id, forKey: vendorId)

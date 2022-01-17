@@ -154,7 +154,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rkT-dR-pfP">
-                                        <rect key="frame" x="15" y="305" width="384" height="314"/>
+                                        <rect key="frame" x="15" y="305" width="384" height="368"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ft5-fS-eeY">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
@@ -191,7 +191,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Block" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pj4-hA-vSK">
                                                         <rect key="frame" x="16" y="0.0" width="352" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -249,7 +249,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="House / Building No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TRs-z2-MNr">
                                                         <rect key="frame" x="16" y="0.0" width="352" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -278,7 +278,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Floor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Oj-xR-jh8">
                                                         <rect key="frame" x="16" y="0.0" width="352" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -307,7 +307,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apartment No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUL-TL-YJS">
                                                         <rect key="frame" x="16" y="0.0" width="352" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -330,12 +330,44 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ty-WS-hcf">
+                                                <rect key="frame" x="0.0" y="324" width="384" height="44"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nee-dz-eGf">
+                                                        <rect key="frame" x="16" y="0.0" width="352" height="44"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Phone number"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="IxK-be-sNI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nee-dz-eGf" secondAttribute="trailing" constant="16" id="PSM-WV-lRQ"/>
+                                                    <constraint firstItem="nee-dz-eGf" firstAttribute="top" secondItem="9Ty-WS-hcf" secondAttribute="top" id="Yxq-80-htN"/>
+                                                    <constraint firstItem="nee-dz-eGf" firstAttribute="leading" secondItem="9Ty-WS-hcf" secondAttribute="leading" constant="16" id="akN-0B-odR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nee-dz-eGf" secondAttribute="bottom" id="wYL-hY-5kb"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="softPurple"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vge-SW-nGy">
-                                        <rect key="frame" x="15" y="629" width="384" height="100"/>
+                                        <rect key="frame" x="15" y="683" width="384" height="100"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DQz-l2-76w">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Additional Direction (optional)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DQz-l2-76w">
                                                 <rect key="frame" x="16" y="8" width="352" height="84"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -364,7 +396,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHd-So-FqL">
-                                        <rect key="frame" x="15" y="789" width="384" height="46"/>
+                                        <rect key="frame" x="15" y="843" width="384" height="46"/>
                                         <color key="backgroundColor" name="Purple"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="aOW-Q9-fqn"/>
@@ -423,6 +455,7 @@
                         <outlet property="blockTF" destination="Pj4-hA-vSK" id="iiC-l3-MLt"/>
                         <outlet property="buildingNoTF" destination="TRs-z2-MNr" id="6KP-Cb-UjG"/>
                         <outlet property="floorTF" destination="4Oj-xR-jh8" id="dYx-wC-m89"/>
+                        <outlet property="phoneNumberTF" destination="nee-dz-eGf" id="FJn-GV-025"/>
                         <outlet property="streetTF" destination="Sor-m4-jTs" id="chv-MR-S7B"/>
                     </connections>
                 </viewController>
@@ -492,6 +525,7 @@
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KvC-Dq-AFi">
                                                         <rect key="frame" x="12" y="163" width="22" height="20.5"/>
+                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="Eor-Ec-Tpv"/>
                                                             <constraint firstAttribute="width" constant="22" id="ZJ6-8P-6Q1"/>
@@ -507,6 +541,7 @@ Salmiya, Kuwait.</string>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nd7-bd-yQH">
                                                         <rect key="frame" x="12" y="210.5" width="22" height="21"/>
+                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="6Jr-YZ-ryB"/>
                                                             <constraint firstAttribute="width" constant="22" id="BTx-Vi-mXA"/>
@@ -520,6 +555,7 @@ Salmiya, Kuwait.</string>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yc9-X4-nls">
                                                         <rect key="frame" x="12" y="237.5" width="22" height="19.5"/>
+                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="22" id="6L6-lS-Zsg"/>
                                                             <constraint firstAttribute="height" constant="22" id="MZh-XS-zau"/>
@@ -684,6 +720,9 @@ Salmiya, Kuwait.</string>
                                                         <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="submitOrderButtonDidPress:" destination="avg-c2-1FS" eventType="touchUpInside" id="iNK-Oa-YLw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

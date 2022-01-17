@@ -44,10 +44,13 @@ class GetUserLocationVC: UIViewController {
     }
     
     @IBAction func confirmButtonDidPress(_ sender: UIButton) {
-        getAreaIdVM.getAreaId(long: 47.991096, lat: 29.384356) { (errMsg, errRes, status) in
+        getAreaIdVM.getAreaId(long: long, lat: lat) { (errMsg, errRes, status) in
             switch status {
             case .populated:
                 SharedData.SharedInstans.setAreaId("\(self.getAreaIdVM.areaResult?.areaID ?? 0)")
+                SharedData.SharedInstans.setLat("\(self.getAreaIdVM.areaResult?.lat ?? 0.0)")
+                SharedData.SharedInstans.setLng("\(self.getAreaIdVM.areaResult?.lng ?? 0.0)")
+                SharedData.SharedInstans.setAddress(self.getAreaIdVM.areaResult?.addressLineOne ?? "")
                 SharedData.SharedInstans.SetShowMap(true)
                 guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
                 UIApplication.shared.windows.first?.rootViewController = homeVC

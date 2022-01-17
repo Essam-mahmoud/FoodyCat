@@ -76,5 +76,10 @@ class AppConstant: NSObject {
         static public var getPayments: String {
             return "\(apiDomain)Vendors/"
         }
+
+        static public var submitOrder: String {
+            return "\(apiDomain)Order/place"
+        }
+
     }
 }
