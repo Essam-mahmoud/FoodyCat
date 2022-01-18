@@ -7,8 +7,8 @@ final class LeftMenuViewController: UIViewController {
 
     // MARK: - Life Cycle
     @IBOutlet weak var closeButton: UIButton!
-    let titles = ["BalanceSide".localized(), "Support".localized(), "Settings".localized(), "Terms and Conditions".localized(), "FAQ".localized(), "Language".localized(), "Log out".localized()]
-    let images = ["Balance", "Support", "Setting", "terms", "FAQ", "lang","logoutMenu"]
+    let titles = ["Support".localized(), "Settings".localized(), "Terms and Conditions".localized(), "FAQ".localized(), "Language".localized(), "Log out".localized()]
+    let images = ["Support", "Setting", "terms", "FAQ", "lang","logoutMenu"]
 
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +72,8 @@ extension LeftMenuViewController: UITableViewDelegate {
 //            self.present(FAQView, animated: true, completion: nil)
             break
         case 5:
-            LanguageManager.switchLanguage()
+//            LanguageManager.switchLanguage()
+            break
         case 6:
 //            LogoutVM.shared.logOut { (errMsg, errRes, status) in
 //                switch status {

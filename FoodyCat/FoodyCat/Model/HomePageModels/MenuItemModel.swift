@@ -88,3 +88,33 @@ class Item: Codable {
         packagingPrice = try value.decodeIfPresent(Int.self, forKey: .packagingPrice)
     }
 }
+
+import Foundation
+
+// MARK: - Welcome
+class CelebritySuggestionItems: Codable {
+    let data: [Item]?
+    let success: Bool?
+    let message: String?
+    let requiredRedirect: Bool?
+    let redirectURL: String?
+
+    enum CodingKeys: String, CodingKey {
+        case data = "data"
+        case success = "success"
+        case message = "message"
+        case requiredRedirect = "requiredRedirect"
+        case redirectURL = "redirectUrl"
+    }
+
+    required init(from decoder: Decoder) throws {
+        let value = try decoder.container(keyedBy: CodingKeys.self)
+        data = try value.decodeIfPresent([Item].self, forKey: .data)
+        success = try value.decodeIfPresent(Bool.self, forKey: .success)
+        message = try value.decodeIfPresent(String.self, forKey: .message)
+        requiredRedirect = try value.decodeIfPresent(Bool.self, forKey: .requiredRedirect)
+        redirectURL = try value.decodeIfPresent(String.self, forKey: .redirectURL)
+    }
+}
+
+

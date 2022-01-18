@@ -10,6 +10,7 @@ import Foundation
 class HomeVM: ViewModel {
     var celeberitiesModel: CeleberitiesModel?
     var bannerModel: BannerModel?
+    var lastOrderData: Order?
 
     func getCeleberities(pageNumber: Int, onComplete: @escaping(_ errorMessage : String?,_ ErrorResponse:ResponseModel?, _ state:State)->()) {
         let params = ["page":pageNumber] as [String : Any]
@@ -39,6 +40,24 @@ class HomeVM: ViewModel {
             if StatusCode == 200 {
                 if let feeds = Result{
                     self.bannerModel = feeds
+                    onComplete(nil, nil, .populated)
+                } else {
+                    onComplete(Mesg, errorResponse, .error)
+                }
+            } else {
+                onComplete(Mesg, errorResponse, .error)
+            }
+        }
+    }
+
+    func getLastOrder(onComplete: @escaping(_ errorMessage : String?,_ ErrorResponse:ResponseModel?, _ state:State)->()) {
+        let url = AppConstant.UrlHandler.lastOrder
+        let  encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let resource = Resource<Order>(url: encodedUrl,httpMethod:.get,parameters:[:], header:SharedData.SharedInstans.getHeader())
+        HttpApiCallingWithRep.requestWithBody(resource: resource) { (Result, StatusCode, Mesg, errorResponse) in
+            if StatusCode == 200 {
+                if let feeds = Result{
+                    self.lastOrderData = feeds
                     onComplete(nil, nil, .populated)
                 } else {
                     onComplete(Mesg, errorResponse, .error)

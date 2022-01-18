@@ -13,7 +13,8 @@ class CartItemsCell: UITableViewCell {
     @IBOutlet weak var itemDescriptionLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
     @IBOutlet weak var itemCounterLabel: UILabel!
-
+    @IBOutlet weak var itemImage: UIImageView!
+    
     var deleteTapped: ((CartItemsCell) -> Void)?
     var increaseTapped: ((CartItemsCell) -> Void)?
     var decreaseTapped: ((CartItemsCell) -> Void)?
@@ -24,6 +25,7 @@ class CartItemsCell: UITableViewCell {
     }
 
     func setupCell(data: ItemOrderModel) {
+        itemImage.loadImageFromUrl(imgUrl: data.itemImageURL, defString: "imageplaceholder")
         itemNameLabel.text = data.itemName
         itemDescriptionLabel.text = data.itemDescription
         itemPriceLabel.text = String(format: "%.2f", data.itemtotalPrice)

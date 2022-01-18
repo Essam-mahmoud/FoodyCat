@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import GoogleMaps
 
-class PaymentMethodVC: UIViewController {
+class PaymentMethodVC: UIViewController, GMSMapViewDelegate {
 
     //MARK:- Outlets
     @IBOutlet weak var methodsTableView: ContentSizedTableView!
@@ -19,8 +20,11 @@ class PaymentMethodVC: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var topTitleLabel: UILabel!
-
+    @IBOutlet weak var mapViewCard: CardWithShadow!
+    
     //MARK:- Properties
+    var locationManager = CLLocationManager()
+    var mapView: GMSMapView!
     var address: AddressData?
     var paymentsMethodVM = PaymentsMethodVM()
     var submitOrderVM = SubmitOrderVM()
@@ -31,6 +35,7 @@ class PaymentMethodVC: UIViewController {
     var paymentMethodId = 0
     var totalPrice = 0.0
     var coupon = ""
+    var paymentName = ""
     fileprivate let methodCellName = "PaymentMethodsCell"
     
     override func viewDidLoad() {
@@ -40,6 +45,7 @@ class PaymentMethodVC: UIViewController {
         registerCell()
         setupUI()
         getPaymentMethods()
+        setupLocationManager()
 
     }
 
@@ -52,8 +58,16 @@ class PaymentMethodVC: UIViewController {
     func setupUI() {
         topTitleLabel.text = address?.name
         addressLabel.text = address?.addressLineOne
-        phoneLabel.text = ""
+        phoneLabel.text = address?.phone
         nameLabel.text = ""
+    }
+
+    func setupLocationManager() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.distanceFilter = 50
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
     }
 
     func getPaymentMethods() {
@@ -98,12 +112,32 @@ class PaymentMethodVC: UIViewController {
         for i in 0..<selectionArray.count {
             if selectionArray[i] {
                 paymentMethodId = paymentsMethodVM.methods?[i].id ?? 0
+                paymentName = paymentsMethodVM.methods?[i].title ?? ""
             }
         }
     }
 
     func fillRequestData() {
         var selectedAddress = [String: Any]()
+        var items = [[String: Any]]()
+        for item in selectedItems {
+            var input = [String: Any]()
+            input["id"] = item.Id
+            input["quantity"] = item.quantity
+            input["specialRequest"] = item.itemDescription
+            input["celebrityId"] = SharedData.SharedInstans.getCelebrityId()
+            if item.topping.count > 0 {
+                var extra = [[String: Any]]()
+                for extraTop in item.topping {
+                    var addone = [String: Any]()
+                    addone["id"] = extraTop.toppingId
+                    extra.append(addone)
+                }
+                input["addons"] = extra
+            }
+            items.append(input)
+        }
+
         selectedAddress["id"] = address?.id
         selectedAddress["lat"] = address?.lat
         selectedAddress["lng"] = address?.lng
@@ -113,14 +147,17 @@ class PaymentMethodVC: UIViewController {
         selectedAddress["addressLineTwo"] = address?.addressLineTwo
         selectedAddress["createdUser"] = 0
 
-        paramaters["vendorId"] = SharedData.SharedInstans.getVendorId
+
+        paramaters["vendorId"] = SharedData.SharedInstans.getVendorId()
         paramaters["orderId"] = 0
-        paramaters["areaId"] = SharedData.SharedInstans.getAreaId
+        paramaters["areaId"] = SharedData.SharedInstans.getAreaId()
         paramaters["coupon"] = coupon
         paramaters["paymentMethod"] = paymentMethodId
         paramaters["generalRequest"] = ""
+        paramaters["items"] = items
         paramaters["address"] = selectedAddress
         paramaters["useWallet"] = false
+        print(paramaters)
     }
 
     @IBAction func backButtonDidPress(_ sender: UIButton) {
@@ -134,9 +171,14 @@ class PaymentMethodVC: UIViewController {
             submitOrderVM.submitOrder(params: paramaters) { (errMsg, errRes, status) in
                 switch status {
                 case .populated:
-                    break
+                    let thankVc = ThanksPageVC.instantiate(fromAppStoryboard: .CheckOut)
+                    thankVc.address = self.address
+                    thankVc.orderNumber = self.submitOrderVM.submitResult?.data?.order?.id ?? 0
+                    thankVc.payment = self.paymentName
+                    thankVc.modalPresentationStyle = .fullScreen
+                    self.present(thankVc, animated: true, completion: nil)
                 case .error:
-                    AppCommon.sharedInstance.showBanner(title: self.paymentsMethodVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
+                    AppCommon.sharedInstance.showBanner(title: self.submitOrderVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
                 default:
                     break
                 }
@@ -174,5 +216,22 @@ extension PaymentMethodVC: RealmViewModelDelegate {
         subtotalLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice)
         serviceChargeLAbel.text = "KWD".localized() + " " + String(format: "%.2f", SharedData.SharedInstans.getDeliveryCharge())
         totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge())
+    }
+}
+
+
+extension PaymentMethodVC: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {return}
+        let coordinate = location.coordinate
+        let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 15)
+        mapView = GMSMapView.map(withFrame: mapViewCard.bounds, camera: camera)
+        mapView.layer.cornerRadius = 15
+        mapView.delegate = self
+        mapViewCard.addSubview(mapView)
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        marker.map = mapView
+        mapViewCard.isUserInteractionEnabled = false
     }
 }

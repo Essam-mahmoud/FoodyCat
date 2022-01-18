@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MealsCell: UICollectionViewCell {
 
@@ -19,6 +20,14 @@ class MealsCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+
+    func setupCell(data: Item) {
+        mealImage.loadImageFromUrl(imgUrl: data.imgFullPath, defString: "imageplaceholder")
+        mealNameLabel.text = data.name
+        mealDiscriptionLabel.text = data.itemDescription
+        mealPriceLabel.text = "KWD".localized() + " \(data.price ?? 0)"
+    }
+    
     @IBAction func addButtonDidPress(_ sender: UIButton) {
         addTapped?(self)
     }

@@ -16,6 +16,7 @@ class CartVC: UIViewController {
     @IBOutlet weak var subTotalLabel: UILabel!
     @IBOutlet weak var serviceChageLabel: UILabel!
     @IBOutlet weak var totalAmountLabel: UILabel!
+    @IBOutlet weak var checkOutButton: UIButton!
 
     var itemsCellName = "CartItemsCell"
     var totalPrice = 0.0
@@ -120,6 +121,11 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
 extension CartVC: RealmViewModelDelegate {
     func recordFetch(items: [ItemOrderModel]) {
         cartItems = items
+        if cartItems.count > 0 {
+            checkOutButton.isEnabled = true
+        } else {
+            checkOutButton.isEnabled = false
+        }
         itemsTableView.reloadData()
         setupUI()
     }

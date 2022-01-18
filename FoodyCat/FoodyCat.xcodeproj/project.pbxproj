@@ -22,6 +22,9 @@
 		9643330D2793532B006C39AB /* GetAddressesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9643330C2793532B006C39AB /* GetAddressesVM.swift */; };
 		9643330F27935C1F006C39AB /* PaymentMethodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9643330E27935C1F006C39AB /* PaymentMethodsModel.swift */; };
 		9643331127935E31006C39AB /* PaymentsMethodVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9643331027935E31006C39AB /* PaymentsMethodVM.swift */; };
+		9643C2B827974E46009BFBFF /* ThanksPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9643C2B727974E46009BFBFF /* ThanksPageVC.swift */; };
+		9643C2BB279754F1009BFBFF /* thanksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9643C2B9279754F1009BFBFF /* thanksCell.swift */; };
+		9643C2BC279754F1009BFBFF /* thanksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9643C2BA279754F1009BFBFF /* thanksCell.xib */; };
 		964E02EF2764B8E500868A8A /* SignInVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E02EE2764B8E500868A8A /* SignInVM.swift */; };
 		964E02F42764BBB100868A8A /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964E02F32764BBB100868A8A /* SignInModel.swift */; };
 		965BEB93276247C400952500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965BEB92276247C400952500 /* AppDelegate.swift */; };
@@ -190,6 +193,9 @@
 		9643330C2793532B006C39AB /* GetAddressesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddressesVM.swift; sourceTree = "<group>"; };
 		9643330E27935C1F006C39AB /* PaymentMethodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsModel.swift; sourceTree = "<group>"; };
 		9643331027935E31006C39AB /* PaymentsMethodVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsMethodVM.swift; sourceTree = "<group>"; };
+		9643C2B727974E46009BFBFF /* ThanksPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksPageVC.swift; sourceTree = "<group>"; };
+		9643C2B9279754F1009BFBFF /* thanksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thanksCell.swift; sourceTree = "<group>"; };
+		9643C2BA279754F1009BFBFF /* thanksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = thanksCell.xib; sourceTree = "<group>"; };
 		964E02EE2764B8E500868A8A /* SignInVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVM.swift; sourceTree = "<group>"; };
 		964E02F32764BBB100868A8A /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		965BEB8F276247C400952500 /* FoodyCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodyCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -760,6 +766,8 @@
 				969A388E27727177001D529A /* AddressCell.xib */,
 				96F818032782457A00A8808D /* PaymentMethodsCell.swift */,
 				96F818042782457A00A8808D /* PaymentMethodsCell.xib */,
+				9643C2B9279754F1009BFBFF /* thanksCell.swift */,
+				9643C2BA279754F1009BFBFF /* thanksCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -770,6 +778,7 @@
 				969A388527726F11001D529A /* SelectAddressVC.swift */,
 				965F4374277286B400A1CE90 /* AddNewAddressVC.swift */,
 				965F437927728F6400A1CE90 /* PaymentMethodVC.swift */,
+				9643C2B727974E46009BFBFF /* ThanksPageVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -942,6 +951,7 @@
 				96FBBCE92768F19000C30E55 /* MenuItemCell.xib in Resources */,
 				965BEBCA276248F900952500 /* Auth.storyboard in Resources */,
 				96E0A30C27680EFD00CF8EB7 /* TabsCell.xib in Resources */,
+				9643C2BC279754F1009BFBFF /* thanksCell.xib in Resources */,
 				965BEBD02762512000952500 /* LandingPage.storyboard in Resources */,
 				969A388127726ED4001D529A /* CheckOut.storyboard in Resources */,
 				9666C7742762639A00C9482D /* CircularStd-Bold.ttf in Resources */,
@@ -1174,6 +1184,7 @@
 				9666C7402762639A00C9482D /* CollectionViewHieght.swift in Sources */,
 				9666C7482762639A00C9482D /* TextFieldExtension.swift in Sources */,
 				965BEB95276247C400952500 /* SceneDelegate.swift in Sources */,
+				9643C2BB279754F1009BFBFF /* thanksCell.swift in Sources */,
 				9666C7622762639A00C9482D /* ExtensionUIViewAnimation.swift in Sources */,
 				9666C76F2762639A00C9482D /* GoogleApiHelper+Nearby.swift in Sources */,
 				965BEBDB2762530E00952500 /* SignInVC.swift in Sources */,
@@ -1190,6 +1201,7 @@
 				9643330627930D7F006C39AB /* GetAreaIdModel.swift in Sources */,
 				96E0A2FE27677A4700CF8EB7 /* VendorVC.swift in Sources */,
 				962B42B0276CB74F00BA5AB1 /* ExtraToppingModel.swift in Sources */,
+				9643C2B827974E46009BFBFF /* ThanksPageVC.swift in Sources */,
 				96FBBCE82768F19000C30E55 /* MenuItemCell.swift in Sources */,
 				96BB6DF82766738300C22403 /* CeleberitiesModel.swift in Sources */,
 				96C20847276DF85F0014ACA3 /* CartVC.swift in Sources */,

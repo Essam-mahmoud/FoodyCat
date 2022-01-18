@@ -68,6 +68,7 @@ class HomeVC: UIViewController {
         registerCells()
         loadCelebrities()
         loadFirstBanner()
+        getLastOrderData()
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeFirstBanner), userInfo: nil, repeats: true)
         }
@@ -125,6 +126,32 @@ class HomeVC: UIViewController {
             default:
                 break
             }
+        }
+    }
+
+    func getLastOrderData() {
+        homeVM.getLastOrder { (errMsg, errRes, status) in
+            switch status {
+            case .populated:
+                self.setupLastOrder()
+            case .error:
+                AppCommon.sharedInstance.showBanner(title: self.homeVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
+            default:
+                break
+            }
+        }
+    }
+
+    func setupLastOrder() {
+        if let lastOrder = homeVM.lastOrderData {
+            inProgressOrderView.isHidden = false
+            restaurantNameLabel.text = lastOrder.vendor?.name
+            idLabel.text = "\(lastOrder.id ?? 0)"
+            numberOfItemsLabel.text = "\(lastOrder.listOfCart?.count ?? 0) " + "items".localized()
+            statusLabel.text = lastOrder.currentStepString
+            inProgressImage.loadImageFromUrl(imgUrl: lastOrder.vendor?.logoFullPath, defString: "imageplaceholder")
+        } else {
+            inProgressOrderView.isHidden = true
         }
     }
 

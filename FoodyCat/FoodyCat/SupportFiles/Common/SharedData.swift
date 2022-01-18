@@ -37,6 +37,33 @@ class SharedData{
     let lat = "Lat"
     let long = "Lng"
     let addres = "Address"
+    let celebrityId = "Celebrity"
+    let areaName = "AreaName"
+
+    func setCelebrityId(_ id:Int){
+        defaults.set(id, forKey: celebrityId)
+    }
+
+    func getCelebrityId() -> Int{
+        if (defaults.object(forKey: celebrityId) != nil) {
+            return defaults.integer(forKey: celebrityId)
+        }else{
+            return 0
+        }
+    }
+
+
+    func setAreaName(_ name:String){
+        defaults.set(name, forKey: areaName)
+    }
+
+    func getAreaName()->String{
+        if (defaults.object(forKey: areaName) != nil) {
+            return defaults.string(forKey: areaName) ?? ""
+        }else{
+            return ""
+        }
+    }
 
     func setLat(_ latit:String){
         defaults.set(latit, forKey: lat)

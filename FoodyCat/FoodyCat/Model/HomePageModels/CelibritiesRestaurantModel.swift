@@ -39,6 +39,7 @@ class VendorsData: Codable {
     let id: Int?
     let name: String?
     let logo: String?
+    let coverImage: String?
     let rating, reviews: Int?
     let phone: String?
     let vendorCharges, acceptanceDuration, preparationDuration: Int?
@@ -58,6 +59,7 @@ class VendorsData: Codable {
         case id = "id"
         case name = "name"
         case logo = "logo"
+        case coverImage = "coverImage"
         case rating = "rating"
         case reviews = "reviews"
         case phone = "phone"
@@ -82,6 +84,7 @@ class VendorsData: Codable {
         id = try value.decodeIfPresent(Int.self, forKey: .id)
         name = try value.decodeIfPresent(String.self, forKey: .name)
         logo = try value.decodeIfPresent(String.self, forKey: .logo)
+        coverImage = try value.decodeIfPresent(String.self, forKey: .coverImage)
         rating = try value.decodeIfPresent(Int.self, forKey: .rating)
         reviews = try value.decodeIfPresent(Int.self, forKey: .reviews)
         phone = try value.decodeIfPresent(String.self, forKey: .phone)

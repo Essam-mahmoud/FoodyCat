@@ -59,9 +59,9 @@ class Order: Codable {
     let orderDate: String?
     let grandTotal: Double?
     let paymentMethod, status, vatAmount: Int?
-    let deliveryCharges: Double?
-    let discountAmount, subTotal, type: Int?
-    let note, mapUUID: String?
+    let deliveryCharges, discountAmount, subTotal: Double?
+    let type: Int?
+   // let note, mapUUID: String?
     let voucherAmount: Int?
     let generalRequest: String?
     let address: Address?
@@ -84,8 +84,8 @@ class Order: Codable {
         case discountAmount = "discountAmount"
         case subTotal = "subTotal"
         case type = "type"
-        case note = "note"
-        case mapUUID = "mapUUID"
+        //case note = "note"
+        //case mapUUID = "mapUUID"
 
         case voucherAmount = "voucherAmount"
         case generalRequest = "generalRequest"
@@ -108,11 +108,11 @@ class Order: Codable {
         status = try value.decodeIfPresent(Int.self, forKey: .status)
         vatAmount = try value.decodeIfPresent(Int.self, forKey: .vatAmount)
         deliveryCharges = try value.decodeIfPresent(Double.self, forKey: .deliveryCharges)
-        discountAmount = try value.decodeIfPresent(Int.self, forKey: .discountAmount)
-        subTotal = try value.decodeIfPresent(Int.self, forKey: .subTotal)
+        discountAmount = try value.decodeIfPresent(Double.self, forKey: .discountAmount)
+        subTotal = try value.decodeIfPresent(Double.self, forKey: .subTotal)
         type = try value.decodeIfPresent(Int.self, forKey: .type)
-        note = try value.decodeIfPresent(String.self, forKey: .note)
-        mapUUID = try value.decodeIfPresent(String.self, forKey: .mapUUID)
+        //note = try value.decodeIfPresent(String.self, forKey: .note)
+        //mapUUID = try value.decodeIfPresent(String.self, forKey: .mapUUID)
 
         voucherAmount = try value.decodeIfPresent(Int.self, forKey: .voucherAmount)
         generalRequest = try value.decodeIfPresent(String.self, forKey: .generalRequest)
@@ -203,13 +203,13 @@ class Vendor: Codable {
     let vendorID: Int?
     let name: String?
     let logoFullPath: String?
-    let phone: String?
+    //let phone: String?
 
     enum CodingKeys: String, CodingKey {
         case vendorID = "vendorID"
         case name = "name"
         case logoFullPath = "logoFullPath"
-        case phone = "phone"
+       // case phone = "phone"
     }
 
     required init(from decoder: Decoder) throws {
@@ -217,7 +217,7 @@ class Vendor: Codable {
         vendorID = try value.decodeIfPresent(Int.self, forKey: .vendorID)
         name = try value.decodeIfPresent(String.self, forKey: .name)
         logoFullPath = try value.decodeIfPresent(String.self, forKey: .logoFullPath)
-        phone = try value.decodeIfPresent(String.self, forKey: .phone)
+        //phone = try value.decodeIfPresent(String.self, forKey: .phone)
     }
 }
 

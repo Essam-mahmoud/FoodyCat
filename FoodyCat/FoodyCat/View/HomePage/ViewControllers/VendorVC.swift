@@ -36,6 +36,7 @@ class VendorVC: UIViewController {
     var vendorSpeciality = ""
     var vendorRating = 0
     var vendorId = 0
+    var celebrityId = 0
     var deliveryCharge = 0.0
     var vendorVM = VendorVM()
     var realmModel = LocalCartItemsVM()
@@ -48,6 +49,7 @@ class VendorVC: UIViewController {
         realmModel.delegate = self
         realmModel.fetchItems()
         setupUI()
+        getCelebritySuggetion()
         getMenuItems()
     }
 
@@ -90,8 +92,20 @@ class VendorVC: UIViewController {
         menuTableView.register(UINib(nibName: menuItemCellName, bundle: nil), forCellReuseIdentifier: menuItemCellName)
     }
 
+    func getCelebritySuggetion() {
+        vendorVM.getRestaurantCelebritySuggestionData(vendorId: vendorId, celebrityId: celebrityId) { (errMsg, errRes, status) in
+            switch status {
+            case .populated:
+                self.mealsCollectionView.reloadData()
+            case .error:
+                AppCommon.sharedInstance.showBanner(title: self.vendorVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
+            default:
+                break
+            }
+        }
+    }
+
     func getMenuItems() {
-        vendorId = 1859
         vendorVM.getRestaurantData(vendorId: vendorId) { (errMsg, errRes, status) in
             switch status {
             case .populated:
@@ -105,11 +119,33 @@ class VendorVC: UIViewController {
             }
         }
     }
-    func addItemTapped(index: IndexPath) {
-        guard let item = vendorVM.itemsResult?.data?[index.section].items?[index.row] else {return}
+
+    func addSuggestionItems(index: IndexPath) {
+        let vendorIdString = "\(vendorId)"
+        if vendorIdString == SharedData.SharedInstans.getVendorId() {
+            addSuggestion(index: index)
+        } else {
+            let alert = UIAlertController(title: "Warning", message: "Do you want to start new order ?".localized(), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok".localized(), style: .default) { action in
+                try! self.realmModel.realm.write {
+                    self.realmModel.realm.deleteAll()
+                }
+                self.addSuggestion(index: index)
+            }
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    func addSuggestion(index: IndexPath) {
+        guard let item = vendorVM.suggestionData?.data?[index.row] else {return}
         if item.hasExtraTopping ?? false{
             let toppingVC = ExtraToppingVC.instantiate(fromAppStoryboard: .Home)
             toppingVC.vendorId = self.vendorId
+            toppingVC.celebrityId = self.celebrityId
             toppingVC.deliveryCharge = self.deliveryCharge
             toppingVC.item = item
             toppingVC.modalPresentationStyle = .overCurrentContext
@@ -125,10 +161,57 @@ class VendorVC: UIViewController {
             cartItem.itemtotalPrice = item.price ?? 0.0
             realmModel.saveItem(item: cartItem)
             realmModel.fetchItems()
+            SharedData.SharedInstans.setCelebrityId(celebrityId)
             SharedData.SharedInstans.setDeliveryCharge(deliveryCharge)
             SharedData.SharedInstans.setVendorId("\(vendorId)")
         }
+    }
 
+    func addItemTapped(index: IndexPath) {
+        let vendorIdString = "\(vendorId)"
+        if vendorIdString == SharedData.SharedInstans.getVendorId() {
+            addItem(index: index)
+        } else {
+            let alert = UIAlertController(title: "Warning", message: "Do you want to start new order ?".localized(), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok".localized(), style: .default) { action in
+                try! self.realmModel.realm.write {
+                    self.realmModel.realm.deleteAll()
+                }
+                self.addItem(index: index)
+            }
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    func addItem(index: IndexPath) {
+        guard let item = vendorVM.itemsResult?.data?[index.section].items?[index.row] else {return}
+        if item.hasExtraTopping ?? false{
+            let toppingVC = ExtraToppingVC.instantiate(fromAppStoryboard: .Home)
+            toppingVC.vendorId = self.vendorId
+            toppingVC.celebrityId = self.celebrityId
+            toppingVC.deliveryCharge = self.deliveryCharge
+            toppingVC.item = item
+            toppingVC.modalPresentationStyle = .overCurrentContext
+            self.present(toppingVC, animated: true, completion: nil)
+        } else {
+            let cartItem = ItemOrderModel()
+            cartItem.Id = item.id ?? 0
+            cartItem.itemDescription = item.itemDescription ?? ""
+            cartItem.itemImageURL = item.imgFullPath ?? ""
+            cartItem.itemName = item.name ?? ""
+            cartItem.quantity = 1
+            cartItem.itemPrice = item.price ?? 0.0
+            cartItem.itemtotalPrice = item.price ?? 0.0
+            realmModel.saveItem(item: cartItem)
+            realmModel.fetchItems()
+            SharedData.SharedInstans.setCelebrityId(celebrityId)
+            SharedData.SharedInstans.setDeliveryCharge(deliveryCharge)
+            SharedData.SharedInstans.setVendorId("\(vendorId)")
+        }
     }
 
     @IBAction func backButtonDidPress(_ sender: UIButton) {
@@ -145,7 +228,7 @@ class VendorVC: UIViewController {
 extension VendorVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 2000 {
-            return 5
+            return vendorVM.suggestionData?.data?.count ?? 0
         } else {
             return vendorVM.itemsResult?.data?.count ?? 0
         }
@@ -154,6 +237,12 @@ extension VendorVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 2000 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mealCellName, for: indexPath) as? MealsCell else {return UICollectionViewCell()}
+            if let meal = vendorVM.suggestionData?.data?[indexPath.row] {
+                cell.setupCell(data: meal)
+            }
+            cell.addTapped = {[weak self] selecteditem in
+                self?.addSuggestionItems(index: indexPath)
+            }
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tabCellName, for: indexPath) as? TabsCell else {return UICollectionViewCell()}

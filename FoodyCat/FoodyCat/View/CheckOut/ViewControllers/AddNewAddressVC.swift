@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import GoogleMaps
 
-class AddNewAddressVC: UIViewController {
+class AddNewAddressVC: UIViewController, GMSMapViewDelegate {
 
     @IBOutlet weak var areaTF: UITextField!
     @IBOutlet weak var blockTF: UITextField!
@@ -17,14 +18,26 @@ class AddNewAddressVC: UIViewController {
     @IBOutlet weak var apartmentNoTF: UITextField!
     @IBOutlet weak var additionDirectionsTV: UITextView!
     @IBOutlet weak var phoneNumberTF: UITextField!
-
+    @IBOutlet weak var mapViewCard: CardWithShadow!
+    
     var addressesVM = AddressesVM()
+    var locationManager = CLLocationManager()
+    var mapView: GMSMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        areaTF.text = SharedData.SharedInstans.getAreaId()
+        setupLocationManager()
+        areaTF.text = SharedData.SharedInstans.getAreaName()
         areaTF.isEnabled = false
         areaTF.textColor = UIColor.lightGray
+    }
+
+    func setupLocationManager() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.distanceFilter = 50
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
     }
 
     func addAddress(){
@@ -63,5 +76,22 @@ class AddNewAddressVC: UIViewController {
 
     @IBAction func backButtonDidPress(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+
+extension AddNewAddressVC: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {return}
+        let coordinate = location.coordinate
+        let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 15)
+        mapView = GMSMapView.map(withFrame: mapViewCard.bounds, camera: camera)
+        mapView.layer.cornerRadius = 15
+        mapView.delegate = self
+        mapViewCard.addSubview(mapView)
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        marker.map = mapView
+        mapViewCard.isUserInteractionEnabled = false
     }
 }
