@@ -68,7 +68,9 @@ class HomeVC: UIViewController {
         registerCells()
         loadCelebrities()
         loadFirstBanner()
-        getLastOrderData()
+        if SharedData.SharedInstans.GetIsLogin() {
+            getLastOrderData()
+        }
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeFirstBanner), userInfo: nil, repeats: true)
         }
