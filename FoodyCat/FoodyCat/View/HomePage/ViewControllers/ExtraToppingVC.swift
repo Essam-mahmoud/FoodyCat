@@ -32,6 +32,8 @@ class ExtraToppingVC: UIViewController {
     var vendorId = 0
     var celebrityId = 0
     var deliveryCharge = 0.0
+    var vendorImage = ""
+    var vendorName = ""
     var realmModel = LocalCartItemsVM()
 
     override func viewDidLoad() {
@@ -164,6 +166,8 @@ class ExtraToppingVC: UIViewController {
         cartItem.itemtotalPrice = totalPrice
         cartItem.topping = topping
         realmModel.saveItem(item: cartItem)
+        SharedData.SharedInstans.setVendorName(vendorName)
+        SharedData.SharedInstans.setVendorImage(vendorImage)
         SharedData.SharedInstans.setCelebrityId(celebrityId)
         SharedData.SharedInstans.setDeliveryCharge(deliveryCharge)
         SharedData.SharedInstans.setVendorId("\(vendorId)")

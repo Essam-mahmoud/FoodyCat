@@ -50,6 +50,8 @@ class ThanksPageVC: UIViewController {
         nameLabel.text = ""
         orderNumberLabel.text = "\(orderNumber)"
         paymentLabel.text = payment
+        vendorNameLabel.text = SharedData.SharedInstans.getVendorNAme()
+        imageView.loadImageFromUrl(imgUrl: SharedData.SharedInstans.getVendorImage(), defString: "imageplaceholder")
     }
     
     @IBAction func backToHomeButtonDidPress(_ sender: UIButton) {

@@ -32,3 +32,13 @@ class GetAreaIdModel: Codable {
         lng = try value.decodeIfPresent(Double.self, forKey: .lng)
     }
 }
+
+struct Place {
+    let name: String
+    let identifier: String
+}
+
+enum PlacesError: Error {
+    case faildToFind
+    case faildToGetCoordinate
+}

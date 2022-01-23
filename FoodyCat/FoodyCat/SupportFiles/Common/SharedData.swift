@@ -207,10 +207,10 @@ class SharedData{
             return ""
         }
     }
-    func setUserName(_ userName:String){
+    func setVendorName(_ userName:String){
         defaults.set(userName, forKey: Name)
     }
-    func getUserNAme()->String{
+    func getVendorNAme()->String{
         if (defaults.object(forKey: Name) != nil) {
             return defaults.string(forKey: Name)!
         }else{
@@ -261,10 +261,10 @@ class SharedData{
         }
     }
 
-    func setUserImage(_ userImagePath:String){
+    func setVendorImage(_ userImagePath:String){
         defaults.set(userImagePath, forKey: imagePath)
     }
-    func getUserImage()->String{
+    func getVendorImage()->String{
         if (defaults.object(forKey: imagePath) != nil) {
             return defaults.string(forKey: imagePath)!
         }else{

@@ -147,6 +147,8 @@ class VendorVC: UIViewController {
             toppingVC.vendorId = self.vendorId
             toppingVC.celebrityId = self.celebrityId
             toppingVC.deliveryCharge = self.deliveryCharge
+            toppingVC.vendorName = self.vendorNameLable
+            toppingVC.vendorImage = self.vendorImageURL
             toppingVC.item = item
             toppingVC.modalPresentationStyle = .overCurrentContext
             self.present(toppingVC, animated: true, completion: nil)
@@ -161,6 +163,8 @@ class VendorVC: UIViewController {
             cartItem.itemtotalPrice = item.price ?? 0.0
             realmModel.saveItem(item: cartItem)
             realmModel.fetchItems()
+            SharedData.SharedInstans.setVendorName(vendorNameLable)
+            SharedData.SharedInstans.setVendorImage(vendorImageURL)
             SharedData.SharedInstans.setCelebrityId(celebrityId)
             SharedData.SharedInstans.setDeliveryCharge(deliveryCharge)
             SharedData.SharedInstans.setVendorId("\(vendorId)")

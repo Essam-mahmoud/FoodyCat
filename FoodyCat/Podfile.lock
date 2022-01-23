@@ -8,6 +8,7 @@ PODS:
   - GoogleMaps/Base (6.0.1)
   - GoogleMaps/Maps (6.0.1):
     - GoogleMaps/Base
+  - GooglePlaces (6.0.0)
   - iOSDropDown (0.3.4)
   - IQKeyboardManagerSwift (6.5.9)
   - Kingfisher (7.1.2)
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - Cosmos (~> 23.0)
   - FSPagerView
   - GoogleMaps
+  - GooglePlaces
   - iOSDropDown
   - IQKeyboardManagerSwift
   - Kingfisher
@@ -60,6 +62,7 @@ SPEC REPOS:
     - Cosmos
     - FSPagerView
     - GoogleMaps
+    - GooglePlaces
     - iOSDropDown
     - IQKeyboardManagerSwift
     - Kingfisher
@@ -81,6 +84,7 @@ SPEC CHECKSUMS:
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GoogleMaps: c213fc2334b7374144cede914da779b99be0ab74
+  GooglePlaces: c97d96ae68594acb64035c9ca9f26fbfc1d23af1
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
@@ -96,6 +100,6 @@ SPEC CHECKSUMS:
   TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 378939eebb91eb66e4001231fc967e8ebc1a94e5
+PODFILE CHECKSUM: 92877b769cea532f85ace555b9f9165bb4b6d3d6
 
 COCOAPODS: 1.10.1

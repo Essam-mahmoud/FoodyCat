@@ -22,6 +22,7 @@ target 'FoodyCat' do
   pod 'Cosmos', '~> 23.0'
   pod 'RealmSwift', '~>10'
   pod 'GoogleMaps'
+  pod 'GooglePlaces'
   pod 'FSPagerView'
 
   target 'FoodyCatTests' do

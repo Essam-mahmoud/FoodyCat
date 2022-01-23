@@ -29,6 +29,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var celebritiesCollectionView: UICollectionView!
     @IBOutlet weak var totalCartPriceLabel: UILabel!
     @IBOutlet weak var numberOfItemsInCartLabel: UILabel!
+    @IBOutlet weak var changeAddressButton: UIButton!
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
             self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -62,6 +63,7 @@ class HomeVC: UIViewController {
     fileprivate let celebritiesCell = "CelebritiesCell"
     override func viewDidLoad() {
         super.viewDidLoad()
+        changeAddressButton.setTitle("", for: .normal)
         realmModel.delegate = self
         pagerView.delegate = self
         pagerView.dataSource = self
@@ -79,6 +81,8 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         realmModel.fetchItems()
+        deliverToLabel.text = "Deliver to" + " " + SharedData.SharedInstans.getAreaName()
+        addressLabel.text = SharedData.SharedInstans.getAddres()
     }
 
     func registerCells() {
@@ -170,6 +174,11 @@ class HomeVC: UIViewController {
     @IBAction func filterButtonDidPress(_ sender: UIButton) {
     }
 
+    @IBAction func changeAddressButtonDidPress(_ sender: UIButton) {
+        let addressVc = ShowOldAddressesVC.instantiate(fromAppStoryboard: .Home)
+        addressVc.modalPresentationStyle = .overCurrentContext
+        self.present(addressVc, animated: true, completion: nil)
+    }
     @IBAction func openAllCelebritiesButtonDidPress(_ sender: UIButton) {
         let allCelebrityVc = AllCelebrityVC.instantiate(fromAppStoryboard: .Home)
         allCelebrityVc.modalPresentationStyle = .fullScreen

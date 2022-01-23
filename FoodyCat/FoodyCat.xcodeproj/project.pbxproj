@@ -110,6 +110,9 @@
 		9666C7C327626A6C00C9482D /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666C7C227626A6C00C9482D /* CreateAccountVC.swift */; };
 		9666C7C827626F4200C9482D /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9666C7C727626F4200C9482D /* ForgetPasswordVC.swift */; };
 		966B2A892764CEAF005AAD1D /* CreateAccountVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B2A882764CEAF005AAD1D /* CreateAccountVM.swift */; };
+		96829535279DFD38005A5AE9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96829534279DFD38005A5AE9 /* ResultViewController.swift */; };
+		96829537279E020F005A5AE9 /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96829536279E020F005A5AE9 /* GooglePlacesManager.swift */; };
+		96829539279E1F53005A5AE9 /* ShowOldAddressesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96829538279E1F53005A5AE9 /* ShowOldAddressesVC.swift */; };
 		969A388127726ED4001D529A /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969A388027726ED4001D529A /* CheckOut.storyboard */; };
 		969A388627726F11001D529A /* SelectAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A388527726F11001D529A /* SelectAddressVC.swift */; };
 		969A388F27727177001D529A /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A388D27727177001D529A /* AddressCell.swift */; };
@@ -288,6 +291,9 @@
 		9666C7C227626A6C00C9482D /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		9666C7C727626F4200C9482D /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		966B2A882764CEAF005AAD1D /* CreateAccountVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVM.swift; sourceTree = "<group>"; };
+		96829534279DFD38005A5AE9 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		96829536279E020F005A5AE9 /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
+		96829538279E1F53005A5AE9 /* ShowOldAddressesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOldAddressesVC.swift; sourceTree = "<group>"; };
 		969A388027726ED4001D529A /* CheckOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckOut.storyboard; sourceTree = "<group>"; };
 		969A388527726F11001D529A /* SelectAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressVC.swift; sourceTree = "<group>"; };
 		969A388D27727177001D529A /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
@@ -624,6 +630,7 @@
 				9666C70D2762639A00C9482D /* LocationsManager.swift */,
 				9666C70E2762639A00C9482D /* Deviceinfo.swift */,
 				9666C70F2762639A00C9482D /* StartupManager.swift */,
+				96829536279E020F005A5AE9 /* GooglePlacesManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -745,6 +752,8 @@
 				96C8C581276BD3B1009B4741 /* ExtraToppingVC.swift */,
 				96C20846276DF85F0014ACA3 /* CartVC.swift */,
 				962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */,
+				96829534279DFD38005A5AE9 /* ResultViewController.swift */,
+				96829538279E1F53005A5AE9 /* ShowOldAddressesVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1151,6 +1160,7 @@
 				965BEB97276247C400952500 /* ViewController.swift in Sources */,
 				960BA16427665C7900AF1A4B /* CelebritiesCell.swift in Sources */,
 				9666C7562762639A00C9482D /* Deviceinfo.swift in Sources */,
+				96829537279E020F005A5AE9 /* GooglePlacesManager.swift in Sources */,
 				9666C76A2762639A00C9482D /* SharedData.swift in Sources */,
 				9666C7672762639A00C9482D /* CardWithShadow.swift in Sources */,
 				9666C7C827626F4200C9482D /* ForgetPasswordVC.swift in Sources */,
@@ -1171,9 +1181,11 @@
 				9643331127935E31006C39AB /* PaymentsMethodVM.swift in Sources */,
 				9666C76E2762639A00C9482D /* GoogleApiHelper.swift in Sources */,
 				965BEBD5276252CA00952500 /* LandingPageVC.swift in Sources */,
+				96829535279DFD38005A5AE9 /* ResultViewController.swift in Sources */,
 				96BB12982764DE6D00D85FFF /* ForgetPasswordModel.swift in Sources */,
 				9666C7462762639A00C9482D /* JKCircleView.swift in Sources */,
 				96BB12A22764E43E00D85FFF /* RootViewController.swift in Sources */,
+				96829539279E1F53005A5AE9 /* ShowOldAddressesVC.swift in Sources */,
 				96BB6DFD2766BEAC00C22403 /* CelebritiesVC.swift in Sources */,
 				96FBBCEE2769411800C30E55 /* BannerModel.swift in Sources */,
 				962233162765394B00E09B97 /* SliderCell.swift in Sources */,

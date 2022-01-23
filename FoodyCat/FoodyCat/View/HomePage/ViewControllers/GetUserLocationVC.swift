@@ -7,11 +7,13 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
 
 class GetUserLocationVC: UIViewController {
 
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var addressLabel: UILabel!
 
     var locationManager = CLLocationManager()
@@ -19,10 +21,13 @@ class GetUserLocationVC: UIViewController {
     var long = 0.0
     var lat = 0.0
     var getAreaIdVM = GetAreaIdVM()
+    let searchVC = UISearchController(searchResultsController: ResultViewController())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()
+        searchVC.searchResultsUpdater = self
+        searchView.addSubview(searchVC.searchBar)
         print(GMSServices.openSourceLicenseInfo())
     }
 
@@ -44,7 +49,7 @@ class GetUserLocationVC: UIViewController {
     }
     
     @IBAction func confirmButtonDidPress(_ sender: UIButton) {
-        getAreaIdVM.getAreaId(long: 47.991096, lat: 29.384356) { (errMsg, errRes, status) in
+        getAreaIdVM.getAreaId(long: long, lat: lat) { (errMsg, errRes, status) in
             switch status {
             case .populated:
                 SharedData.SharedInstans.setAreaName(self.getAreaIdVM.areaResult?.area ?? "")
@@ -75,12 +80,9 @@ extension GetUserLocationVC: CLLocationManagerDelegate {
         mainView.addSubview(mapView)
         long = coordinate.longitude
         lat = coordinate.latitude
-        // Creates a marker in the center of the map.
 
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
-//        marker.title = "Kuwait"
-//        marker.snippet = "Kuwait"
         marker.map = mapView
         getAdressName(coords: location)
     }
@@ -161,4 +163,40 @@ extension GetUserLocationVC {
                 }
             }
       }
+}
+
+extension GetUserLocationVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let query = searchController.searchBar.text, !query.trimmingCharacters(in: .whitespaces).isEmpty, let resultsVC = searchController.searchResultsController as? ResultViewController else {return}
+
+        resultsVC.delegate = self
+        GooglePlacesManager.shared.findPlaces(query: query) { result in
+            switch result {
+            case .success(let places):
+                DispatchQueue.main.async {
+                    resultsVC.update(with: places)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}
+
+
+extension GetUserLocationVC: ResultViewControllerDelegate {
+    func didTapPlace(with coordinates: CLLocationCoordinate2D) {
+        searchVC.searchBar.resignFirstResponder()
+        searchVC.dismiss(animated: true, completion: nil)
+        lat = coordinates.latitude
+        long = coordinates.longitude
+        let location = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        getAdressName(coords: location)
+        let marker = GMSMarker()
+        let camera = GMSCameraPosition.camera(withLatitude: coordinates.latitude, longitude: coordinates.longitude, zoom: 15)
+        mapView.clear()
+        mapView.camera = camera
+        marker.position = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        marker.map = mapView
+    }
 }
