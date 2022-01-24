@@ -113,6 +113,7 @@
 		96829535279DFD38005A5AE9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96829534279DFD38005A5AE9 /* ResultViewController.swift */; };
 		96829537279E020F005A5AE9 /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96829536279E020F005A5AE9 /* GooglePlacesManager.swift */; };
 		96829539279E1F53005A5AE9 /* ShowOldAddressesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96829538279E1F53005A5AE9 /* ShowOldAddressesVC.swift */; };
+		968A1942279F33C5006AC7E5 /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A1941279F33C5006AC7E5 /* ItemDetailsVC.swift */; };
 		969A388127726ED4001D529A /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969A388027726ED4001D529A /* CheckOut.storyboard */; };
 		969A388627726F11001D529A /* SelectAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A388527726F11001D529A /* SelectAddressVC.swift */; };
 		969A388F27727177001D529A /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A388D27727177001D529A /* AddressCell.swift */; };
@@ -294,6 +295,7 @@
 		96829534279DFD38005A5AE9 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		96829536279E020F005A5AE9 /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
 		96829538279E1F53005A5AE9 /* ShowOldAddressesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOldAddressesVC.swift; sourceTree = "<group>"; };
+		968A1941279F33C5006AC7E5 /* ItemDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
 		969A388027726ED4001D529A /* CheckOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckOut.storyboard; sourceTree = "<group>"; };
 		969A388527726F11001D529A /* SelectAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressVC.swift; sourceTree = "<group>"; };
 		969A388D27727177001D529A /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
@@ -754,6 +756,7 @@
 				962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */,
 				96829534279DFD38005A5AE9 /* ResultViewController.swift */,
 				96829538279E1F53005A5AE9 /* ShowOldAddressesVC.swift */,
+				968A1941279F33C5006AC7E5 /* ItemDetailsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1178,6 +1181,7 @@
 				9643330B27934F70006C39AB /* AddressModel.swift in Sources */,
 				9666C7632762639A00C9482D /* SwiftSpinner.swift in Sources */,
 				9643330F27935C1F006C39AB /* PaymentMethodsModel.swift in Sources */,
+				968A1942279F33C5006AC7E5 /* ItemDetailsVC.swift in Sources */,
 				9643331127935E31006C39AB /* PaymentsMethodVM.swift in Sources */,
 				9666C76E2762639A00C9482D /* GoogleApiHelper.swift in Sources */,
 				965BEBD5276252CA00952500 /* LandingPageVC.swift in Sources */,

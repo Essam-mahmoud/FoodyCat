@@ -287,3 +287,9 @@ extension HomeVC: FSPagerViewDataSource,FSPagerViewDelegate{
     }
 }
 
+extension HomeVC: ShowOldAddressesDelegate {
+    func updateAddress() {
+        addressLabel.text = SharedData.SharedInstans.getAddres()
+    }
+}
+

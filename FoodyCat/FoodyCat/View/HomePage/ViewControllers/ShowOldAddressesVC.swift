@@ -7,13 +7,21 @@
 
 import UIKit
 
+protocol ShowOldAddressesDelegate {
+    func updateAddress()
+}
+
 class ShowOldAddressesVC: UIViewController {
 
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var addressesTableView: UITableView!
+    @IBOutlet weak var openMapButton: UIButton!
+
+    var delegate: ShowOldAddressesDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        openMapButton.setTitle("", for: .normal)
         topView.darkBlurView()
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         topView.addGestureRecognizer(tap)
@@ -30,7 +38,15 @@ class ShowOldAddressesVC: UIViewController {
     }
 
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        delegate?.updateAddress()
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func openMapButtonDidPress(_ sender: UIButton) {
+        let mapVc = GetUserLocationVC.instantiate(fromAppStoryboard: .Home)
+        mapVc.isFromHomePage = true
+        mapVc.modalPresentationStyle = .fullScreen
+        self.present(mapVc, animated: true, completion: nil)
     }
 
 }

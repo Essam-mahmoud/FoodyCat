@@ -28,6 +28,7 @@ class ExtraToppingVC: UIViewController {
     var numberOfExtraTopping = 0
     var extraToppingCellName = "ExtaToppingCell"
     var extraToppingVM = ExtraToppingVM()
+    var delegate: AddItemDelegate?
     var item: Item?
     var vendorId = 0
     var celebrityId = 0
@@ -136,6 +137,7 @@ class ExtraToppingVC: UIViewController {
 
     @IBAction func addToCartButtonDidPress(_ sender: UIButton) {
         addToCart()
+        delegate?.itemAdded()
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -200,7 +202,7 @@ extension ExtraToppingVC: UITableViewDelegate, UITableViewDataSource {
 
 extension ExtraToppingVC: RealmViewModelDelegate {
     func recordSaved() {
-        AppCommon.sharedInstance.showBanner(title: "Item added", subtitle: "", style: .success)
+        AppCommon.sharedInstance.showBanner(title: "Item added".localized(), subtitle: "", style: .success)
     }
 
     func recordFetch(items: [ItemOrderModel]) {

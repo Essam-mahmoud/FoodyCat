@@ -20,6 +20,7 @@ class GetUserLocationVC: UIViewController {
     var mapView: GMSMapView!
     var long = 0.0
     var lat = 0.0
+    var isFromHomePage = false
     var getAreaIdVM = GetAreaIdVM()
     let searchVC = UISearchController(searchResultsController: ResultViewController())
 
@@ -58,9 +59,13 @@ class GetUserLocationVC: UIViewController {
                 SharedData.SharedInstans.setLng("\(self.getAreaIdVM.areaResult?.lng ?? 0.0)")
                 SharedData.SharedInstans.setAddress(self.getAreaIdVM.areaResult?.addressLineOne ?? "")
                 SharedData.SharedInstans.SetShowMap(true)
-                guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
-                UIApplication.shared.windows.first?.rootViewController = homeVC
-                UIApplication.shared.windows.first?.makeKeyAndVisible()
+                if self.isFromHomePage {
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
+                    UIApplication.shared.windows.first?.rootViewController = homeVC
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                }
             case .error:
                 AppCommon.sharedInstance.showBanner(title: self.getAreaIdVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
             default:

@@ -144,6 +144,7 @@ class VendorVC: UIViewController {
         guard let item = vendorVM.suggestionData?.data?[index.row] else {return}
         if item.hasExtraTopping ?? false{
             let toppingVC = ExtraToppingVC.instantiate(fromAppStoryboard: .Home)
+            toppingVC.delegate = self
             toppingVC.vendorId = self.vendorId
             toppingVC.celebrityId = self.celebrityId
             toppingVC.deliveryCharge = self.deliveryCharge
@@ -153,21 +154,17 @@ class VendorVC: UIViewController {
             toppingVC.modalPresentationStyle = .overCurrentContext
             self.present(toppingVC, animated: true, completion: nil)
         } else {
-            let cartItem = ItemOrderModel()
-            cartItem.Id = item.id ?? 0
-            cartItem.itemDescription = item.itemDescription ?? ""
-            cartItem.itemImageURL = item.imgFullPath ?? ""
-            cartItem.itemName = item.name ?? ""
-            cartItem.quantity = 1
-            cartItem.itemPrice = item.price ?? 0.0
-            cartItem.itemtotalPrice = item.price ?? 0.0
-            realmModel.saveItem(item: cartItem)
-            realmModel.fetchItems()
-            SharedData.SharedInstans.setVendorName(vendorNameLable)
-            SharedData.SharedInstans.setVendorImage(vendorImageURL)
-            SharedData.SharedInstans.setCelebrityId(celebrityId)
-            SharedData.SharedInstans.setDeliveryCharge(deliveryCharge)
-            SharedData.SharedInstans.setVendorId("\(vendorId)")
+
+            let descriptionVC = ItemDetailsVC.instantiate(fromAppStoryboard: .Home)
+            descriptionVC.delegate = self
+            descriptionVC.item = item
+            descriptionVC.vendorId = self.vendorId
+            descriptionVC.celebrityId = self.celebrityId
+            descriptionVC.deliveryCharge = self.deliveryCharge
+            descriptionVC.vendorName = self.vendorNameLable
+            descriptionVC.vendorImage = self.vendorImageURL
+            descriptionVC.modalPresentationStyle = .overCurrentContext
+            self.present(descriptionVC, animated: true, completion: nil)
         }
     }
 
@@ -195,26 +192,27 @@ class VendorVC: UIViewController {
         guard let item = vendorVM.itemsResult?.data?[index.section].items?[index.row] else {return}
         if item.hasExtraTopping ?? false{
             let toppingVC = ExtraToppingVC.instantiate(fromAppStoryboard: .Home)
+            toppingVC.delegate = self
             toppingVC.vendorId = self.vendorId
             toppingVC.celebrityId = self.celebrityId
             toppingVC.deliveryCharge = self.deliveryCharge
+            toppingVC.vendorName = self.vendorNameLable
+            toppingVC.vendorImage = self.vendorImageURL
             toppingVC.item = item
             toppingVC.modalPresentationStyle = .overCurrentContext
             self.present(toppingVC, animated: true, completion: nil)
         } else {
-            let cartItem = ItemOrderModel()
-            cartItem.Id = item.id ?? 0
-            cartItem.itemDescription = item.itemDescription ?? ""
-            cartItem.itemImageURL = item.imgFullPath ?? ""
-            cartItem.itemName = item.name ?? ""
-            cartItem.quantity = 1
-            cartItem.itemPrice = item.price ?? 0.0
-            cartItem.itemtotalPrice = item.price ?? 0.0
-            realmModel.saveItem(item: cartItem)
-            realmModel.fetchItems()
-            SharedData.SharedInstans.setCelebrityId(celebrityId)
-            SharedData.SharedInstans.setDeliveryCharge(deliveryCharge)
-            SharedData.SharedInstans.setVendorId("\(vendorId)")
+
+            let descriptionVC = ItemDetailsVC.instantiate(fromAppStoryboard: .Home)
+            descriptionVC.delegate = self
+            descriptionVC.item = item
+            descriptionVC.vendorId = self.vendorId
+            descriptionVC.celebrityId = self.celebrityId
+            descriptionVC.deliveryCharge = self.deliveryCharge
+            descriptionVC.vendorName = self.vendorNameLable
+            descriptionVC.vendorImage = self.vendorImageURL
+            descriptionVC.modalPresentationStyle = .overCurrentContext
+            self.present(descriptionVC, animated: true, completion: nil)
         }
     }
 
@@ -259,7 +257,11 @@ extension VendorVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        menuTableView.scrollToRow(at: IndexPath(row: 0, section: indexPath.item), at: .top, animated: true)
+        if collectionView.tag == 2000 {
+            addSuggestionItems(index: indexPath)
+        } else {
+            menuTableView.scrollToRow(at: IndexPath(row: 0, section: indexPath.item), at: .top, animated: true)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -298,6 +300,10 @@ extension VendorVC: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        addItemTapped(index: indexPath)
+    }
 }
 
 extension VendorVC: RealmViewModelDelegate {
@@ -313,6 +319,12 @@ extension VendorVC: RealmViewModelDelegate {
 
     func recordSaved() {
         AppCommon.sharedInstance.showBanner(title: "Item Added".localized(), subtitle: "", style: .success)
+    }
+}
+
+extension VendorVC: AddItemDelegate {
+    func itemAdded() {
+        realmModel.fetchItems()
     }
 }
 
