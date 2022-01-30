@@ -162,6 +162,10 @@ class HomeVC: UIViewController {
     }
 
     @IBAction func openInprogressButtonDidPress(_ sender: UIButton) {
+        let orderVc = OrderDetailsVC.instantiate(fromAppStoryboard: .CheckOut)
+        orderVc.orderId = homeVM.lastOrderData?.id ?? 0
+        orderVc.modalPresentationStyle = .fullScreen
+        self.present(orderVc, animated: true, completion: nil)
     }
 
     @IBAction func sideMenuButtonDidPress(_ sender: UIButton) {
@@ -176,6 +180,7 @@ class HomeVC: UIViewController {
 
     @IBAction func changeAddressButtonDidPress(_ sender: UIButton) {
         let addressVc = ShowOldAddressesVC.instantiate(fromAppStoryboard: .Home)
+        addressVc.delegate = self
         addressVc.modalPresentationStyle = .overCurrentContext
         self.present(addressVc, animated: true, completion: nil)
     }

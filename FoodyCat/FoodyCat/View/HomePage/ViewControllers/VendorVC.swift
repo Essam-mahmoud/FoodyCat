@@ -63,10 +63,12 @@ class VendorVC: UIViewController {
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tabsCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        DispatchQueue.main.async {
+//            self.tabsCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
+//        }
+//    }
 
     func setupUI() {
         vendorImage.loadImageFromUrl(imgUrl: vendorImageURL, defString: "")
@@ -111,7 +113,7 @@ class VendorVC: UIViewController {
             case .populated:
                 self.tabsCollectionView.reloadData()
                 self.menuTableView.reloadData()
-
+                self.tabsCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
             case .error:
                 AppCommon.sharedInstance.showBanner(title: self.vendorVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
             default:

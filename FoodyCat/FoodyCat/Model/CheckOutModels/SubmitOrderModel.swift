@@ -59,11 +59,13 @@ class Order: Codable {
     let orderDate: String?
     let grandTotal: Double?
     let paymentMethod, status, vatAmount: Int?
+    let paymentMethodString: String?
     let deliveryCharges, discountAmount, subTotal: Double?
     let type: Int?
    // let note, mapUUID: String?
     let voucherAmount: Int?
     let generalRequest: String?
+    let expectedDeliveryTime: String?
     let address: Address?
     let vendor: Vendor?
     let listOfCart: [ListOfCart]?
@@ -77,7 +79,7 @@ class Order: Codable {
         case orderDate = "orderDate"
         case grandTotal = "grandTotal"
         case paymentMethod = "paymentMethod"
-
+        case paymentMethodString = "paymentMethodString"
         case status = "status"
         case vatAmount = "vatAmount"
         case deliveryCharges = "deliveryCharges"
@@ -89,6 +91,7 @@ class Order: Codable {
 
         case voucherAmount = "voucherAmount"
         case generalRequest = "generalRequest"
+        case expectedDeliveryTime = "expectedDeliveryTime"
         case address = "address"
         case vendor = "vendor"
         case listOfCart = "listOfCart"
@@ -104,6 +107,7 @@ class Order: Codable {
         orderDate = try value.decodeIfPresent(String.self, forKey: .orderDate)
         grandTotal = try value.decodeIfPresent(Double.self, forKey: .grandTotal)
         paymentMethod = try value.decodeIfPresent(Int.self, forKey: .paymentMethod)
+        paymentMethodString = try value.decodeIfPresent(String.self, forKey: .paymentMethodString)
 
         status = try value.decodeIfPresent(Int.self, forKey: .status)
         vatAmount = try value.decodeIfPresent(Int.self, forKey: .vatAmount)
@@ -116,6 +120,7 @@ class Order: Codable {
 
         voucherAmount = try value.decodeIfPresent(Int.self, forKey: .voucherAmount)
         generalRequest = try value.decodeIfPresent(String.self, forKey: .generalRequest)
+        expectedDeliveryTime = try value.decodeIfPresent(String.self, forKey: .expectedDeliveryTime)
         address = try value.decodeIfPresent(Address.self, forKey: .address)
         vendor = try value.decodeIfPresent(Vendor.self, forKey: .vendor)
         listOfCart = try value.decodeIfPresent([ListOfCart].self, forKey: .listOfCart)

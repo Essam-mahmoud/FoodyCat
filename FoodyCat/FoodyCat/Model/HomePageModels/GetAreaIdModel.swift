@@ -42,3 +42,19 @@ enum PlacesError: Error {
     case faildToFind
     case faildToGetCoordinate
 }
+
+struct SavedAddressesModel: Codable {
+    let areaId: Int?
+    let address: String?
+    let long: Double?
+    let lat: Double?
+    let areaName: String?
+
+    init(areaId: Int, address: String, long: Double, lat: Double, areaName: String) {
+        self.areaId = areaId
+        self.address = address
+        self.long = long
+        self.lat = lat
+        self.areaName = areaName
+    }
+}

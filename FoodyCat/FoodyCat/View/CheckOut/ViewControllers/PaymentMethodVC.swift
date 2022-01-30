@@ -59,7 +59,7 @@ class PaymentMethodVC: UIViewController, GMSMapViewDelegate {
         topTitleLabel.text = address?.name
         addressLabel.text = address?.addressLineOne
         phoneLabel.text = address?.phone
-        nameLabel.text = ""
+        nameLabel.text = SharedData.SharedInstans.getUserName()
     }
 
     func setupLocationManager() {

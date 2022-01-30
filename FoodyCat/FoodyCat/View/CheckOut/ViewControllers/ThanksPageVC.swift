@@ -47,7 +47,7 @@ class ThanksPageVC: UIViewController {
         addressName.text = address?.name
         addressLabel.text = address?.addressLineOne
         phoneLabel.text = address?.phone
-        nameLabel.text = ""
+        nameLabel.text = SharedData.SharedInstans.getUserName()
         orderNumberLabel.text = "\(orderNumber)"
         paymentLabel.text = payment
         vendorNameLabel.text = SharedData.SharedInstans.getVendorNAme()
@@ -59,6 +59,7 @@ class ThanksPageVC: UIViewController {
             self.realmModel.realm.deleteAll()
         }
         SharedData.SharedInstans.setDeliveryCharge(0)
+        SharedData.SharedInstans.setVendorId("")
         guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
         UIApplication.shared.windows.first?.rootViewController = homeVC
         UIApplication.shared.windows.first?.makeKeyAndVisible()

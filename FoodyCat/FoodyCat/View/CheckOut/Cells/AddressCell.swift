@@ -21,7 +21,7 @@ class AddressCell: UITableViewCell {
     func setupCell(data: AddressData) {
         addressTitleLabel.text = data.name
         addressLabel.text = data.addressLineOne
-        userNameLabel.text = ""
-        phoneNumberLabel.text = ""
+        userNameLabel.text = SharedData.SharedInstans.getUserName()
+        phoneNumberLabel.text = data.phone
     }
 }

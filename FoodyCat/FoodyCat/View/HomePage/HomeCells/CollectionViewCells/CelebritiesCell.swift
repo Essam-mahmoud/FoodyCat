@@ -20,7 +20,7 @@ class CelebritiesCell: UICollectionViewCell {
         DispatchQueue.main.async {
             self.celebrityImage.roundCorners([.topRight,.topLeft], radius: 15)
             self.celebrityImage.layer.masksToBounds = true
-            self.celebrityImage.loadImageFromUrl(imgUrl: data.mediaFullPath, defString: "avatarPlaceHolder")
+            self.celebrityImage.loadImageFromUrl(imgUrl: data.mediaFullPath, defString: "celebrityPlaceHolder")
             self.celebrityNameLabel.text = data.name
         }
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class createAccountModel: Codable {
+class AuthModel: Codable {
     let data, message: String?
 
     enum CodingKeys: String, CodingKey {

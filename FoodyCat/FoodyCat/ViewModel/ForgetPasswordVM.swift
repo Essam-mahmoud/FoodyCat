@@ -8,14 +8,13 @@
 import Foundation
 
 class ForgetPasswordVM: ViewModel {
-    var result: ResponseModel?
+    var result: AuthModel?
 
-    func forgetPassword( email: String, onComplete:@escaping(_ errorMessage : String?,_ ErrorResponse:ResponseModel?, _ state:State)->()) {
+    func forgetPassword( phone: String, onComplete:@escaping(_ errorMessage : String?,_ ErrorResponse:ResponseModel?, _ state:State)->()) {
 
-        let params = ["email":email] as [String : Any]
+        let params = ["phone":phone] as [String : Any]
 
-        let resource = Resource<ResponseModel>(url:AppConstant.UrlHandler.forgetPassword,httpMethod:.post,parameters:params, header: AppCommon.sharedInstance.getHeader(AddtionParms: [:]))
-
+        let resource = Resource<AuthModel>(url:AppConstant.UrlHandler.forgetPassword,httpMethod:.post,parameters:params, header: AppCommon.sharedInstance.getHeader(AddtionParms: [:]))
         HttpApiCallingWithRep.requestWithBody(resource: resource){
             (Result, StatusCode, Mesg ,errorResponse) in
             if StatusCode == 200 {

@@ -21,7 +21,7 @@ class MenuItemCell: UITableViewCell {
     }
 
     func setupCell(data: Item) {
-        itemImage.loadImageFromUrl(imgUrl: data.imgFullPath, defString: "imageplaceholder")
+        itemImage.loadImageFromUrl(imgUrl: data.imgFullPath, defString: "itemPlaceHolder")
         itemNameLabel.text = data.name
         itemDescriptionLabel.text = data.itemDescription
         itemPriceLabel.text = "KWD".localized() + "\(data.price ?? 0.0)"

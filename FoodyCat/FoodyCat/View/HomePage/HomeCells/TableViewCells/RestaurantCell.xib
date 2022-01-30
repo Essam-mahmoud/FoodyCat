@@ -54,9 +54,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Arabic, Chinese, Seafood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qI-G1-fh7">
-                                <rect key="frame" x="0.0" y="186" width="178" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arabic, Chinese, Seafood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qI-G1-fh7">
+                                <rect key="frame" x="0.0" y="190" width="348" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" name="blueyGrey"/>
                                 <nil key="highlightedColor"/>
@@ -68,7 +67,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9qI-G1-fh7" secondAttribute="trailing" constant="16" id="0to-Li-Ihu"/>
                             <constraint firstItem="BNE-zN-h5z" firstAttribute="leading" secondItem="8MZ-vV-xb0" secondAttribute="leading" constant="1" id="2wT-Kj-P6V"/>
+                            <constraint firstItem="9qI-G1-fh7" firstAttribute="top" secondItem="nbf-21-Frr" secondAttribute="bottom" constant="8" id="6Nk-eQ-vGV"/>
                             <constraint firstItem="eTU-A4-fWU" firstAttribute="centerY" secondItem="nbf-21-Frr" secondAttribute="centerY" id="FGi-0l-Urw"/>
                             <constraint firstItem="nbf-21-Frr" firstAttribute="leading" secondItem="8MZ-vV-xb0" secondAttribute="leading" id="aIe-Ab-EYt"/>
                             <constraint firstAttribute="trailing" secondItem="eTU-A4-fWU" secondAttribute="trailing" constant="8" id="bgr-Id-XRJ"/>
@@ -76,6 +77,7 @@
                             <constraint firstItem="nbf-21-Frr" firstAttribute="top" secondItem="BNE-zN-h5z" secondAttribute="bottom" constant="15" id="nBt-Ed-aq9"/>
                             <constraint firstAttribute="trailing" secondItem="BNE-zN-h5z" secondAttribute="trailing" constant="1" id="rXv-dH-J9O"/>
                             <constraint firstAttribute="height" constant="210" id="u4s-W8-2di"/>
+                            <constraint firstItem="9qI-G1-fh7" firstAttribute="leading" secondItem="nbf-21-Frr" secondAttribute="leading" id="vED-wD-Ghp"/>
                         </constraints>
                     </view>
                 </subviews>

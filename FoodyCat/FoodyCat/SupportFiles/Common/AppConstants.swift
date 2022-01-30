@@ -84,5 +84,9 @@ class AppConstant: NSObject {
         static public var lastOrder: String {
             return "\(apiDomain)Customer/Orders/last"
         }
+
+        static public var orderDetails: String {
+            return "\(apiDomain)Customer/Orders/"
+        }
     }
 }

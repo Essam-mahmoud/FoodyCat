@@ -16,7 +16,7 @@ class SliderCell: UICollectionViewCell {
     }
 
     func setupCell(data: BannerData) {
-        bannerImage.loadImageFromUrl(imgUrl: data.imageFullPath, defString: "imageplaceholder")
+        bannerImage.loadImageFromUrl(imgUrl: data.imageFullPath, defString: "vendorPlaceHolder")
     }
 
 }

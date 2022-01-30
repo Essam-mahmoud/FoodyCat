@@ -17,6 +17,7 @@ class GetUserLocationVC: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
 
     var locationManager = CLLocationManager()
+    var savedAddresses = [SavedAddressesModel]()
     var mapView: GMSMapView!
     var long = 0.0
     var lat = 0.0
@@ -29,6 +30,7 @@ class GetUserLocationVC: UIViewController {
         setupLocationManager()
         searchVC.searchResultsUpdater = self
         searchView.addSubview(searchVC.searchBar)
+        savedAddresses = SharedData.SharedInstans.loadAddresses()
         print(GMSServices.openSourceLicenseInfo())
     }
 
@@ -48,17 +50,29 @@ class GetUserLocationVC: UIViewController {
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
     }
+
+    func saveAddress() {
+        let address = SavedAddressesModel(
+            areaId: getAreaIdVM.areaResult?.areaID ?? 0,
+            address: getAreaIdVM.areaResult?.addressLineOne ?? "",
+            long: getAreaIdVM.areaResult?.lng ?? 0.0,
+            lat: getAreaIdVM.areaResult?.lat ?? 0.0,
+            areaName: getAreaIdVM.areaResult?.area ?? "")
+        savedAddresses.append(address)
+        SharedData.SharedInstans.saveAddresses(savedAddresses: savedAddresses)
+    }
     
     @IBAction func confirmButtonDidPress(_ sender: UIButton) {
         getAreaIdVM.getAreaId(long: long, lat: lat) { (errMsg, errRes, status) in
             switch status {
             case .populated:
                 SharedData.SharedInstans.setAreaName(self.getAreaIdVM.areaResult?.area ?? "")
-                SharedData.SharedInstans.setAreaId("\(self.getAreaIdVM.areaResult?.areaID ?? 0)")
+                SharedData.SharedInstans.setAreaId(self.getAreaIdVM.areaResult?.areaID ?? 0)
                 SharedData.SharedInstans.setLat("\(self.getAreaIdVM.areaResult?.lat ?? 0.0)")
                 SharedData.SharedInstans.setLng("\(self.getAreaIdVM.areaResult?.lng ?? 0.0)")
                 SharedData.SharedInstans.setAddress(self.getAreaIdVM.areaResult?.addressLineOne ?? "")
                 SharedData.SharedInstans.SetShowMap(true)
+                self.saveAddress()
                 if self.isFromHomePage {
                     self.dismiss(animated: true, completion: nil)
                 } else {

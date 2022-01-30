@@ -20,7 +20,7 @@ class RestaurantCell: UITableViewCell {
     }
 
     func setupCell(data: VendorsData) {
-        vendorImage.loadImageFromUrl(imgUrl: data.coverImage, defString: "imageplaceholder")
+        vendorImage.loadImageFromUrl(imgUrl: data.coverImage, defString: "vendorPlaceHolder")
         vendorNameLabel.text = data.name
         vendorSpecialityLabel.text = data.cuisines
         ratingView.rating = Double(data.rating ?? 0)

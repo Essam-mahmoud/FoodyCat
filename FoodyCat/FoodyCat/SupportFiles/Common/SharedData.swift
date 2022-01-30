@@ -39,6 +39,19 @@ class SharedData{
     let addres = "Address"
     let celebrityId = "Celebrity"
     let areaName = "AreaName"
+    let userName = "Name"
+
+    func setUserName(_ name:String){
+        defaults.set(name, forKey: userName)
+    }
+
+    func getUserName()->String{
+        if (defaults.object(forKey: userName) != nil) {
+            return defaults.string(forKey: userName) ?? ""
+        }else{
+            return ""
+        }
+    }
 
     func setCelebrityId(_ id:Int){
         defaults.set(id, forKey: celebrityId)
@@ -126,15 +139,15 @@ class SharedData{
         }
     }
 
-    func setAreaId(_ id:String){
+    func setAreaId(_ id:Int){
         defaults.set(id, forKey: areaId)
     }
 
-    func getAreaId()->String{
+    func getAreaId()->Int{
         if (defaults.object(forKey: areaId) != nil) {
-            return defaults.string(forKey: areaId) ?? ""
+            return defaults.integer(forKey: areaId)
         }else{
-            return ""
+            return 0
         }
     }
 
@@ -337,6 +350,15 @@ class SharedData{
         }else{
             return false
         }
+    }
+
+    func loadAddresses() -> [SavedAddressesModel]{
+        let savedAddresses = defaults.decode(for: [SavedAddressesModel].self, using: "Addresses") ?? [SavedAddressesModel]()
+        return savedAddresses
+    }
+
+    func saveAddresses(savedAddresses: [SavedAddressesModel]) {
+        defaults.encode(for: savedAddresses, using: "Addresses")
     }
 
 

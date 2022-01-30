@@ -12,6 +12,7 @@ class SelectAddressVC: UIViewController {
 
     @IBOutlet weak var addressesTableView: UITableView!
 
+    @IBOutlet weak var noAddressLabel: UILabel!
     fileprivate let addressCellName = "AddressCell"
     var getAddressesVM = AddressesVM()
 
@@ -31,6 +32,11 @@ class SelectAddressVC: UIViewController {
         getAddressesVM.getAddresses(page: 1) { (errMsg, errRes, status) in
             switch status {
             case .populated:
+                if self.getAddressesVM.addressesResult?.data?.count ?? 0 > 0 {
+                    self.noAddressLabel.isHidden = true
+                } else {
+                    self.noAddressLabel.isHidden = false
+                }
                 self.addressesTableView.reloadData()
             case .error:
                 AppCommon.sharedInstance.showBanner(title: self.getAddressesVM.baseReponse?.message ?? "", subtitle: "", style: .danger)

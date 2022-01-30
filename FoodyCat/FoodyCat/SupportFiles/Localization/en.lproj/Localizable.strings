@@ -14,7 +14,7 @@
 "Date of Birth"="Date of Birth";
 "Continue"="Continue";
 "Forgot Password"="Forgot Password";
-"Please enter your Email"="Please enter your Email so we can help you recover your password.";
+"Please enter your Email"="Please enter your phone so we can help you recover your password.";
 "Next"="Next";
 "Logged in Successfully"="Logged in Successfully";
 "Phone Number"="Phone Number";
@@ -44,3 +44,9 @@
 "Order has been sent successfully"="Order has been sent successfully";
 "Delivery charge"="Delivery charge";
 "items"="items";
+"Choose Delivery location"="Choose Delivery location";
+"No Saved Address"="No Saved Address";
+"Your order delivering"="Your order delivering";
+"Order Confirmation"="Order Confirmation";
+"Account Created"="Account Created";
+"RECOMMENDED"="RECOMMENDED";

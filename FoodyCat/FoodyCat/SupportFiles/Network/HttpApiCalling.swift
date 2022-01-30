@@ -96,7 +96,7 @@ class HttpApiCallingWithRep{
                 DispatchQueue.main.async {
                                         AppCommon.sharedInstance.showBanner(title: "Something went wrong try agen later".localized(), subtitle: "" , style: .danger)
                 }
-                //                Result(nil ,response.response!.statusCode , "Server Error",nil)
+                Result(nil ,response.response!.statusCode , "Server Error",nil)
                 
                 return
             }
@@ -122,7 +122,7 @@ class HttpApiCallingWithRep{
                         AppCommon.sharedInstance.showBanner(title: Object.message ?? "", subtitle: "" , style: .danger)
                                              
                     }
-                    
+                    Result(nil,response.response!.statusCode,"Server Error", nil)
                     return
                 }else{
                     AppCommon.sharedInstance.showBanner(title: "Something went wrong try agen later".localized(), subtitle: "" , style: .danger)

@@ -13,6 +13,7 @@ class AllCelebrityVC: UIViewController {
 
     fileprivate let celebritiesCell = "CelebritiesCell"
     var page = 1
+    var counter = 2
     var homeVM = HomeVM()
     var celebrityArray = [CeleberitiesData]()
     override func viewDidLoad() {
@@ -28,6 +29,13 @@ class AllCelebrityVC: UIViewController {
             switch status {
             case .populated:
                 self.celebrityArray.append(contentsOf: self.homeVM.celeberitiesModel?.data ?? [CeleberitiesData]())
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    if self.counter > 0{
+                        self.counter -= 1
+                        self.page += 1
+                        self.loadCelebrities()
+                    }
+                }
                 self.celebrityCollectionView.reloadData()
             case .error:
                 AppCommon.sharedInstance.showBanner(title: self.homeVM.baseReponse?.message ?? "", subtitle: "", style: .danger)

@@ -57,9 +57,10 @@ class ItemDetailsVC: UIViewController {
     }
 
     func setupView() {
-        itemImage.roundCorners([.topLeft, .topRight], radius: 15)
-        closeButton.setTitle("", for: .normal)
         itemImage.loadImageFromUrl(imgUrl: item?.imgFullPath, defString: "imageplaceholder")
+        itemImage.layer.cornerRadius = 15
+       // self.itemImage.roundCorners([.topLeft, .topRight], radius: 15)
+        closeButton.setTitle("", for: .normal)
         itemNameLabel.text = item?.name
         itemDescriptionLabel.text = item?.itemDescription
         priceLabel.text = "KWD".localized() + " \(item?.price ?? 0)"

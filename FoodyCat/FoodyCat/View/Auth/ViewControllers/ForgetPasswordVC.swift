@@ -22,13 +22,13 @@ class ForgetPasswordVC: UIViewController {
     }
 
     @IBAction func nextButtonDidPress(_ sender: UIButton) {
-        guard let email = emailTF.text else {return}
-        if AppCommon.sharedInstance.isValidEmail(txtString: email) {
-            forgetPasswordVM.forgetPassword(email: email) { (errMsg, errRes, status) in
+        guard let phone = emailTF.text else {return}
+        if AppCommon.sharedInstance.isValidEmail(txtString: phone) {
+            forgetPasswordVM.forgetPassword(phone: phone) { (errMsg, errRes, status) in
                 switch status {
                 case .populated:
-                    SharedData.SharedInstans.SetIsLogin(true)
-                    AppCommon.sharedInstance.showBanner(title: "New password send to your email".localized(), subtitle: "", style: .success, customColor: UIColor(named: "tealish"))
+                    AppCommon.sharedInstance.showBanner(title: self.forgetPasswordVM.result?.data ?? "", subtitle: "", style: .success, customColor: UIColor(named: "tealish"))
+                    self.dismiss(animated: true, completion: nil)
                 case .error:
                     AppCommon.sharedInstance.showBanner(title: self.forgetPasswordVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
                 default:

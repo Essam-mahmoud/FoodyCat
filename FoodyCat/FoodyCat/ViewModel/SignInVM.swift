@@ -24,6 +24,7 @@ class SignInVM: ViewModel {
                 if let customerData = Result {
                     self.result = customerData
                     SharedData.SharedInstans.settoken(customerData.token ?? "")
+                    SharedData.SharedInstans.setUserName(customerData.user?.fName ?? "")
                     onComplete(nil ,nil,.populated)
                 }else{
                     onComplete(Mesg ,errorResponse,.error)

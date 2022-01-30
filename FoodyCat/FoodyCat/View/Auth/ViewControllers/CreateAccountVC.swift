@@ -49,16 +49,18 @@ class CreateAccountVC: UIViewController {
                 case .populated:
                     if self.cameFromOrder {
                         SharedData.SharedInstans.SetIsLogin(true)
+                        SharedData.SharedInstans.setUserName(fullName)
                         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
                     } else {
                         SharedData.SharedInstans.SetIsLogin(true)
-                        AppCommon.sharedInstance.showBanner(title: self.createAccountVM.result?.message ?? "", subtitle: "", style: .success, customColor: UIColor(named: "tealish"))
+                        SharedData.SharedInstans.setUserName(fullName)
+                        AppCommon.sharedInstance.showBanner(title: "Account Created".localized(), subtitle: "", style: .success, customColor: UIColor(named: "tealish"))
                         let homeVC = HomeVC.instantiate(fromAppStoryboard: .Home)
                         homeVC.modalPresentationStyle = .fullScreen
                         self.present(homeVC, animated: true, completion: nil)
                     }
                 case .error:
-                    AppCommon.sharedInstance.showBanner(title: self.createAccountVM.result?.message ?? "", subtitle: "", style: .danger)
+                    AppCommon.sharedInstance.showBanner(title: self.createAccountVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
                 default:
                     break
                 }

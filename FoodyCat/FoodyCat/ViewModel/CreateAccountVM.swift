@@ -9,7 +9,7 @@ import Foundation
 
 class CreateAccountVM: ViewModel {
 
-    var result: createAccountModel?
+    var result: LoginInModel?
 
     func register(phone: String, email: String, name: String, password: String, datOfBirth: String, onComplete:@escaping(_ errorMessage : String?,_ ErrorResponse:ResponseModel?, _ state:State)->()) {
 
@@ -22,13 +22,14 @@ class CreateAccountVM: ViewModel {
 
         ] as [String : Any]
 
-        let resource = Resource<createAccountModel>(url:AppConstant.UrlHandler.register,httpMethod:.post,parameters:params, header: AppCommon.sharedInstance.getHeader(AddtionParms: [:]))
+        let resource = Resource<LoginInModel>(url:AppConstant.UrlHandler.register,httpMethod:.post,parameters:params, header: AppCommon.sharedInstance.getHeader(AddtionParms: [:]))
 
         HttpApiCallingWithRep.requestWithBody(resource: resource){
             (Result, StatusCode, Mesg ,errorResponse) in
             if StatusCode == 200 {
                 if let Data = Result {
                     self.result = Data
+                    SharedData.SharedInstans.settoken(Data.token ?? "")
                     onComplete(nil ,nil,.populated)
                 }else{
                     onComplete(Mesg ,errorResponse,.error)

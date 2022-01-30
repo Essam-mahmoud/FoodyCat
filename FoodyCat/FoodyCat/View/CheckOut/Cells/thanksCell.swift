@@ -21,10 +21,8 @@ class thanksCell: UITableViewCell {
         nameLabel.text = data.itemName
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setupCellList(data: ListOfCart) {
+        quantityLabel.text = "\(data.qty ?? 0)"
+        nameLabel.text = data.name
     }
-    
 }
