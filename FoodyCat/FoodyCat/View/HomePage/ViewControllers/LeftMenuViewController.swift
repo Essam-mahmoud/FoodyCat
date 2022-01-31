@@ -7,7 +7,7 @@ final class LeftMenuViewController: UIViewController {
 
     // MARK: - Life Cycle
     @IBOutlet weak var closeButton: UIButton!
-    let titles = ["Support".localized(), "Settings".localized(), "Terms and Conditions".localized(), "FAQ".localized(), "Language".localized(), "Log out".localized()]
+    let titles = ["Personal information".localized(), "My addresses".localized(), "My orders".localized(), "Wallet".localized(), "Language".localized(), "Log out".localized()]
     let images = ["Support", "Setting", "terms", "FAQ", "lang","logoutMenu"]
 
     override public func viewDidLoad() {
@@ -52,16 +52,17 @@ extension LeftMenuViewController: UITableViewDelegate {
 //            sideMenuViewController?.hideMenuViewController()
             break
         case 1:
-//            let supportVC = SupportViewController.instantiate(fromAppStoryboard: .Home)
-//            supportVC.modalPresentationStyle = .overCurrentContext
-//            self.present(supportVC, animated: true, completion: nil)
-            //sideMenuViewController?.hideMenuViewController()
+            let selectAddressVc = SelectAddressVC.instantiate(fromAppStoryboard: .CheckOut)
+            selectAddressVc.isFromSideMenu = true
+            selectAddressVc.modalPresentationStyle = .fullScreen
+            self.present(selectAddressVc, animated: true, completion: nil)
+            sideMenuViewController?.hideMenuViewController()
             break
         case 2:
-//            let SettingVC = SettingViewController.instantiate(fromAppStoryboard: .Payment)
-//            SettingVC.modalPresentationStyle = .fullScreen
-//            self.present(SettingVC, animated: true, completion: nil)
-//            sideMenuViewController?.hideMenuViewController()
+            let myOrders = MyOrdersVC.instantiate(fromAppStoryboard: .CheckOut)
+            myOrders.modalPresentationStyle = .fullScreen
+            self.present(myOrders, animated: true, completion: nil)
+            sideMenuViewController?.hideMenuViewController()
             break
         case 3:
             LanguageManager.switchLanguage()

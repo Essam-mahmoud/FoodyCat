@@ -23,6 +23,7 @@ class AddNewAddressVC: UIViewController, GMSMapViewDelegate {
     var addressesVM = AddressesVM()
     var locationManager = CLLocationManager()
     var mapView: GMSMapView!
+    var isFromSideMenu = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,17 @@ class AddNewAddressVC: UIViewController, GMSMapViewDelegate {
         locationManager.delegate = self
     }
 
+    func routeNextView() {
+        if isFromSideMenu {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let paymentVc = PaymentMethodVC.instantiate(fromAppStoryboard: .CheckOut)
+            paymentVc.address = self.addressesVM.addAddressResult
+            paymentVc.modalPresentationStyle = .fullScreen
+            self.present(paymentVc, animated: true, completion: nil)
+        }
+    }
+
     func addAddress(){
         guard let area = areaTF.text else {return}
         guard let block = blockTF.text else {return}
@@ -55,10 +67,7 @@ class AddNewAddressVC: UIViewController, GMSMapViewDelegate {
             addressesVM.addAddress(address: address, extaInfo: additionalInfo, phone: phone) { (errMsg, errRes, status) in
                 switch status {
                 case .populated:
-                    let paymentVc = PaymentMethodVC.instantiate(fromAppStoryboard: .CheckOut)
-                    paymentVc.address = self.addressesVM.addAddressResult
-                    paymentVc.modalPresentationStyle = .fullScreen
-                    self.present(paymentVc, animated: true, completion: nil)
+                    self.routeNextView()
                 case .error:
                     AppCommon.sharedInstance.showBanner(title: self.addressesVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
                 default:

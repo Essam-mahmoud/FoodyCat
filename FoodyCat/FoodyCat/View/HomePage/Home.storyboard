@@ -20,11 +20,11 @@
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="0dJ-ki-X01" customClass="HomeVC" customModule="FoodyCat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4eu-5X-vZY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1174"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mp6-vU-f8w">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mp6-vU-f8w">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1174"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZs-j8-639">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
@@ -211,34 +211,30 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhE-Bj-B95">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                 <subviews>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1000" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PK3-yr-fNH">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcV-Ko-5RR" customClass="FSPagerView" customModule="FSPagerView">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="170" id="Qj3-Le-UO6"/>
+                                                            <constraint firstAttribute="height" constant="170" id="i0L-qI-g2C"/>
                                                         </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="D3D-3H-TAj">
-                                                            <size key="itemSize" width="128" height="128"/>
-                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        </collectionViewFlowLayout>
-                                                        <cells/>
-                                                    </collectionView>
-                                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kGU-su-rhp">
-                                                        <rect key="frame" x="149.5" y="174" width="115.5" height="26"/>
-                                                        <color key="pageIndicatorTintColor" red="0.96862745098039216" green="0.59607843137254901" blue="0.14117647058823529" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                        <color key="currentPageIndicatorTintColor" name="mango"/>
-                                                    </pageControl>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuC-NJ-p8m" customClass="FSPageControl" customModule="FSPagerView">
+                                                        <rect key="frame" x="0.0" y="170" width="414" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="BbD-nr-8gM"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="PK3-yr-fNH" firstAttribute="top" secondItem="MhE-Bj-B95" secondAttribute="top" id="4ed-wX-eEs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YcV-Ko-5RR" secondAttribute="trailing" id="6pH-zy-aOo"/>
                                                     <constraint firstAttribute="height" constant="200" id="7bL-pU-HNx"/>
-                                                    <constraint firstAttribute="trailing" secondItem="PK3-yr-fNH" secondAttribute="trailing" id="83G-gn-rWl"/>
-                                                    <constraint firstAttribute="bottom" secondItem="kGU-su-rhp" secondAttribute="bottom" id="PWG-8H-cqt"/>
-                                                    <constraint firstItem="PK3-yr-fNH" firstAttribute="leading" secondItem="MhE-Bj-B95" secondAttribute="leading" id="RcN-bW-euu"/>
-                                                    <constraint firstItem="kGU-su-rhp" firstAttribute="centerX" secondItem="MhE-Bj-B95" secondAttribute="centerX" id="W8F-jt-zCt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iuC-NJ-p8m" secondAttribute="trailing" id="Fv9-j4-HKJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iuC-NJ-p8m" secondAttribute="bottom" id="Ood-pJ-PYw"/>
+                                                    <constraint firstItem="YcV-Ko-5RR" firstAttribute="top" secondItem="MhE-Bj-B95" secondAttribute="top" id="XL9-Ms-SZ5"/>
+                                                    <constraint firstItem="iuC-NJ-p8m" firstAttribute="leading" secondItem="MhE-Bj-B95" secondAttribute="leading" id="aof-Rm-nGv"/>
+                                                    <constraint firstItem="YcV-Ko-5RR" firstAttribute="leading" secondItem="MhE-Bj-B95" secondAttribute="leading" id="bdP-VH-eWM"/>
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xt-6u-Aa4">
@@ -379,37 +375,25 @@
                                             <constraint firstItem="aNd-VI-P2W" firstAttribute="leading" secondItem="XMh-NS-ItI" secondAttribute="leading" constant="14" id="s6S-M1-Qeh"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAr-d3-4fN">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAr-d3-4fN">
                                         <rect key="frame" x="0.0" y="744" width="414" height="339"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9O-AE-qto" customClass="FSPagerView" customModule="FSPagerView">
-                                                <rect key="frame" x="8" y="8" width="398" height="284"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xd5-ES-0VW" customClass="ContentSizedTableView" customModule="FoodyCat" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="8" width="382" height="331"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="284" id="UF1-EB-glk"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqm-lY-dV9" customClass="FSPageControl" customModule="FSPagerView">
-                                                <rect key="frame" x="0.0" y="312" width="414" height="14"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="14" id="Vvm-Wj-hJO"/>
-                                                </constraints>
-                                            </view>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="kqm-lY-dV9" firstAttribute="leading" secondItem="PAr-d3-4fN" secondAttribute="leading" id="4ba-6S-RhL"/>
-                                            <constraint firstItem="G9O-AE-qto" firstAttribute="top" secondItem="PAr-d3-4fN" secondAttribute="top" constant="8" id="FjA-dt-VHy"/>
-                                            <constraint firstItem="G9O-AE-qto" firstAttribute="leading" secondItem="PAr-d3-4fN" secondAttribute="leading" constant="8" id="G9q-Vm-VGI"/>
-                                            <constraint firstAttribute="trailing" secondItem="G9O-AE-qto" secondAttribute="trailing" constant="8" id="Gpt-5a-hxS"/>
-                                            <constraint firstAttribute="height" constant="339" id="Lci-hz-XN1"/>
-                                            <constraint firstAttribute="trailing" secondItem="kqm-lY-dV9" secondAttribute="trailing" id="MNp-sZ-HJg"/>
-                                            <constraint firstItem="kqm-lY-dV9" firstAttribute="top" secondItem="G9O-AE-qto" secondAttribute="bottom" constant="20" id="njf-jq-JQz"/>
+                                            <constraint firstItem="Xd5-ES-0VW" firstAttribute="leading" secondItem="PAr-d3-4fN" secondAttribute="leading" constant="16" id="1DS-ZX-P55"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xd5-ES-0VW" secondAttribute="bottom" id="Igy-sn-ZiV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xd5-ES-0VW" secondAttribute="trailing" constant="16" id="oQ8-Od-wah"/>
+                                            <constraint firstItem="Xd5-ES-0VW" firstAttribute="top" secondItem="PAr-d3-4fN" secondAttribute="top" constant="8" id="pqn-0q-bVN"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PAr-d3-4fN" secondAttribute="bottom" constant="91" id="2nv-z6-Rbp"/>
                                     <constraint firstItem="QZs-j8-639" firstAttribute="centerX" secondItem="mp6-vU-f8w" secondAttribute="centerX" id="6DW-Xg-DIw"/>
                                     <constraint firstItem="tkr-7x-uEW" firstAttribute="top" secondItem="QZs-j8-639" secondAttribute="bottom" constant="8" id="9Cj-wR-ebv"/>
                                     <constraint firstAttribute="trailing" secondItem="tkr-7x-uEW" secondAttribute="trailing" id="AUR-Lx-qY8"/>
@@ -420,7 +404,6 @@
                                     <constraint firstItem="QZs-j8-639" firstAttribute="top" secondItem="mp6-vU-f8w" secondAttribute="top" id="acR-vo-LCZ"/>
                                     <constraint firstItem="tkr-7x-uEW" firstAttribute="leading" secondItem="mp6-vU-f8w" secondAttribute="leading" id="aeR-vq-8Yh"/>
                                     <constraint firstItem="XMh-NS-ItI" firstAttribute="leading" secondItem="mp6-vU-f8w" secondAttribute="leading" id="fY7-qm-Udn"/>
-                                    <constraint firstAttribute="bottom" secondItem="PAr-d3-4fN" secondAttribute="bottom" constant="87" id="jaD-17-ODd"/>
                                     <constraint firstItem="PAr-d3-4fN" firstAttribute="top" secondItem="XMh-NS-ItI" secondAttribute="bottom" constant="8" id="oga-4t-hzv"/>
                                     <constraint firstAttribute="trailing" secondItem="PAr-d3-4fN" secondAttribute="trailing" id="tkm-BH-TCW"/>
                                     <constraint firstAttribute="trailing" secondItem="XMh-NS-ItI" secondAttribute="trailing" id="uIW-9B-YGz"/>
@@ -429,7 +412,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="fGp-pa-K0a"/>
                             </scrollView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geI-WZ-xDC" customClass="CardWithShadow" customModule="FoodyCat" customModuleProvider="target">
-                                <rect key="frame" x="15" y="1212" width="384" height="54"/>
+                                <rect key="frame" x="15" y="1086" width="384" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ITEM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GH7-dN-zeZ">
                                         <rect key="frame" x="15" y="8" width="39" height="14.5"/>
@@ -482,16 +465,15 @@
                             <constraint firstItem="AfM-nC-5o4" firstAttribute="trailing" secondItem="geI-WZ-xDC" secondAttribute="trailing" constant="15" id="G65-BH-MR9"/>
                             <constraint firstItem="AfM-nC-5o4" firstAttribute="bottom" secondItem="geI-WZ-xDC" secondAttribute="bottom" id="GQx-W1-ftT"/>
                             <constraint firstItem="geI-WZ-xDC" firstAttribute="leading" secondItem="AfM-nC-5o4" secondAttribute="leading" constant="15" id="Jms-Ng-nTk"/>
-                            <constraint firstAttribute="bottom" secondItem="mp6-vU-f8w" secondAttribute="bottom" id="KIM-8S-JR1"/>
                             <constraint firstItem="mp6-vU-f8w" firstAttribute="top" secondItem="4eu-5X-vZY" secondAttribute="top" id="VhN-kr-6qi"/>
                             <constraint firstItem="mp6-vU-f8w" firstAttribute="trailing" secondItem="AfM-nC-5o4" secondAttribute="trailing" id="pnQ-gC-tpr"/>
+                            <constraint firstAttribute="bottom" secondItem="mp6-vU-f8w" secondAttribute="bottom" id="sIO-AM-Yec"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="414" height="1300"/>
+                    <size key="freeformSize" width="414" height="1174"/>
                     <connections>
                         <outlet property="addressLabel" destination="LxW-PT-oEP" id="Xwv-VM-J1F"/>
-                        <outlet property="bannerCollectionView" destination="PK3-yr-fNH" id="RG8-aS-bz9"/>
-                        <outlet property="bannerPageControl" destination="kGU-su-rhp" id="jvU-Ah-GF4"/>
+                        <outlet property="bannerView" destination="MhE-Bj-B95" id="AjI-BD-jeH"/>
                         <outlet property="celebritiesCollectionView" destination="jCk-B3-Hq8" id="EUf-li-pOy"/>
                         <outlet property="changeAddressButton" destination="KMz-3J-aGo" id="6L4-NZ-rfg"/>
                         <outlet property="deliverToLabel" destination="wl3-eK-YEe" id="4e4-Km-0XL"/>
@@ -501,19 +483,20 @@
                         <outlet property="inProgressOrderView" destination="3xt-6u-Aa4" id="wqn-R5-6gS"/>
                         <outlet property="numberOfItemsInCartLabel" destination="GH7-dN-zeZ" id="TQN-NN-4Xn"/>
                         <outlet property="numberOfItemsLabel" destination="0od-gQ-Srr" id="BUS-Sp-G02"/>
-                        <outlet property="pagerControl" destination="kqm-lY-dV9" id="9W4-Jo-AAs"/>
-                        <outlet property="pagerView" destination="G9O-AE-qto" id="bXs-Yt-sXL"/>
+                        <outlet property="pagerController" destination="iuC-NJ-p8m" id="FcM-sb-AyM"/>
+                        <outlet property="pagerView" destination="YcV-Ko-5RR" id="JAV-tR-L7l"/>
                         <outlet property="profileButton" destination="17J-ui-eBD" id="0nD-mL-V3G"/>
                         <outlet property="restaurantNameLabel" destination="KaJ-g3-G7q" id="5LT-dG-MQk"/>
                         <outlet property="searchTF" destination="afD-ey-Ljq" id="uEF-0a-e2g"/>
                         <outlet property="sideMenueButton" destination="fKy-T1-223" id="6Ga-yF-Fe3"/>
                         <outlet property="statusLabel" destination="fWR-pZ-baC" id="io9-B5-l8r"/>
                         <outlet property="totalCartPriceLabel" destination="bgy-Pn-u5q" id="9DY-sZ-qHg"/>
+                        <outlet property="vendorsTableView" destination="Xd5-ES-0VW" id="mUO-j6-SmO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jk5-qe-fEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146.37681159420291" y="3.3482142857142856"/>
+            <point key="canvasLocation" x="146.37681159420291" y="-38.839285714285715"/>
         </scene>
         <!--CelebritiesVC-->
         <scene sceneID="lcG-w4-ukL">

@@ -11,6 +11,7 @@ class AddressesVM: ViewModel {
 
     var addressesResult: Addresses?
     var addAddressResult: AddressData?
+    var deleteResult: ResponseModel?
 
     func getAddresses(page: Int, onComplete: @escaping(_ errorMessage : String?,_ ErrorResponse:ResponseModel?, _ state:State)->()) {
         let areaId = SharedData.SharedInstans.getAreaId()
@@ -49,6 +50,25 @@ class AddressesVM: ViewModel {
             if StatusCode == 200 {
                 if let feeds = Result{
                     self.addAddressResult = feeds
+                    onComplete(nil, nil, .populated)
+                } else {
+                    onComplete(Mesg, errorResponse, .error)
+                }
+            } else {
+                onComplete(Mesg, errorResponse, .error)
+            }
+        }
+    }
+
+    func deleteAddress(id: Int, onComplete: @escaping(_ errorMessage : String?,_ ErrorResponse:ResponseModel?, _ state:State)->()) {
+        let params = [:] as [String : Any]
+        let url = AppConstant.UrlHandler.getAddresses + "/" + "\(id)"
+        let  encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let resource = Resource<ResponseModel>(url: encodedUrl,httpMethod:.delete,parameters:params, header:SharedData.SharedInstans.getHeader())
+        HttpApiCallingWithRep.requestWithBody(resource: resource) { (Result, StatusCode, Mesg, errorResponse) in
+            if StatusCode == 200 {
+                if let feeds = Result{
+                    self.deleteResult = feeds
                     onComplete(nil, nil, .populated)
                 } else {
                     onComplete(Mesg, errorResponse, .error)

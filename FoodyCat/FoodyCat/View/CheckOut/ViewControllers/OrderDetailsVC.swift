@@ -106,9 +106,13 @@ class OrderDetailsVC: UIViewController {
         case 7:
             StatusImage.image = UIImage(named: "Delivery2")
             deliveryProgressWidth.constant = progressWidthView.bounds.width
+            progressColordView.layer.cornerRadius = 10
+            progressColordView.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
         case 8:
             StatusImage.image = UIImage(named: "Delivery2")
             deliveryProgressWidth.constant = progressWidthView.bounds.width
+            progressColordView.layer.cornerRadius = 10
+            progressColordView.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
         default:
             break
         }

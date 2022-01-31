@@ -68,6 +68,17 @@ Salmiya, Kuwait.</string>
                                 <color key="textColor" name="lightGreyBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZ3-NH-VEd">
+                                <rect key="frame" x="270" y="12" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="516-2l-8s4"/>
+                                    <constraint firstAttribute="width" constant="32" id="vqU-sy-Wp1"/>
+                                </constraints>
+                                <state key="normal" image="delete"/>
+                                <connections>
+                                    <action selector="deleteButtonDidPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QxZ-Cb-ZaQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -78,6 +89,8 @@ Salmiya, Kuwait.</string>
                             <constraint firstItem="Kez-ao-nDd" firstAttribute="top" secondItem="sFY-Hm-djS" secondAttribute="bottom" constant="8" id="Cas-RU-bIv"/>
                             <constraint firstItem="IKn-R9-W8f" firstAttribute="leading" secondItem="8TZ-nE-bQ3" secondAttribute="leading" id="Gdq-qN-bJy"/>
                             <constraint firstItem="sFY-Hm-djS" firstAttribute="top" secondItem="IKn-R9-W8f" secondAttribute="top" id="N2z-e3-olD"/>
+                            <constraint firstItem="RZ3-NH-VEd" firstAttribute="top" secondItem="FaY-AL-Jni" secondAttribute="top" constant="12" id="SRM-rT-YgV"/>
+                            <constraint firstAttribute="trailing" secondItem="RZ3-NH-VEd" secondAttribute="trailing" constant="12" id="V4N-K3-Jbb"/>
                             <constraint firstItem="LeD-QR-BA6" firstAttribute="top" secondItem="iy0-KY-MFP" secondAttribute="bottom" constant="8" id="WXQ-iN-bDW"/>
                             <constraint firstAttribute="trailing" secondItem="sFY-Hm-djS" secondAttribute="trailing" constant="8" id="Wmr-P3-tPF"/>
                             <constraint firstItem="clR-UM-2j1" firstAttribute="leading" secondItem="LeD-QR-BA6" secondAttribute="trailing" constant="14.5" id="ZVD-Jp-hF4"/>
@@ -103,6 +116,7 @@ Salmiya, Kuwait.</string>
             <connections>
                 <outlet property="addressLabel" destination="sFY-Hm-djS" id="4RX-6n-hJp"/>
                 <outlet property="addressTitleLabel" destination="8TZ-nE-bQ3" id="JYU-sp-mT8"/>
+                <outlet property="deleteButton" destination="RZ3-NH-VEd" id="Ahl-dU-N9p"/>
                 <outlet property="phoneNumberLabel" destination="clR-UM-2j1" id="XaG-tk-D5m"/>
                 <outlet property="userNameLabel" destination="Kez-ao-nDd" id="wiu-cc-RGs"/>
             </connections>
@@ -110,6 +124,7 @@ Salmiya, Kuwait.</string>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="delete" width="15.5" height="20"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>

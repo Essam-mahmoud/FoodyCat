@@ -116,6 +116,11 @@
 		96829537279E020F005A5AE9 /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96829536279E020F005A5AE9 /* GooglePlacesManager.swift */; };
 		96829539279E1F53005A5AE9 /* ShowOldAddressesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96829538279E1F53005A5AE9 /* ShowOldAddressesVC.swift */; };
 		968A1942279F33C5006AC7E5 /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A1941279F33C5006AC7E5 /* ItemDetailsVC.swift */; };
+		9698FF1A27A824DA00F8C35D /* MyOrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698FF1927A824DA00F8C35D /* MyOrdersVC.swift */; };
+		9698FF1D27A8250C00F8C35D /* MyOrdersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698FF1B27A8250C00F8C35D /* MyOrdersCell.swift */; };
+		9698FF1E27A8250C00F8C35D /* MyOrdersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9698FF1C27A8250C00F8C35D /* MyOrdersCell.xib */; };
+		9698FF2027A829CC00F8C35D /* MyOrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698FF1F27A829CC00F8C35D /* MyOrdersModel.swift */; };
+		9698FF2227A82A8D00F8C35D /* MyOrdersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698FF2127A82A8D00F8C35D /* MyOrdersVM.swift */; };
 		969A388127726ED4001D529A /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969A388027726ED4001D529A /* CheckOut.storyboard */; };
 		969A388627726F11001D529A /* SelectAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A388527726F11001D529A /* SelectAddressVC.swift */; };
 		969A388F27727177001D529A /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A388D27727177001D529A /* AddressCell.swift */; };
@@ -302,6 +307,11 @@
 		96829536279E020F005A5AE9 /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
 		96829538279E1F53005A5AE9 /* ShowOldAddressesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOldAddressesVC.swift; sourceTree = "<group>"; };
 		968A1941279F33C5006AC7E5 /* ItemDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
+		9698FF1927A824DA00F8C35D /* MyOrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersVC.swift; sourceTree = "<group>"; };
+		9698FF1B27A8250C00F8C35D /* MyOrdersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersCell.swift; sourceTree = "<group>"; };
+		9698FF1C27A8250C00F8C35D /* MyOrdersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrdersCell.xib; sourceTree = "<group>"; };
+		9698FF1F27A829CC00F8C35D /* MyOrdersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersModel.swift; sourceTree = "<group>"; };
+		9698FF2127A82A8D00F8C35D /* MyOrdersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersVM.swift; sourceTree = "<group>"; };
 		969A388027726ED4001D529A /* CheckOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckOut.storyboard; sourceTree = "<group>"; };
 		969A388527726F11001D529A /* SelectAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressVC.swift; sourceTree = "<group>"; };
 		969A388D27727177001D529A /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
@@ -429,6 +439,7 @@
 				9643330A27934F70006C39AB /* AddressModel.swift */,
 				9643330E27935C1F006C39AB /* PaymentMethodsModel.swift */,
 				96AC993E2796165F0063AC2C /* SubmitOrderModel.swift */,
+				9698FF1F27A829CC00F8C35D /* MyOrdersModel.swift */,
 			);
 			path = CheckOutModels;
 			sourceTree = "<group>";
@@ -540,6 +551,7 @@
 				9643331027935E31006C39AB /* PaymentsMethodVM.swift */,
 				96AC993C279615F00063AC2C /* SubmitOrderVM.swift */,
 				964EDDD527A5674C00DD1E41 /* OrderDetailsVM.swift */,
+				9698FF2127A82A8D00F8C35D /* MyOrdersVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -789,6 +801,8 @@
 				96F818042782457A00A8808D /* PaymentMethodsCell.xib */,
 				9643C2B9279754F1009BFBFF /* thanksCell.swift */,
 				9643C2BA279754F1009BFBFF /* thanksCell.xib */,
+				9698FF1B27A8250C00F8C35D /* MyOrdersCell.swift */,
+				9698FF1C27A8250C00F8C35D /* MyOrdersCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -801,6 +815,7 @@
 				965F437927728F6400A1CE90 /* PaymentMethodVC.swift */,
 				9643C2B727974E46009BFBFF /* ThanksPageVC.swift */,
 				964EDDD127A5636C00DD1E41 /* OrderDetailsVC.swift */,
+				9698FF1927A824DA00F8C35D /* MyOrdersVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -968,6 +983,7 @@
 				96E0A3052767D39200CF8EB7 /* MealsCell.xib in Resources */,
 				96BB6E052766C29000C22403 /* RestaurantCell.xib in Resources */,
 				96C2084E276E02130014ACA3 /* CartItemsCell.xib in Resources */,
+				9698FF1E27A8250C00F8C35D /* MyOrdersCell.xib in Resources */,
 				960BA16527665C7900AF1A4B /* CelebritiesCell.xib in Resources */,
 				9666C7722762639A00C9482D /* AvertaStd-Black.ttf in Resources */,
 				9666C7762762639A00C9482D /* AvertaStd-LightItalic.ttf in Resources */,
@@ -1158,6 +1174,7 @@
 				9666C7602762639A00C9482D /* GTLabel.swift in Sources */,
 				9666C75C2762639A00C9482D /* GTTextView.swift in Sources */,
 				9666C7AF2762694B00C9482D /* ViewModel.swift in Sources */,
+				9698FF2227A82A8D00F8C35D /* MyOrdersVM.swift in Sources */,
 				9666C7472762639A00C9482D /* UIFontExtension.swift in Sources */,
 				9666C7BA2762699200C9482D /* HomeVC.swift in Sources */,
 				9666C74A2762639A00C9482D /* CodableInit.swift in Sources */,
@@ -1167,10 +1184,12 @@
 				96E0A2E42767645600CF8EB7 /* CelebritiesRestaurantVM.swift in Sources */,
 				9666C76C2762639A00C9482D /* AppCommon.swift in Sources */,
 				9666C7612762639A00C9482D /* CustomImageView.swift in Sources */,
+				9698FF2027A829CC00F8C35D /* MyOrdersModel.swift in Sources */,
 				9666C7642762639A00C9482D /* ToastHelper.swift in Sources */,
 				96E0A30B27680EFD00CF8EB7 /* TabsCell.swift in Sources */,
 				9666C7512762639A00C9482D /* LanguageManager.swift in Sources */,
 				9643330D2793532B006C39AB /* GetAddressesVM.swift in Sources */,
+				9698FF1D27A8250C00F8C35D /* MyOrdersCell.swift in Sources */,
 				9666C74F2762639A00C9482D /* Banner.swift in Sources */,
 				96BB12A12764E43E00D85FFF /* LeftMenuViewController.swift in Sources */,
 				96BB12872764DDF300D85FFF /* ForgetPasswordVM.swift in Sources */,
@@ -1196,6 +1215,7 @@
 				9643330B27934F70006C39AB /* AddressModel.swift in Sources */,
 				9666C7632762639A00C9482D /* SwiftSpinner.swift in Sources */,
 				9643330F27935C1F006C39AB /* PaymentMethodsModel.swift in Sources */,
+				9698FF1A27A824DA00F8C35D /* MyOrdersVC.swift in Sources */,
 				968A1942279F33C5006AC7E5 /* ItemDetailsVC.swift in Sources */,
 				9643331127935E31006C39AB /* PaymentsMethodVM.swift in Sources */,
 				9666C76E2762639A00C9482D /* GoogleApiHelper.swift in Sources */,

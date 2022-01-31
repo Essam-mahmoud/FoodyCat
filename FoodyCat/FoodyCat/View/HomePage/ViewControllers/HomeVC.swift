@@ -18,8 +18,6 @@ class HomeVC: UIViewController {
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var searchTF: UITextField!
-    @IBOutlet weak var bannerCollectionView: UICollectionView!
-    @IBOutlet weak var bannerPageControl: UIPageControl!
     @IBOutlet weak var inProgressOrderView: UIView!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
@@ -30,8 +28,11 @@ class HomeVC: UIViewController {
     @IBOutlet weak var totalCartPriceLabel: UILabel!
     @IBOutlet weak var numberOfItemsInCartLabel: UILabel!
     @IBOutlet weak var changeAddressButton: UIButton!
-    @IBOutlet weak var pagerView: FSPagerView! {
+    @IBOutlet weak var vendorsTableView: ContentSizedTableView!
+    @IBOutlet weak var bannerView: UIView!
+    @IBOutlet weak var pagerView: FSPagerView!{
         didSet {
+
             self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             self.pagerView.itemSize = FSPagerView.automaticSize
             self.pagerView.automaticSlidingInterval = .init(3)
@@ -40,42 +41,37 @@ class HomeVC: UIViewController {
 
         }
     }
-    @IBOutlet weak var pagerControl: FSPageControl! {
+
+    @IBOutlet weak var pagerController: FSPageControl!{
         didSet {
-            self.pagerControl.numberOfPages = 3
-            self.pagerControl.contentHorizontalAlignment = .right
-            self.pagerControl.contentInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-            self.pagerControl.backgroundColor = .clear
-            self.pagerControl.setFillColor(#colorLiteral(red: 0.968627451, green: 0.5960784314, blue: 0.1411764706, alpha: 1), for: .selected)
-            self.pagerControl.setFillColor(#colorLiteral(red: 0.968627451, green: 0.5960784314, blue: 0.1411764706, alpha: 0.2), for: .normal)
-            self.pagerControl.contentHorizontalAlignment = .center
-            self.pagerControl.itemSpacing = 7
+            self.pagerController.numberOfPages = self.homeVM.bannerModel?.data?.count ?? 0
+            self.pagerController.contentHorizontalAlignment = .right
+            self.pagerController.contentInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+            self.pagerController.backgroundColor = .clear
+            self.pagerController.setFillColor(#colorLiteral(red: 0.968627451, green: 0.5960784314, blue: 0.1411764706, alpha: 1), for: .selected)
+            self.pagerController.setFillColor(#colorLiteral(red: 0.968627451, green: 0.5960784314, blue: 0.1411764706, alpha: 0.2), for: .normal)
+            self.pagerController.contentHorizontalAlignment = .center
 
         }
     }
 
+
     //MARK:- Properities
+    let group = DispatchGroup()
     var homeVM = HomeVM()
     var realmModel = LocalCartItemsVM()
+    var celebritiesRestaurantVM = CelebritiesRestaurantVM()
     var timer: Timer?
     var counter = 0
     fileprivate let bannerCell = "SliderCell"
     fileprivate let celebritiesCell = "CelebritiesCell"
+    fileprivate let restaurantCellName = "RestaurantCell"
     override func viewDidLoad() {
         super.viewDidLoad()
         changeAddressButton.setTitle("", for: .normal)
         realmModel.delegate = self
-        pagerView.delegate = self
-        pagerView.dataSource = self
         registerCells()
-        loadCelebrities()
-        loadFirstBanner()
-        if SharedData.SharedInstans.GetIsLogin() {
-            getLastOrderData()
-        }
-        DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeFirstBanner), userInfo: nil, repeats: true)
-        }
+        getAllHomeData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -85,50 +81,76 @@ class HomeVC: UIViewController {
         addressLabel.text = SharedData.SharedInstans.getAddres()
     }
 
+    func getAllHomeData() {
+        loadCelebrities()
+        loadFirstBanner()
+        getRestaurants()
+        if SharedData.SharedInstans.GetIsLogin() {
+            getLastOrderData()
+        }
+        group.notify(queue: .main) {
+            self.celebritiesCollectionView.reloadData()
+            self.vendorsTableView.reloadData()
+            self.pagerView.reloadData()
+            self.pagerController.numberOfPages = self.homeVM.bannerModel?.data?.count ?? 0
+            self.setupLastOrder()
+            if self.homeVM.bannerModel?.data?.count ?? 0 <= 0 {
+                self.bannerView.isHidden = true
+            }
+        }
+    }
+
     func registerCells() {
-        bannerCollectionView.delegate = self
-        bannerCollectionView.dataSource = self
-        bannerCollectionView.register(UINib(nibName: bannerCell, bundle: nil), forCellWithReuseIdentifier: bannerCell)
 
         celebritiesCollectionView.delegate = self
         celebritiesCollectionView.dataSource = self
         celebritiesCollectionView.register(UINib(nibName: celebritiesCell, bundle: nil), forCellWithReuseIdentifier: celebritiesCell)
+
+        vendorsTableView.delegate = self
+        vendorsTableView.dataSource = self
+        vendorsTableView.register(UINib(nibName: restaurantCellName, bundle: nil), forCellReuseIdentifier: restaurantCellName)
     }
 
     func loadCelebrities() {
+        group.enter()
         homeVM.getCeleberities(pageNumber: 1) { (errMsg, errRes, status) in
             switch status {
             case .populated:
-                self.celebritiesCollectionView.reloadData()
+                self.group.leave()
             case .error:
                 AppCommon.sharedInstance.showBanner(title: self.homeVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
+                self.group.leave()
             default:
                 break
             }
         }
     }
 
-    @objc func changeFirstBanner() {
-        if counter < homeVM.bannerModel?.data?.count ?? 0 {
-            bannerCollectionView.scrollToItem(at: IndexPath(item: counter, section: 0), at: .centeredHorizontally, animated: true)
-            bannerPageControl.currentPage = counter
-            counter += 1
-        } else {
-            counter = 0
-            bannerCollectionView.scrollToItem(at: IndexPath(item: counter, section: 0), at: .centeredHorizontally, animated: true)
-            bannerPageControl.currentPage = counter
-            counter = 1
+    func getRestaurants() {
+        group.enter()
+        celebritiesRestaurantVM.getRestaurantDataWithoutCelebrity { (errMsg, errRes, status) in
+            switch status {
+            case .populated:
+                self.group.leave()
+            case .error:
+                AppCommon.sharedInstance.showBanner(title: self.celebritiesRestaurantVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
+                self.group.leave()
+            default:
+                break
+            }
         }
     }
 
     func loadFirstBanner() {
-        homeVM.getBannarData(type: 0, areaId: -1) { (errMsg, errRes, status) in
+        group.enter()
+        let areaId = SharedData.SharedInstans.getAreaId()
+        homeVM.getBannarData(type: 0, areaId: areaId) { (errMsg, errRes, status) in
             switch status {
             case .populated:
-                self.bannerCollectionView.reloadData()
-                self.bannerPageControl.numberOfPages = self.homeVM.bannerModel?.data?.count ?? 0
+                self.group.leave()
             case .error:
                 AppCommon.sharedInstance.showBanner(title: self.homeVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
+                self.group.leave()
             default:
                 break
             }
@@ -136,12 +158,14 @@ class HomeVC: UIViewController {
     }
 
     func getLastOrderData() {
+        group.enter()
         homeVM.getLastOrder { (errMsg, errRes, status) in
             switch status {
             case .populated:
-                self.setupLastOrder()
+                self.group.leave()
             case .error:
                 AppCommon.sharedInstance.showBanner(title: self.homeVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
+                self.group.leave()
             default:
                 break
             }
@@ -260,35 +284,35 @@ extension HomeVC: RealmViewModelDelegate {
     }
 }
 
-extension HomeVC: FSPagerViewDataSource,FSPagerViewDelegate{
-    // MARK:- FSPagerView DataSource
-
-    public func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return 3
+extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return celebritiesRestaurantVM.vendors?.data?.count ?? 0
     }
 
-    public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.image = UIImage(named: "placeholder")
-        cell.imageView?.contentMode = .scaleAspectFill
-        cell.imageView?.clipsToBounds = true
-        cell.textLabel?.text = ""
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: restaurantCellName, for: indexPath) as? RestaurantCell else {return UITableViewCell()}
+        if let vendor = celebritiesRestaurantVM.vendors?.data?[indexPath.row] {
+            cell.setupCell(data: vendor)
+        }
         return cell
     }
 
-    // MARK:- FSPagerView Delegate
-
-    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-        pagerView.deselectItem(at: index, animated: true)
-        pagerView.scrollToItem(at: index, animated: true)
-    }
-
-    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
-        self.pagerControl.currentPage = targetIndex
-    }
-
-    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
-        self.pagerControl.currentPage = pagerView.currentIndex
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        if let vendor = celebritiesRestaurantVM.vendors?.data?[indexPath.row] {
+            let vendorVc = VendorVC.instantiate(fromAppStoryboard: .Home)
+//            vendorVc.celebrityImageURL = self.celebrityImageURL
+//            vendorVc.celebrityName = self.celebrityName
+//            vendorVc.celebrityId = self.celebrityId
+            vendorVc.vendorImageURL = vendor.logo ?? ""
+            vendorVc.vendorId = vendor.id ?? 0
+            vendorVc.deliveryCharge = vendor.deliveryCharge ?? 0.0
+            vendorVc.vendorSpeciality = vendor.cuisines ?? ""
+            vendorVc.vendorNameLable = vendor.name ?? ""
+            vendorVc.vendorRating = vendor.rating ?? 0
+            vendorVc.modalPresentationStyle = .fullScreen
+            self.present(vendorVc, animated: true, completion: nil)
+        }
     }
 }
 
@@ -298,3 +322,33 @@ extension HomeVC: ShowOldAddressesDelegate {
     }
 }
 
+
+extension HomeVC: FSPagerViewDataSource,FSPagerViewDelegate{
+    // MARK:- FSPagerView DataSource
+    public func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return homeVM.bannerModel?.data?.count ?? 0
+    }
+
+    public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        cell.imageView?.loadImageFromUrl(imgUrl: homeVM.bannerModel?.data?[index].imageFullPath, defString: "vendorPlaceHolder")
+        cell.imageView?.contentMode = .scaleAspectFill
+        cell.imageView?.clipsToBounds = true
+        cell.textLabel?.text = ""
+        return cell
+    }
+
+    // MARK:- FSPagerView Delegate
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        pagerView.deselectItem(at: index, animated: true)
+        pagerView.scrollToItem(at: index, animated: true)
+    }
+
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        self.pagerController.currentPage = targetIndex
+    }
+
+    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
+        self.pagerController.currentPage = pagerView.currentIndex
+    }
+}
