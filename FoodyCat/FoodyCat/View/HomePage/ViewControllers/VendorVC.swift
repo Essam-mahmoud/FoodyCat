@@ -27,8 +27,9 @@ class VendorVC: UIViewController {
     @IBOutlet weak var totalPriceCartLabel: UILabel!
     @IBOutlet weak var numberOfItemsInCardLabel: UILabel!
     
+    @IBOutlet weak var celebrityView: UIView!
     //MARK:- Properity
-
+    var isComeFromHome = false
     var vendorImageURL = ""
     var celebrityImageURL = ""
     var celebrityName = ""
@@ -78,6 +79,9 @@ class VendorVC: UIViewController {
         ratingView.rating = Double(vendorRating)
         ratingView.isUserInteractionEnabled = false
         registerCells()
+        if isComeFromHome {
+            celebrityView.isHidden = true
+        }
     }
 
     func registerCells() {

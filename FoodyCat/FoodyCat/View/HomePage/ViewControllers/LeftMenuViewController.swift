@@ -65,7 +65,7 @@ extension LeftMenuViewController: UITableViewDelegate {
             sideMenuViewController?.hideMenuViewController()
             break
         case 3:
-            LanguageManager.switchLanguage()
+            //LanguageManager.switchLanguage()
             break
         case 4:
 //            let FAQView = ShowUrlsVC.instantiate(fromAppStoryboard: .Home)

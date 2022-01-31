@@ -304,6 +304,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 //            vendorVc.celebrityImageURL = self.celebrityImageURL
 //            vendorVc.celebrityName = self.celebrityName
 //            vendorVc.celebrityId = self.celebrityId
+            vendorVc.isComeFromHome = true
             vendorVc.vendorImageURL = vendor.logo ?? ""
             vendorVc.vendorId = vendor.id ?? 0
             vendorVc.deliveryCharge = vendor.deliveryCharge ?? 0.0

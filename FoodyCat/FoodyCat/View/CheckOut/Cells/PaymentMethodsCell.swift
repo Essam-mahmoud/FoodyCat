@@ -27,7 +27,7 @@ class PaymentMethodsCell: UITableViewCell {
 
     func setupCell(data: PaymentMethods, isSelected: Bool) {
         selectedButton.setImage(isSelected ? UIImage(named: "check") : UIImage(named: "uncheck") , for: .normal)
-        paymentImage.loadImageFromUrl(imgUrl: data.icon, defString: "imageplaceholdera`")
+        paymentImage.loadImageFromUrl(imgUrl: data.icon, defString: "celebrityPlaceHolder")
         paymentNameLabel.text = data.title
     }
     

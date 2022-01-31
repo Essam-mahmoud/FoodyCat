@@ -489,7 +489,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-Sl-Hnv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftL-rE-L9H">
                                                 <rect key="frame" x="15" y="30" width="32" height="32"/>
@@ -516,7 +516,7 @@
                                         <constraints>
                                             <constraint firstItem="Z7Z-Cp-OXx" firstAttribute="leading" secondItem="ftL-rE-L9H" secondAttribute="leading" constant="8" id="BgP-rm-phk"/>
                                             <constraint firstItem="ftL-rE-L9H" firstAttribute="top" secondItem="aWr-Sl-Hnv" secondAttribute="top" constant="30" id="CO0-Di-346"/>
-                                            <constraint firstAttribute="height" constant="120" id="XV7-PM-ZxN"/>
+                                            <constraint firstAttribute="height" constant="105" id="XV7-PM-ZxN"/>
                                             <constraint firstItem="ftL-rE-L9H" firstAttribute="leading" secondItem="aWr-Sl-Hnv" secondAttribute="leading" constant="15" id="qU6-ju-5mD"/>
                                             <constraint firstItem="Z7Z-Cp-OXx" firstAttribute="top" secondItem="ftL-rE-L9H" secondAttribute="bottom" constant="12" id="qVS-Vy-3UC"/>
                                         </constraints>
@@ -757,7 +757,7 @@ Salmiya, Kuwait.</string>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Zas-xH-6hJ" firstAttribute="leading" secondItem="bQc-5W-IrQ" secondAttribute="leading" constant="15" id="0Tw-xg-7cV"/>
-                                    <constraint firstItem="USH-wr-4Rr" firstAttribute="top" secondItem="aWr-Sl-Hnv" secondAttribute="bottom" constant="32" id="98g-rz-3qQ"/>
+                                    <constraint firstItem="USH-wr-4Rr" firstAttribute="top" secondItem="aWr-Sl-Hnv" secondAttribute="bottom" constant="12" id="98g-rz-3qQ"/>
                                     <constraint firstItem="aWr-Sl-Hnv" firstAttribute="top" secondItem="bQc-5W-IrQ" secondAttribute="top" id="AjW-hJ-lO6"/>
                                     <constraint firstItem="x5G-Tn-ble" firstAttribute="top" secondItem="USH-wr-4Rr" secondAttribute="bottom" constant="16" id="I6g-Fp-D1K"/>
                                     <constraint firstAttribute="bottom" secondItem="0c3-ll-Udp" secondAttribute="bottom" constant="58" id="K8e-sc-5Ed"/>
