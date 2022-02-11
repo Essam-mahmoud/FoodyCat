@@ -120,7 +120,7 @@ class HttpApiCallingWithRep{
                     }
                     DispatchQueue.main.async {
                         AppCommon.sharedInstance.showBanner(title: Object.message ?? "", subtitle: "" , style: .danger)
-                                             
+
                     }
                     Result(nil,response.response!.statusCode,"Server Error", nil)
                     return

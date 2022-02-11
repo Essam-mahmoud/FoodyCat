@@ -92,6 +92,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="AddNewAddressButton" destination="GiN-P5-l1E" id="Iw2-PX-sqa"/>
                         <outlet property="addressesTableView" destination="Jxf-3A-Ody" id="cXc-og-brx"/>
                         <outlet property="noAddressLabel" destination="FCc-TU-Eaz" id="daS-px-SVN"/>
                     </connections>
@@ -1556,6 +1557,21 @@ Salmiya, Kuwait.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icC-68-Q2T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3968" y="141"/>
+        </scene>
+        <!--ChangeU Ser InfoVC-->
+        <scene sceneID="qQv-xn-SkK">
+            <objects>
+                <viewController storyboardIdentifier="ChangeUSerInfoVC" id="WWs-xh-5zs" customClass="ChangeUSerInfoVC" customModule="FoodyCat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nJc-gB-60p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zdc-oC-X2h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zuZ-tz-4C7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4677" y="141"/>
         </scene>
     </scenes>
     <resources>

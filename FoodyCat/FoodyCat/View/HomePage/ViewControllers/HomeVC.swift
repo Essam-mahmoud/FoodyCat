@@ -44,7 +44,7 @@ class HomeVC: UIViewController {
 
     @IBOutlet weak var pagerController: FSPageControl!{
         didSet {
-            self.pagerController.numberOfPages = self.homeVM.bannerModel?.data?.count ?? 0
+            self.pagerController.numberOfPages = 3 //self.homeVM.bannerModel?.data?.count ?? 0
             self.pagerController.contentHorizontalAlignment = .right
             self.pagerController.contentInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
             self.pagerController.backgroundColor = .clear
@@ -70,6 +70,8 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         changeAddressButton.setTitle("", for: .normal)
         realmModel.delegate = self
+        pagerView.delegate = self
+        pagerView.dataSource = self
         registerCells()
         getAllHomeData()
     }

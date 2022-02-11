@@ -92,5 +92,9 @@ class AppConstant: NSObject {
         static public var getOrders: String {
             return "\(apiDomain)Customer/Orders"
         }
+
+        static public var getDiscount: String {
+            return "\(apiDomain)Voucher/"
+        }
     }
 }

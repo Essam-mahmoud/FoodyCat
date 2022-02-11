@@ -12,6 +12,7 @@ class SelectAddressVC: UIViewController {
 
     @IBOutlet weak var addressesTableView: UITableView!
 
+    @IBOutlet weak var AddNewAddressButton: UIButton!
     @IBOutlet weak var noAddressLabel: UILabel!
     fileprivate let addressCellName = "AddressCell"
     var getAddressesVM = AddressesVM()
@@ -24,7 +25,12 @@ class SelectAddressVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getAddresses()
+        if SharedData.SharedInstans.GetIsLogin() {
+            getAddresses()
+        } else {
+            noAddressLabel.isHidden = false
+            AddNewAddressButton.isHidden = true
+        }
     }
 
     func registerCells() {

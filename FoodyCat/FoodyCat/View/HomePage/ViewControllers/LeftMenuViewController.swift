@@ -7,12 +7,20 @@ final class LeftMenuViewController: UIViewController {
 
     // MARK: - Life Cycle
     @IBOutlet weak var closeButton: UIButton!
-    let titles = ["Personal information".localized(), "My addresses".localized(), "My orders".localized(), "Wallet".localized(), "Language".localized(), "Log out".localized()]
-    let images = ["Support", "Setting", "terms", "FAQ", "lang","logoutMenu"]
+    @IBOutlet weak var helloLabel: UILabel!
+    let titles = [ "My addresses".localized(), "My orders".localized(), "Wallet".localized(),"Terms and conditions".localized(),"FAQs".localized(), "Language".localized(), "Log out".localized()]
+    let images = ["Support", "Setting", "terms", "FAQ", "lang","logoutMenu","logoutMenu","logoutMenu"]
 
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.bringSubviewToFront(closeButton)
+        self.view.bringSubviewToFront(helloLabel)
+        if SharedData.SharedInstans.GetIsLogin() {
+            helloLabel.text = "Hi".localized() + " " + SharedData.SharedInstans.getUserName()
+        } else {
+            helloLabel.text = "Hi Guest".localized()
+        }
+
         addTableView()
     }
 
@@ -46,23 +54,20 @@ extension LeftMenuViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-//            let balanceVc = ShowBalanceDetailsVC.instantiate(fromAppStoryboard: .Payment)
-//            balanceVc.modalPresentationStyle = .fullScreen
-//            self.present(balanceVc, animated: true, completion: nil)
-//            sideMenuViewController?.hideMenuViewController()
-            break
-        case 1:
             let selectAddressVc = SelectAddressVC.instantiate(fromAppStoryboard: .CheckOut)
             selectAddressVc.isFromSideMenu = true
             selectAddressVc.modalPresentationStyle = .fullScreen
             self.present(selectAddressVc, animated: true, completion: nil)
             sideMenuViewController?.hideMenuViewController()
             break
-        case 2:
+        case 1:
             let myOrders = MyOrdersVC.instantiate(fromAppStoryboard: .CheckOut)
             myOrders.modalPresentationStyle = .fullScreen
             self.present(myOrders, animated: true, completion: nil)
             sideMenuViewController?.hideMenuViewController()
+            break
+        case 2:
+
             break
         case 3:
             //LanguageManager.switchLanguage()

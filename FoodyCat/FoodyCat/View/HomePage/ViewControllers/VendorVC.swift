@@ -128,7 +128,7 @@ class VendorVC: UIViewController {
 
     func addSuggestionItems(index: IndexPath) {
         let vendorIdString = "\(vendorId)"
-        if vendorIdString == SharedData.SharedInstans.getVendorId() {
+        if vendorIdString == SharedData.SharedInstans.getVendorId() || SharedData.SharedInstans.getVendorId() == "" {
             addSuggestion(index: index)
         } else {
             let alert = UIAlertController(title: "Warning", message: "Do you want to start new order ?".localized(), preferredStyle: .alert)
@@ -176,7 +176,7 @@ class VendorVC: UIViewController {
 
     func addItemTapped(index: IndexPath) {
         let vendorIdString = "\(vendorId)"
-        if vendorIdString == SharedData.SharedInstans.getVendorId() {
+        if vendorIdString == SharedData.SharedInstans.getVendorId() || SharedData.SharedInstans.getVendorId() == "" {
             addItem(index: index)
         } else {
             let alert = UIAlertController(title: "Warning", message: "Do you want to start new order ?".localized(), preferredStyle: .alert)

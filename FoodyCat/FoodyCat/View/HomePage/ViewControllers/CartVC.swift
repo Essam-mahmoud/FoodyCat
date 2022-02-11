@@ -22,6 +22,7 @@ class CartVC: UIViewController {
     var totalPrice = 0.0
     var realmModel = LocalCartItemsVM()
     var cartItems = [ItemOrderModel]()
+    var voucherVM = VoucherVM()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,10 @@ class CartVC: UIViewController {
         realmModel.deleteItem(item: cartItems[index])
     }
 
+    func changeTotalPrice() {
+
+    }
+
     @IBAction func addItemsButtonDidPress(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -89,6 +94,26 @@ class CartVC: UIViewController {
             loginVC.cameFromOrder = true
             loginVC.modalPresentationStyle = .fullScreen
             self.present(loginVC, animated: true, completion: nil)
+        }
+    }
+
+    @IBAction func addVoucherButtonDidPress(_ sender: UIButton) {
+        guard let voucher = voucherTF.text?.trimmingCharacters(in: .whitespaces) else {return}
+        if voucher != "" {
+            let vendorId = SharedData.SharedInstans.getVendorId()
+            voucherVM.getDiscount(vendorId: vendorId, code: voucher) { (errMsg, errRes, status) in
+                switch status {
+                case .populated:
+                    self.changeTotalPrice()
+                case .error:
+                    //AppCommon.sharedInstance.showBanner(title: self.voucherVM.result?.message ?? "", subtitle: "", style: .danger)
+                    break
+                default:
+                    break
+                }
+            }
+        } else {
+            AppCommon.sharedInstance.showBanner(title: "You must write code to apply".localized(), subtitle: "", style: .danger)
         }
     }
 }
