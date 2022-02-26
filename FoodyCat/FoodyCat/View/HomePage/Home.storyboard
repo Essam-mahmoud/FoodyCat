@@ -92,24 +92,39 @@
                                                                             <constraint firstAttribute="width" constant="25" id="pd7-7f-v5i"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="afD-ey-Ljq">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="afD-ey-Ljq">
                                                                         <rect key="frame" x="41" y="5" width="279" height="31"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="31" id="muE-RH-nYk"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Search here..."/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </textField>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuH-IN-BEj">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                                        <connections>
+                                                                            <action selector="searchButtonDidPress:" destination="0dJ-ki-X01" eventType="touchUpInside" id="V6t-dz-ZpK"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="afD-ey-Ljq" secondAttribute="bottom" constant="8" id="630-bR-x34"/>
+                                                                    <constraint firstItem="QuH-IN-BEj" firstAttribute="leading" secondItem="bXf-Bj-7tc" secondAttribute="leading" id="7gp-k4-FGH"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="QuH-IN-BEj" secondAttribute="bottom" id="F5h-Dc-vAL"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="QuH-IN-BEj" secondAttribute="trailing" id="K2p-WL-dyz"/>
                                                                     <constraint firstAttribute="trailing" secondItem="afD-ey-Ljq" secondAttribute="trailing" id="ZgW-EC-UNk"/>
                                                                     <constraint firstItem="jgl-NO-vWX" firstAttribute="leading" secondItem="bXf-Bj-7tc" secondAttribute="leading" constant="8" id="ZxY-xw-5PO"/>
                                                                     <constraint firstItem="jgl-NO-vWX" firstAttribute="top" secondItem="bXf-Bj-7tc" secondAttribute="top" constant="10" id="cbh-LF-YnU"/>
                                                                     <constraint firstItem="afD-ey-Ljq" firstAttribute="leading" secondItem="jgl-NO-vWX" secondAttribute="trailing" constant="8" id="exH-A5-s9q"/>
                                                                     <constraint firstAttribute="height" constant="44" id="pcg-6l-W3q"/>
                                                                     <constraint firstItem="afD-ey-Ljq" firstAttribute="top" secondItem="bXf-Bj-7tc" secondAttribute="top" constant="5" id="vAk-mS-P1g"/>
+                                                                    <constraint firstItem="QuH-IN-BEj" firstAttribute="top" secondItem="bXf-Bj-7tc" secondAttribute="top" id="yTY-ym-wBn"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -498,6 +513,7 @@
                         <outlet property="pagerView" destination="YcV-Ko-5RR" id="JAV-tR-L7l"/>
                         <outlet property="profileButton" destination="17J-ui-eBD" id="0nD-mL-V3G"/>
                         <outlet property="restaurantNameLabel" destination="KaJ-g3-G7q" id="5LT-dG-MQk"/>
+                        <outlet property="searchButton" destination="QuH-IN-BEj" id="2pf-fy-FeZ"/>
                         <outlet property="searchTF" destination="afD-ey-Ljq" id="uEF-0a-e2g"/>
                         <outlet property="sideMenueButton" destination="fKy-T1-223" id="6Ga-yF-Fe3"/>
                         <outlet property="statusLabel" destination="fWR-pZ-baC" id="io9-B5-l8r"/>
@@ -521,10 +537,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkX-Mc-Rhs">
-                                        <rect key="frame" x="0.0" y="-50" width="414" height="400"/>
+                                        <rect key="frame" x="0.0" y="-50" width="414" height="450"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zdl-PN-h1n">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbl-qc-tcd">
                                                 <rect key="frame" x="20" y="80" width="40" height="40"/>
@@ -540,7 +556,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="1Tt-Dg-tNd"/>
+                                            <constraint firstAttribute="height" constant="450" id="1Tt-Dg-tNd"/>
                                             <constraint firstItem="Zdl-PN-h1n" firstAttribute="leading" secondItem="FkX-Mc-Rhs" secondAttribute="leading" id="CpJ-PE-Djb"/>
                                             <constraint firstItem="Zdl-PN-h1n" firstAttribute="top" secondItem="FkX-Mc-Rhs" secondAttribute="top" id="KsL-by-CfH"/>
                                             <constraint firstItem="Vbl-qc-tcd" firstAttribute="leading" secondItem="FkX-Mc-Rhs" secondAttribute="leading" constant="20" id="R6g-fw-DK8"/>
@@ -671,10 +687,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyp-gf-QwL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                        <rect key="frame" x="0.0" y="-50" width="414" height="450"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OxA-yQ-wxN">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OxA-yQ-wxN">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQ1-nk-PQL">
                                                 <rect key="frame" x="20" y="50" width="40" height="40"/>
@@ -694,13 +710,13 @@
                                             <constraint firstItem="OxA-yQ-wxN" firstAttribute="leading" secondItem="vyp-gf-QwL" secondAttribute="leading" id="4zL-WC-dhS"/>
                                             <constraint firstAttribute="trailing" secondItem="OxA-yQ-wxN" secondAttribute="trailing" id="QEp-tD-Vpr"/>
                                             <constraint firstItem="OxA-yQ-wxN" firstAttribute="top" secondItem="vyp-gf-QwL" secondAttribute="top" id="bBp-Ih-IaW"/>
-                                            <constraint firstAttribute="height" constant="350" id="dn9-hb-Kql"/>
+                                            <constraint firstAttribute="height" constant="450" id="dn9-hb-Kql"/>
                                             <constraint firstAttribute="bottom" secondItem="OxA-yQ-wxN" secondAttribute="bottom" id="qKx-2j-95b"/>
                                             <constraint firstItem="JQ1-nk-PQL" firstAttribute="leading" secondItem="vyp-gf-QwL" secondAttribute="leading" constant="20" id="vut-4R-isM"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRB-re-u0E">
-                                        <rect key="frame" x="0.0" y="293" width="414" height="1217"/>
+                                        <rect key="frame" x="0.0" y="343" width="414" height="1217"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dR-hZ-NTR" customClass="CardWithShadow" customModule="FoodyCat" customModuleProvider="target">
                                                 <rect key="frame" x="22" y="-64" width="370" height="93"/>
@@ -868,7 +884,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="vyp-gf-QwL" firstAttribute="top" secondItem="Lm8-C0-Nk9" secondAttribute="top" id="0dO-mi-Dl4"/>
+                                    <constraint firstItem="vyp-gf-QwL" firstAttribute="top" secondItem="Lm8-C0-Nk9" secondAttribute="top" constant="-50" id="0dO-mi-Dl4"/>
                                     <constraint firstAttribute="trailing" secondItem="vyp-gf-QwL" secondAttribute="trailing" id="3Pu-YR-4eD"/>
                                     <constraint firstAttribute="trailing" secondItem="ZRB-re-u0E" secondAttribute="trailing" id="668-5e-rXF"/>
                                     <constraint firstItem="vyp-gf-QwL" firstAttribute="leading" secondItem="Lm8-C0-Nk9" secondAttribute="leading" id="79R-Ik-59p"/>

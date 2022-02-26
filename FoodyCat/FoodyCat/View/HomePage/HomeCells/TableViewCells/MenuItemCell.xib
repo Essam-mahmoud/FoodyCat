@@ -22,7 +22,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSc-03-TtA" customClass="CardWithShadow" customModule="FoodyCat" customModuleProvider="target">
                         <rect key="frame" x="1" y="8" width="318" height="90"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2WJ-KF-7L5">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vendorPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="2WJ-KF-7L5">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="gg1-Za-Abc"/>
@@ -103,8 +103,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="placeholder" width="450" height="338"/>
         <image name="plusIcon" width="22" height="22"/>
+        <image name="vendorPlaceHolder" width="344" height="170"/>
         <namedColor name="blueyGrey">
             <color red="0.5607843137254902" green="0.60784313725490191" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

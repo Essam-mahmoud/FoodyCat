@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SearchedCelebrityCell" customModule="FoodyCat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="166" height="153"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="166" height="153"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qww-7o-euZ">
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="153"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="celebrityPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="X2w-q8-jJ0">
+                                <rect key="frame" x="33" y="0.0" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="fgI-48-KS2"/>
+                                    <constraint firstAttribute="width" constant="100" id="foS-rl-Cil"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="softPurple"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4in-3M-XTW">
+                                <rect key="frame" x="12" y="108" width="142" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X2w-q8-jJ0" firstAttribute="top" secondItem="Qww-7o-euZ" secondAttribute="top" id="R9l-lz-A0V"/>
+                            <constraint firstItem="X2w-q8-jJ0" firstAttribute="centerX" secondItem="Qww-7o-euZ" secondAttribute="centerX" id="euo-Fe-T5H"/>
+                            <constraint firstAttribute="trailing" secondItem="4in-3M-XTW" secondAttribute="trailing" constant="12" id="jLq-bX-pyG"/>
+                            <constraint firstItem="4in-3M-XTW" firstAttribute="top" secondItem="X2w-q8-jJ0" secondAttribute="bottom" constant="8" symbolic="YES" id="mTz-nh-lCj"/>
+                            <constraint firstItem="4in-3M-XTW" firstAttribute="leading" secondItem="Qww-7o-euZ" secondAttribute="leading" constant="12" id="rSs-0u-kOE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Qww-7o-euZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FQk-ZR-m4K"/>
+                <constraint firstAttribute="bottom" secondItem="Qww-7o-euZ" secondAttribute="bottom" id="QWM-pr-SnW"/>
+                <constraint firstAttribute="trailing" secondItem="Qww-7o-euZ" secondAttribute="trailing" id="sCd-R0-PrB"/>
+                <constraint firstItem="Qww-7o-euZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xMo-vt-OIZ"/>
+            </constraints>
+            <size key="customSize" width="166" height="153"/>
+            <point key="canvasLocation" x="221.73913043478262" y="130.91517857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="celebrityPlaceHolder" width="103" height="112"/>
+        <namedColor name="softPurple">
+            <color red="0.63137254901960782" green="0.42352941176470588" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

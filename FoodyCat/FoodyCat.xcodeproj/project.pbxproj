@@ -14,6 +14,12 @@
 		962233162765394B00E09B97 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962233142765394B00E09B97 /* SliderCell.swift */; };
 		962233172765394B00E09B97 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962233152765394B00E09B97 /* SliderCell.xib */; };
 		962449AC276FF2EA005781D8 /* GetUserLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */; };
+		9627BAFA27CA5CB6004E6958 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9627BAF927CA5CB6004E6958 /* SearchViewController.swift */; };
+		9627BAFD27CA6372004E6958 /* SearchedCelebrityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9627BAFB27CA6372004E6958 /* SearchedCelebrityCell.swift */; };
+		9627BAFE27CA6372004E6958 /* SearchedCelebrityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9627BAFC27CA6372004E6958 /* SearchedCelebrityCell.xib */; };
+		9627BB0127CA64C8004E6958 /* SearchedVendorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9627BAFF27CA64C8004E6958 /* SearchedVendorCell.swift */; };
+		9627BB0227CA64C8004E6958 /* SearchedVendorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9627BB0027CA64C8004E6958 /* SearchedVendorCell.xib */; };
+		9627BB0427CA6ADC004E6958 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9627BB0327CA6ADC004E6958 /* SearchVM.swift */; };
 		962B42B0276CB74F00BA5AB1 /* ExtraToppingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B42AF276CB74F00BA5AB1 /* ExtraToppingModel.swift */; };
 		962B42B5276CB8CA00BA5AB1 /* ExtraToppingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B42B4276CB8CA00BA5AB1 /* ExtraToppingVM.swift */; };
 		96419B7827AB2762002630B0 /* VoucherVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B7727AB2762002630B0 /* VoucherVM.swift */; };
@@ -200,6 +206,12 @@
 		962233142765394B00E09B97 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		962233152765394B00E09B97 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserLocationVC.swift; sourceTree = "<group>"; };
+		9627BAF927CA5CB6004E6958 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9627BAFB27CA6372004E6958 /* SearchedCelebrityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedCelebrityCell.swift; sourceTree = "<group>"; };
+		9627BAFC27CA6372004E6958 /* SearchedCelebrityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchedCelebrityCell.xib; sourceTree = "<group>"; };
+		9627BAFF27CA64C8004E6958 /* SearchedVendorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedVendorCell.swift; sourceTree = "<group>"; };
+		9627BB0027CA64C8004E6958 /* SearchedVendorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchedVendorCell.xib; sourceTree = "<group>"; };
+		9627BB0327CA6ADC004E6958 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 		962B42AF276CB74F00BA5AB1 /* ExtraToppingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraToppingModel.swift; sourceTree = "<group>"; };
 		962B42B4276CB8CA00BA5AB1 /* ExtraToppingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraToppingVM.swift; sourceTree = "<group>"; };
 		96419B7727AB2762002630B0 /* VoucherVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherVM.swift; sourceTree = "<group>"; };
@@ -557,6 +569,7 @@
 				964EDDD527A5674C00DD1E41 /* OrderDetailsVM.swift */,
 				9698FF2127A82A8D00F8C35D /* MyOrdersVM.swift */,
 				96419B7727AB2762002630B0 /* VoucherVM.swift */,
+				9627BB0327CA6ADC004E6958 /* SearchVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -808,6 +821,10 @@
 				9643C2BA279754F1009BFBFF /* thanksCell.xib */,
 				9698FF1B27A8250C00F8C35D /* MyOrdersCell.swift */,
 				9698FF1C27A8250C00F8C35D /* MyOrdersCell.xib */,
+				9627BAFB27CA6372004E6958 /* SearchedCelebrityCell.swift */,
+				9627BAFC27CA6372004E6958 /* SearchedCelebrityCell.xib */,
+				9627BAFF27CA64C8004E6958 /* SearchedVendorCell.swift */,
+				9627BB0027CA64C8004E6958 /* SearchedVendorCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -822,6 +839,7 @@
 				964EDDD127A5636C00DD1E41 /* OrderDetailsVC.swift */,
 				9698FF1927A824DA00F8C35D /* MyOrdersVC.swift */,
 				96F2C82627A95702000AF569 /* ChangeUSerInfoVC.swift */,
+				9627BAF927CA5CB6004E6958 /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -982,11 +1000,13 @@
 				9666C7782762639A00C9482D /* AvertaStd-Regular.ttf in Resources */,
 				969A389027727177001D529A /* AddressCell.xib in Resources */,
 				9666C75E2762639A00C9482D /* BannerView.xib in Resources */,
+				9627BB0227CA64C8004E6958 /* SearchedVendorCell.xib in Resources */,
 				9666C7B52762697500C9482D /* Home.storyboard in Resources */,
 				9666C7792762639A00C9482D /* AvertaStd-Semibold.ttf in Resources */,
 				96C8C589276BF737009B4741 /* ExtaToppingCell.xib in Resources */,
 				9666C7752762639A00C9482D /* AvertaStd-Bold.ttf in Resources */,
 				96E0A3052767D39200CF8EB7 /* MealsCell.xib in Resources */,
+				9627BAFE27CA6372004E6958 /* SearchedCelebrityCell.xib in Resources */,
 				96BB6E052766C29000C22403 /* RestaurantCell.xib in Resources */,
 				96C2084E276E02130014ACA3 /* CartItemsCell.xib in Resources */,
 				9698FF1E27A8250C00F8C35D /* MyOrdersCell.xib in Resources */,
@@ -1225,6 +1245,7 @@
 				9698FF1A27A824DA00F8C35D /* MyOrdersVC.swift in Sources */,
 				968A1942279F33C5006AC7E5 /* ItemDetailsVC.swift in Sources */,
 				9643331127935E31006C39AB /* PaymentsMethodVM.swift in Sources */,
+				9627BB0127CA64C8004E6958 /* SearchedVendorCell.swift in Sources */,
 				9666C76E2762639A00C9482D /* GoogleApiHelper.swift in Sources */,
 				965BEBD5276252CA00952500 /* LandingPageVC.swift in Sources */,
 				96829535279DFD38005A5AE9 /* ResultViewController.swift in Sources */,
@@ -1257,12 +1278,14 @@
 				9666C7652762639A00C9482D /* Alias.swift in Sources */,
 				965F4375277286B400A1CE90 /* AddNewAddressVC.swift in Sources */,
 				9643330627930D7F006C39AB /* GetAreaIdModel.swift in Sources */,
+				9627BAFA27CA5CB6004E6958 /* SearchViewController.swift in Sources */,
 				96E0A2FE27677A4700CF8EB7 /* VendorVC.swift in Sources */,
 				964EDDD627A5674C00DD1E41 /* OrderDetailsVM.swift in Sources */,
 				962B42B0276CB74F00BA5AB1 /* ExtraToppingModel.swift in Sources */,
 				9643C2B827974E46009BFBFF /* ThanksPageVC.swift in Sources */,
 				96FBBCE82768F19000C30E55 /* MenuItemCell.swift in Sources */,
 				96BB6DF82766738300C22403 /* CeleberitiesModel.swift in Sources */,
+				9627BB0427CA6ADC004E6958 /* SearchVM.swift in Sources */,
 				96C20847276DF85F0014ACA3 /* CartVC.swift in Sources */,
 				96F817E12781E22900A8808D /* OnboardingVC.swift in Sources */,
 				9666C7432762639A00C9482D /* Ex+UIViewController.swift in Sources */,
@@ -1276,6 +1299,7 @@
 				9666C74C2762639A00C9482D /* Reachability.swift in Sources */,
 				966B2A892764CEAF005AAD1D /* CreateAccountVM.swift in Sources */,
 				9666C7682762639A00C9482D /* Util.swift in Sources */,
+				9627BAFD27CA6372004E6958 /* SearchedCelebrityCell.swift in Sources */,
 				9666C7662762639A00C9482D /* SelfSizedTableView.swift in Sources */,
 				9666C74D2762639A00C9482D /* CodableHandler.swift in Sources */,
 				9666C75A2762639A00C9482D /* CustomButton.swift in Sources */,

@@ -30,6 +30,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var changeAddressButton: UIButton!
     @IBOutlet weak var vendorsTableView: ContentSizedTableView!
     @IBOutlet weak var bannerView: UIView!
+    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var pagerView: FSPagerView!{
         didSet {
 
@@ -68,6 +69,7 @@ class HomeVC: UIViewController {
     fileprivate let restaurantCellName = "RestaurantCell"
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchButton.setTitle("", for: .normal)
         changeAddressButton.setTitle("", for: .normal)
         realmModel.delegate = self
         pagerView.delegate = self
@@ -196,6 +198,11 @@ class HomeVC: UIViewController {
 
     @IBAction func sideMenuButtonDidPress(_ sender: UIButton) {
         sideMenuViewController?.presentLeftMenuViewController()
+    }
+    @IBAction func searchButtonDidPress(_ sender: UIButton) {
+        let searchVc = SearchViewController.instantiate(fromAppStoryboard: .CheckOut)
+        searchVc.modalPresentationStyle = .fullScreen
+        self.present(searchVc, animated: true, completion: nil)
     }
 
     @IBAction func profileButtonDidPress(_ sender: UIButton) {

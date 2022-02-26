@@ -203,9 +203,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1C-ww-NtX" customClass="FSPagerView" customModule="FSPagerView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="500" id="byL-Je-QMM"/>
-                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Favorite Celebrities " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4l-wg-LBg">
                                         <rect key="frame" x="40" y="493" width="334" height="72"/>
@@ -217,7 +214,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover the foods from over 3250 restaurants." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZO-XL-jCu">
-                                        <rect key="frame" x="70" y="573" width="274" height="41"/>
+                                        <rect key="frame" x="50" y="573" width="314" height="41"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" name="blueyGrey"/>
                                         <nil key="highlightedColor"/>
@@ -236,6 +233,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="JKD-BP-DZD" firstAttribute="trailing" secondItem="h1C-ww-NtX" secondAttribute="trailing" id="3KT-jA-lBT"/>
+                                    <constraint firstItem="h1C-ww-NtX" firstAttribute="height" secondItem="nEB-Iu-Xd6" secondAttribute="height" multiplier="0.776398" id="4Pq-ev-y9z"/>
                                     <constraint firstItem="JKD-BP-DZD" firstAttribute="top" secondItem="h1C-ww-NtX" secondAttribute="bottom" constant="-45" id="6QK-Sj-rvv"/>
                                     <constraint firstAttribute="trailing" secondItem="i4l-wg-LBg" secondAttribute="trailing" constant="40" id="CQI-Fn-vOu"/>
                                     <constraint firstItem="JKD-BP-DZD" firstAttribute="leading" secondItem="h1C-ww-NtX" secondAttribute="leading" id="Euq-A9-Kos"/>
@@ -243,10 +241,9 @@
                                     <constraint firstItem="i4l-wg-LBg" firstAttribute="top" secondItem="JKD-BP-DZD" secondAttribute="bottom" constant="26" id="Gkf-Ma-0Ab"/>
                                     <constraint firstAttribute="trailing" secondItem="h1C-ww-NtX" secondAttribute="trailing" id="NKM-A7-xjD"/>
                                     <constraint firstItem="i4l-wg-LBg" firstAttribute="leading" secondItem="nEB-Iu-Xd6" secondAttribute="leading" constant="40" id="SSf-64-sps"/>
-                                    <constraint firstItem="7ZO-XL-jCu" firstAttribute="leading" secondItem="nEB-Iu-Xd6" secondAttribute="leading" constant="70" id="VIr-Rp-jno"/>
+                                    <constraint firstItem="7ZO-XL-jCu" firstAttribute="leading" secondItem="nEB-Iu-Xd6" secondAttribute="leading" constant="50" id="VIr-Rp-jno"/>
                                     <constraint firstItem="7ZO-XL-jCu" firstAttribute="top" secondItem="i4l-wg-LBg" secondAttribute="bottom" constant="8" symbolic="YES" id="YlI-OK-fMg"/>
-                                    <constraint firstAttribute="height" constant="644" id="cry-fi-9tx"/>
-                                    <constraint firstAttribute="trailing" secondItem="7ZO-XL-jCu" secondAttribute="trailing" constant="70" id="gyK-tC-DKW"/>
+                                    <constraint firstAttribute="trailing" secondItem="7ZO-XL-jCu" secondAttribute="trailing" constant="50" id="gyK-tC-DKW"/>
                                     <constraint firstItem="h1C-ww-NtX" firstAttribute="leading" secondItem="nEB-Iu-Xd6" secondAttribute="leading" id="v8d-hk-8Gx"/>
                                 </constraints>
                             </view>
@@ -307,6 +304,7 @@
                             <constraint firstItem="4Rc-CS-2xh" firstAttribute="leading" secondItem="HX7-Ad-NA2" secondAttribute="leading" constant="30" id="ESl-Px-JsW"/>
                             <constraint firstItem="4Rc-CS-2xh" firstAttribute="top" secondItem="nEB-Iu-Xd6" secondAttribute="bottom" constant="50" id="IK6-1D-afr"/>
                             <constraint firstItem="HX7-Ad-NA2" firstAttribute="trailing" secondItem="4Rc-CS-2xh" secondAttribute="trailing" constant="30" id="Ku0-lJ-Vou"/>
+                            <constraint firstItem="nEB-Iu-Xd6" firstAttribute="height" secondItem="cSg-GQ-nhK" secondAttribute="height" multiplier="0.71875" id="Sgk-OY-jhH"/>
                             <constraint firstItem="nEB-Iu-Xd6" firstAttribute="leading" secondItem="cSg-GQ-nhK" secondAttribute="leading" id="Xi2-Sp-Ixp"/>
                         </constraints>
                     </view>
