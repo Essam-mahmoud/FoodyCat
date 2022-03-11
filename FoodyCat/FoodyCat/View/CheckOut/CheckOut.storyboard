@@ -1621,12 +1621,12 @@ Salmiya, Kuwait.</string>
                                 <rect key="frame" x="0.0" y="138" width="414" height="758"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gR-iH-WQk">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
+                                        <rect key="frame" x="0.0" y="16" width="414" height="155"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hW5-no-sCf">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X7r-Ez-Pqt">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="X7r-Ez-Pqt">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1645,7 +1645,7 @@ Salmiya, Kuwait.</string>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Nv4-Fd-5Rd">
-                                        <rect key="frame" x="0.0" y="163" width="414" height="590"/>
+                                        <rect key="frame" x="0.0" y="179" width="414" height="590"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="590" id="qxE-wS-rBd"/>
@@ -1656,7 +1656,7 @@ Salmiya, Kuwait.</string>
                                     <constraint firstItem="7gR-iH-WQk" firstAttribute="leading" secondItem="E9V-Fv-0N5" secondAttribute="leading" id="8hf-xr-kvl"/>
                                     <constraint firstAttribute="bottom" secondItem="Nv4-Fd-5Rd" secondAttribute="bottom" id="F9A-Mx-uW9"/>
                                     <constraint firstAttribute="trailing" secondItem="7gR-iH-WQk" secondAttribute="trailing" id="Flr-jz-9aq"/>
-                                    <constraint firstItem="7gR-iH-WQk" firstAttribute="top" secondItem="E9V-Fv-0N5" secondAttribute="top" id="I7B-fw-2Vc"/>
+                                    <constraint firstItem="7gR-iH-WQk" firstAttribute="top" secondItem="E9V-Fv-0N5" secondAttribute="top" constant="16" id="I7B-fw-2Vc"/>
                                     <constraint firstItem="Nv4-Fd-5Rd" firstAttribute="top" secondItem="7gR-iH-WQk" secondAttribute="bottom" constant="8" id="RrX-h0-UcF"/>
                                     <constraint firstAttribute="trailing" secondItem="Nv4-Fd-5Rd" secondAttribute="trailing" id="Sw0-Tf-gDd"/>
                                     <constraint firstItem="7gR-iH-WQk" firstAttribute="centerX" secondItem="E9V-Fv-0N5" secondAttribute="centerX" id="T7H-bi-OOW"/>
@@ -1665,12 +1665,23 @@ Salmiya, Kuwait.</string>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Kkx-Li-tQM"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="dD3-ts-qSl"/>
                             </scrollView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data To show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYB-hj-CWw">
+                                <rect key="frame" x="116" y="433.5" width="182" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" name="blueyGrey"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="No Data To show"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FiX-4i-fEH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="E9V-Fv-0N5" firstAttribute="top" secondItem="vLr-1y-IKp" secondAttribute="bottom" constant="8" id="8th-tH-87m"/>
                             <constraint firstAttribute="bottom" secondItem="E9V-Fv-0N5" secondAttribute="bottom" id="HUy-Nm-EVs"/>
+                            <constraint firstItem="RYB-hj-CWw" firstAttribute="centerX" secondItem="uqS-iF-tly" secondAttribute="centerX" id="KUK-Mh-IvJ"/>
+                            <constraint firstItem="RYB-hj-CWw" firstAttribute="centerY" secondItem="uqS-iF-tly" secondAttribute="centerY" id="KV7-Yr-0dX"/>
                             <constraint firstItem="vLr-1y-IKp" firstAttribute="top" secondItem="uqS-iF-tly" secondAttribute="top" id="Mwu-vY-CCB"/>
                             <constraint firstItem="FiX-4i-fEH" firstAttribute="trailing" secondItem="vLr-1y-IKp" secondAttribute="trailing" id="NzJ-LQ-7Sb"/>
                             <constraint firstItem="E9V-Fv-0N5" firstAttribute="leading" secondItem="uqS-iF-tly" secondAttribute="leading" id="d2a-vN-Oia"/>
@@ -1680,6 +1691,8 @@ Salmiya, Kuwait.</string>
                     </view>
                     <connections>
                         <outlet property="celebrityCollectionView" destination="hW5-no-sCf" id="pmG-x8-tgt"/>
+                        <outlet property="collectionViewHightConstraint" destination="tQ4-DY-xIB" id="Ld0-tf-b9B"/>
+                        <outlet property="noDataLabel" destination="RYB-hj-CWw" id="Q2w-8b-8zE"/>
                         <outlet property="searchTF" destination="ahc-13-Ueo" id="Neb-Ap-c3Z"/>
                         <outlet property="vendorTableView" destination="Nv4-Fd-5Rd" id="QV2-sa-R2Y"/>
                     </connections>
@@ -1688,11 +1701,54 @@ Salmiya, Kuwait.</string>
             </objects>
             <point key="canvasLocation" x="5450.7246376811599" y="150"/>
         </scene>
+        <!--Open ImageVC-->
+        <scene sceneID="s18-ga-auu">
+            <objects>
+                <viewController storyboardIdentifier="openImageVC" id="9mq-Gb-IfW" customClass="openImageVC" customModule="FoodyCat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P4B-5q-jOk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Doj-Gw-zFl">
+                                <rect key="frame" x="0.0" y="194" width="414" height="518"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKR-HX-kbI">
+                                <rect key="frame" x="20" y="64" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="DRh-5r-ugf"/>
+                                    <constraint firstAttribute="height" constant="40" id="FNF-Yg-Z9E"/>
+                                </constraints>
+                                <state key="normal" image="backWithBackground"/>
+                                <connections>
+                                    <action selector="backButtonDidPress:" destination="9mq-Gb-IfW" eventType="touchUpInside" id="IOV-Hk-euF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L48-za-uur"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="Doj-Gw-zFl" firstAttribute="top" secondItem="L48-za-uur" secondAttribute="top" constant="150" id="8TB-qo-8eo"/>
+                            <constraint firstItem="XKR-HX-kbI" firstAttribute="top" secondItem="L48-za-uur" secondAttribute="top" constant="20" id="KQE-tP-eGq"/>
+                            <constraint firstItem="L48-za-uur" firstAttribute="trailing" secondItem="Doj-Gw-zFl" secondAttribute="trailing" id="MAq-zm-Q6G"/>
+                            <constraint firstItem="XKR-HX-kbI" firstAttribute="leading" secondItem="L48-za-uur" secondAttribute="leading" constant="20" id="U1Z-RP-oeU"/>
+                            <constraint firstItem="Doj-Gw-zFl" firstAttribute="leading" secondItem="L48-za-uur" secondAttribute="leading" id="gGP-Cd-EiV"/>
+                            <constraint firstItem="L48-za-uur" firstAttribute="bottom" secondItem="Doj-Gw-zFl" secondAttribute="bottom" constant="150" id="keh-pN-0JG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fullImageView" destination="Doj-Gw-zFl" id="QOM-Ic-VJ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9e-RR-DlY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6209" y="150"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BackButton" width="24" height="24"/>
         <image name="Delivery1" width="454" height="454"/>
         <image name="Group 16" width="20.666666030883789" height="20.666666030883789"/>
+        <image name="backWithBackground" width="28" height="28"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>

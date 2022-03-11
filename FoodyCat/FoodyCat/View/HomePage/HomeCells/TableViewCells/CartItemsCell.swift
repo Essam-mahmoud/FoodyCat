@@ -28,7 +28,7 @@ class CartItemsCell: UITableViewCell {
         itemImage.loadImageFromUrl(imgUrl: data.itemImageURL, defString: "itemPlaceHolder")
         itemNameLabel.text = data.itemName
         itemDescriptionLabel.text = data.itemDescription
-        itemPriceLabel.text = String(format: "%.2f", data.itemtotalPrice)
+        itemPriceLabel.text = "KWD".localized() + " " + String(format: "%.2f", data.itemtotalPrice)
         itemCounterLabel.text = "\(data.quantity)"
     }
 

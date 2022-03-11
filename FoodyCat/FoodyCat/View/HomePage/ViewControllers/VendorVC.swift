@@ -26,6 +26,7 @@ class VendorVC: UIViewController {
     @IBOutlet weak var menuTableViewHightConstrains: NSLayoutConstraint!
     @IBOutlet weak var totalPriceCartLabel: UILabel!
     @IBOutlet weak var numberOfItemsInCardLabel: UILabel!
+    @IBOutlet weak var openImageButton: UIButton!
     
     @IBOutlet weak var celebrityView: UIView!
     //MARK:- Properity
@@ -72,10 +73,12 @@ class VendorVC: UIViewController {
 //    }
 
     func setupUI() {
+        openImageButton.setTitle("", for: .normal)
         vendorImage.loadImageFromUrl(imgUrl: vendorImageURL, defString: "")
         celebrityImage.loadImageFromUrl(imgUrl: celebrityImageURL, defString: "")
         celebrityNameLabel.text = celebrityName
         vendorNameLabel.text = vendorNameLable
+        vendorSpecialityLabel.text = vendorSpeciality
         ratingView.rating = Double(vendorRating)
         ratingView.isUserInteractionEnabled = false
         registerCells()
@@ -226,6 +229,12 @@ class VendorVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func openImageButtonDidPress(_ sender: UIButton) {
+        let openFullImageVC = openImageVC.instantiate(fromAppStoryboard: .CheckOut)
+        openFullImageVC.imageURL = vendorImageURL
+        openFullImageVC.modalPresentationStyle = .fullScreen
+        self.present(openFullImageVC, animated: true, completion: nil)
+    }
     @IBAction func openCartDidPress(_ sender: UIButton) {
         let cartVc = CartVC.instantiate(fromAppStoryboard: .Home)
         cartVc.modalPresentationStyle = .fullScreen

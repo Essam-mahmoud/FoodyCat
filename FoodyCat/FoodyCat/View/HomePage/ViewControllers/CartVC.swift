@@ -84,6 +84,9 @@ class CartVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func backButtonDidPress(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func checkOutButtonDidPress(_ sender: UIButton) {
         if SharedData.SharedInstans.GetIsLogin() {
             let selectAddressVc = SelectAddressVC.instantiate(fromAppStoryboard: .CheckOut)

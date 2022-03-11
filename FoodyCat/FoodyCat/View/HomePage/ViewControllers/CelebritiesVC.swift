@@ -14,6 +14,7 @@ class CelebritiesVC: UIViewController {
     @IBOutlet weak var resturantTableView: ContentSizedTableView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var priceCartLabel: UILabel!
+    @IBOutlet weak var openImageButton: UIButton!
     @IBOutlet weak var numberOfItemsInCartLabel: UILabel!
     
     fileprivate let restaurantCellName = "RestaurantCell"
@@ -42,6 +43,7 @@ class CelebritiesVC: UIViewController {
     }
 
     func setupUI() {
+        openImageButton.setTitle("", for: .normal)
         resturantTableView.delegate = self
         resturantTableView.dataSource = self
         resturantTableView.register(UINib(nibName: restaurantCellName, bundle: nil), forCellReuseIdentifier: restaurantCellName)
@@ -63,6 +65,12 @@ class CelebritiesVC: UIViewController {
         }
     }
     
+    @IBAction func openImageButtonDidPress(_ sender: UIButton) {
+        let openFullImageVC = openImageVC.instantiate(fromAppStoryboard: .CheckOut)
+        openFullImageVC.imageURL = celebrityImageURL
+        openFullImageVC.modalPresentationStyle = .fullScreen
+        self.present(openFullImageVC, animated: true, completion: nil)
+    }
     @IBAction func backButtonDidPress(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }

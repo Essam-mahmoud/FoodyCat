@@ -66,6 +66,10 @@
                 <constraint firstItem="Qww-7o-euZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xMo-vt-OIZ"/>
             </constraints>
             <size key="customSize" width="166" height="153"/>
+            <connections>
+                <outlet property="celebrityImage" destination="X2w-q8-jJ0" id="Gaf-sj-Mt8"/>
+                <outlet property="celebrityName" destination="4in-3M-XTW" id="uaI-Ch-jAS"/>
+            </connections>
             <point key="canvasLocation" x="221.73913043478262" y="130.91517857142856"/>
         </collectionViewCell>
     </objects>

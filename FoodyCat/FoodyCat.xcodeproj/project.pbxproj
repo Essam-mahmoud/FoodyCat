@@ -11,6 +11,7 @@
 		960BA16427665C7900AF1A4B /* CelebritiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960BA16227665C7900AF1A4B /* CelebritiesCell.swift */; };
 		960BA16527665C7900AF1A4B /* CelebritiesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960BA16327665C7900AF1A4B /* CelebritiesCell.xib */; };
 		960BA16A2766665200AF1A4B /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960BA1692766665200AF1A4B /* HomeVM.swift */; };
+		960DF51827D3B7D200BB4660 /* openImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960DF51727D3B7D200BB4660 /* openImageVC.swift */; };
 		962233162765394B00E09B97 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962233142765394B00E09B97 /* SliderCell.swift */; };
 		962233172765394B00E09B97 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962233152765394B00E09B97 /* SliderCell.xib */; };
 		962449AC276FF2EA005781D8 /* GetUserLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */; };
@@ -203,6 +204,7 @@
 		960BA16227665C7900AF1A4B /* CelebritiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebritiesCell.swift; sourceTree = "<group>"; };
 		960BA16327665C7900AF1A4B /* CelebritiesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CelebritiesCell.xib; sourceTree = "<group>"; };
 		960BA1692766665200AF1A4B /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		960DF51727D3B7D200BB4660 /* openImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openImageVC.swift; sourceTree = "<group>"; };
 		962233142765394B00E09B97 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		962233152765394B00E09B97 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserLocationVC.swift; sourceTree = "<group>"; };
@@ -840,6 +842,7 @@
 				9698FF1927A824DA00F8C35D /* MyOrdersVC.swift */,
 				96F2C82627A95702000AF569 /* ChangeUSerInfoVC.swift */,
 				9627BAF927CA5CB6004E6958 /* SearchViewController.swift */,
+				960DF51727D3B7D200BB4660 /* openImageVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1224,6 +1227,7 @@
 				9666C7562762639A00C9482D /* Deviceinfo.swift in Sources */,
 				96829537279E020F005A5AE9 /* GooglePlacesManager.swift in Sources */,
 				9666C76A2762639A00C9482D /* SharedData.swift in Sources */,
+				960DF51827D3B7D200BB4660 /* openImageVC.swift in Sources */,
 				9666C7672762639A00C9482D /* CardWithShadow.swift in Sources */,
 				9666C7C827626F4200C9482D /* ForgetPasswordVC.swift in Sources */,
 				96C208A2276E200F0014ACA3 /* LocalCartItemsVM.swift in Sources */,
@@ -1501,7 +1505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 8A8J99K7X5;
 				INFOPLIST_FILE = FoodyCat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1523,7 +1527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 8A8J99K7X5;
 				INFOPLIST_FILE = FoodyCat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

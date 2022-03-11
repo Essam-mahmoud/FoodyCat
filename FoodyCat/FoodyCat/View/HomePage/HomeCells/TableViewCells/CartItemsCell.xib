@@ -96,12 +96,12 @@
                             <constraint firstItem="IxP-sy-PTK" firstAttribute="top" secondItem="g69-wQ-Dht" secondAttribute="top" constant="5" id="KcE-lP-p1K"/>
                             <constraint firstItem="g69-wQ-Dht" firstAttribute="top" secondItem="SWf-Q0-TWR" secondAttribute="top" id="V3K-un-AO2"/>
                             <constraint firstItem="ozs-EY-uDt" firstAttribute="leading" secondItem="IxP-sy-PTK" secondAttribute="leading" id="VT3-2d-2CI"/>
+                            <constraint firstAttribute="bottom" secondItem="xS4-bS-ZQj" secondAttribute="bottom" constant="8" id="YgM-NP-Vz5"/>
                             <constraint firstItem="g69-wQ-Dht" firstAttribute="leading" secondItem="SWf-Q0-TWR" secondAttribute="leading" id="aUF-Kc-53g"/>
                             <constraint firstAttribute="trailing" secondItem="Dzc-lC-BRh" secondAttribute="trailing" id="d8n-Ze-4vV"/>
                             <constraint firstAttribute="bottom" secondItem="g69-wQ-Dht" secondAttribute="bottom" id="lSh-px-U75"/>
                             <constraint firstItem="IxP-sy-PTK" firstAttribute="leading" secondItem="g69-wQ-Dht" secondAttribute="trailing" constant="10" id="vlU-Mn-VUR"/>
                             <constraint firstItem="Dzc-lC-BRh" firstAttribute="centerY" secondItem="xS4-bS-ZQj" secondAttribute="centerY" id="z0C-nW-4Mo"/>
-                            <constraint firstItem="xS4-bS-ZQj" firstAttribute="top" secondItem="ozs-EY-uDt" secondAttribute="bottom" constant="7" id="zgF-0w-0CY"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="_cornerRadius">

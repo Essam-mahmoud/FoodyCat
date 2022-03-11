@@ -8,8 +8,8 @@ final class LeftMenuViewController: UIViewController {
     // MARK: - Life Cycle
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var helloLabel: UILabel!
-    let titles = [ "My addresses".localized(), "My orders".localized(), "Wallet".localized(),"Terms and conditions".localized(),"FAQs".localized(), "Language".localized(), "Log out".localized()]
-    let images = ["Support", "Setting", "terms", "FAQ", "lang","logoutMenu","logoutMenu","logoutMenu"]
+    let titles = [ "My addresses".localized(), "My orders".localized(), "Wallet".localized(),"Terms and conditions".localized(),"Language".localized(), "Log out".localized()]
+    let images = ["Support", "Setting", "terms", "lang","logoutMenu","logoutMenu","logoutMenu"]
 
     override public func viewDidLoad() {
         super.viewDidLoad()
