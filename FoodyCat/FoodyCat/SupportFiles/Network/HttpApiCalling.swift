@@ -103,7 +103,24 @@ class HttpApiCallingWithRep{
                 
                 //// custom error 401
             else if response.response!.statusCode == statusCode.UNAuthoried{
-                Result(nil,response.response!.statusCode,"Unauthorized", nil)
+                if let data = response.data {
+                    let jsondata = JSON(data)
+
+                    guard let Object = CodableHandler.decodeClass(ResponseModel.self, classJsonData:jsondata)
+                        as? ResponseModel
+                        else {
+                        AppCommon.sharedInstance.showBanner(title: "Something went wrong try agen later".localized(), subtitle: "" , style: .danger)
+                            return
+                    }
+                    DispatchQueue.main.async {
+                        AppCommon.sharedInstance.showBanner(title: Object.message ?? "", subtitle: "" , style: .danger)
+
+                    }
+                    return
+                }else{
+                    AppCommon.sharedInstance.showBanner(title: "Something went wrong try agen later".localized(), subtitle: "" , style: .danger)
+
+                }
                 
             }
                 
@@ -122,7 +139,7 @@ class HttpApiCallingWithRep{
                         AppCommon.sharedInstance.showBanner(title: Object.message ?? "", subtitle: "" , style: .danger)
 
                     }
-                    Result(nil,response.response!.statusCode,"Server Error", nil)
+                   // Result(Object as? T,response.response!.statusCode,"Server Error", nil)
                     return
                 }else{
                     AppCommon.sharedInstance.showBanner(title: "Something went wrong try agen later".localized(), subtitle: "" , style: .danger)

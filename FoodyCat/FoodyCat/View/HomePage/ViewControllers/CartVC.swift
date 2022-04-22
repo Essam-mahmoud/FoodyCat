@@ -23,6 +23,8 @@ class CartVC: UIViewController {
     var realmModel = LocalCartItemsVM()
     var cartItems = [ItemOrderModel]()
     var voucherVM = VoucherVM()
+    var voucherAmount = 0.0
+    var isFixed = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +79,18 @@ class CartVC: UIViewController {
     }
 
     func changeTotalPrice() {
+        guard let result = voucherVM.result else {return}
+        voucherAmount = result.amount ?? 0.0
+        isFixed = result.fixedAmount ?? false
+        SharedData.SharedInstans.setVoucherAmount(voucherAmount)
+        SharedData.SharedInstans.setIsFixedAmount(isFixed)
+        if isFixed {
+            totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge() - voucherAmount)
+        } else {
+            let discount = 1 - (voucherAmount / 100)
+            totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", (totalPrice + SharedData.SharedInstans.getDeliveryCharge()) * discount)
+        }
+
 
     }
 
@@ -108,8 +122,9 @@ class CartVC: UIViewController {
                 switch status {
                 case .populated:
                     self.changeTotalPrice()
+                    SharedData.SharedInstans.setCoupon(voucher)
                 case .error:
-                    //AppCommon.sharedInstance.showBanner(title: self.voucherVM.result?.message ?? "", subtitle: "", style: .danger)
+                    AppCommon.sharedInstance.showBanner(title: self.voucherVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
                     break
                 default:
                     break

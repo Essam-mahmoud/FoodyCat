@@ -64,6 +64,7 @@ class HomeVC: UIViewController {
     var celebritiesRestaurantVM = CelebritiesRestaurantVM()
     var timer: Timer?
     var counter = 0
+    var direction: CATransitionSubtype!
     fileprivate let bannerCell = "SliderCell"
     fileprivate let celebritiesCell = "CelebritiesCell"
     fileprivate let restaurantCellName = "RestaurantCell"
@@ -81,7 +82,7 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         realmModel.fetchItems()
-        deliverToLabel.text = "Deliver to" + " " + SharedData.SharedInstans.getAreaName()
+        deliverToLabel.text = "Deliver to".localized() + " " + SharedData.SharedInstans.getAreaName()
         addressLabel.text = SharedData.SharedInstans.getAddres()
     }
 
@@ -181,7 +182,7 @@ class HomeVC: UIViewController {
             inProgressOrderView.isHidden = false
             restaurantNameLabel.text = lastOrder.vendor?.name
             idLabel.text = "\(lastOrder.id ?? 0)"
-            numberOfItemsLabel.text = "\(lastOrder.listOfCart?.count ?? 0) " + "items".localized()
+            numberOfItemsLabel.text = "\(lastOrder.listOfCart?.count ?? 0) " + "ITEM".localized()
             statusLabel.text = lastOrder.currentStepString
             inProgressImage.loadImageFromUrl(imgUrl: lastOrder.vendor?.logoFullPath, defString: "imageplaceholder")
         } else {
@@ -197,7 +198,7 @@ class HomeVC: UIViewController {
     }
 
     @IBAction func sideMenuButtonDidPress(_ sender: UIButton) {
-        sideMenuViewController?.presentLeftMenuViewController()
+        
     }
     @IBAction func searchButtonDidPress(_ sender: UIButton) {
         let searchVc = SearchViewController.instantiate(fromAppStoryboard: .CheckOut)
@@ -206,6 +207,14 @@ class HomeVC: UIViewController {
     }
 
     @IBAction func profileButtonDidPress(_ sender: UIButton) {
+        let sideMenuVc = SideMenuVC.instantiate(fromAppStoryboard: .Home)
+        sideMenuVc.modalPresentationStyle = .fullScreen
+        if LanguageManager.isArabic() {
+            direction = .fromLeft
+        } else {
+            direction = .fromRight
+        }
+        self.presentDetail(sideMenuVc, transitionSubtype: direction)
     }
 
     @IBAction func filterButtonDidPress(_ sender: UIButton) {

@@ -40,6 +40,9 @@ class SharedData{
     let celebrityId = "Celebrity"
     let areaName = "AreaName"
     let userName = "Name"
+    let voucherAmount = "Voucher"
+    let fixed = "fixedAmount"
+    let couponString = "Coupon"
 
     func setUserName(_ name:String){
         defaults.set(name, forKey: userName)
@@ -134,6 +137,42 @@ class SharedData{
     func getVendorId()->String{
         if (defaults.object(forKey: vendorId) != nil) {
             return defaults.string(forKey: vendorId) ?? ""
+        }else{
+            return ""
+        }
+    }
+
+    func setVoucherAmount(_ amount:Double){
+        defaults.set(amount, forKey: voucherAmount)
+    }
+
+    func getVoucherAmount()->Double{
+        if (defaults.object(forKey: voucherAmount) != nil) {
+            return defaults.double(forKey: voucherAmount)
+        }else{
+            return 0.0
+        }
+    }
+
+    func setIsFixedAmount(_ isFixed:Bool){
+        defaults.set(isFixed, forKey: fixed)
+    }
+
+    func getIsFixedAmount()->Bool{
+        if (defaults.object(forKey: fixed) != nil) {
+            return defaults.bool(forKey: fixed)
+        }else{
+            return false
+        }
+    }
+
+    func setCoupon(_ coubon:String){
+        defaults.set(coubon, forKey: couponString)
+    }
+
+    func getCoupon()->String{
+        if (defaults.object(forKey: couponString) != nil) {
+            return defaults.string(forKey: couponString) ?? ""
         }else{
             return ""
         }
@@ -376,7 +415,6 @@ class SharedData{
     func getHeader() -> HTTPHeaders {
         let lang = LanguageManager.isArabic() ? "1" : "0"
         let token = SharedData.SharedInstans.gettoken()
-        let playerId = UserDefaults.standard.string(forKey: "GT_PLAYER_ID") ?? ""
-        return HTTPHeaders(["Content-Type":"application/json", "Authorization":"Bearer \(token)", "device": "1", "lang": lang, "playerid": playerId])
+        return HTTPHeaders(["Content-Type":"application/json", "Authorization":"Bearer \(token)", "device": "1", "lang": lang])
     }
 }

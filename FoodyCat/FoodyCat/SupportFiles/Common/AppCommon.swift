@@ -264,9 +264,9 @@ class AppCommon: UIViewController {
 //    }
 
     func resetRootIntro() {
-//        guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
-//        UIApplication.shared.windows.first?.rootViewController = homeVC
-//        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? HomeVC else {return}
+        UIApplication.shared.windows.first?.rootViewController = homeVC
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
 
     }
     func showBanner(title:String,subtitle:String = "",style:BannerStyle,customColor:UIColor? = nil) {

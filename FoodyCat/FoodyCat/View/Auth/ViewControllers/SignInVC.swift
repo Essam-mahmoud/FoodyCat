@@ -47,7 +47,7 @@ class SignInVC: UIViewController {
                 } else {
                     SharedData.SharedInstans.SetIsLogin(true)
                     AppCommon.sharedInstance.showBanner(title: "Logged in Successfully".localized(), subtitle: "", style: .success, customColor: UIColor(named: "tealish"))
-                    let homeVC = RootViewController.instantiate(fromAppStoryboard: .Home)
+                    let homeVC = HomeVC.instantiate(fromAppStoryboard: .Home)
                     homeVC.modalPresentationStyle = .fullScreen
                     self.present(homeVC, animated: true, completion: nil)
                 }

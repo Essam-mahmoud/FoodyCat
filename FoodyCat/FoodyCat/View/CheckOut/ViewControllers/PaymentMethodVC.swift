@@ -34,7 +34,6 @@ class PaymentMethodVC: UIViewController, GMSMapViewDelegate {
     var selectionArray = [Bool]()
     var paymentMethodId = 0
     var totalPrice = 0.0
-    var coupon = ""
     var paymentName = ""
     fileprivate let methodCellName = "PaymentMethodsCell"
     
@@ -151,7 +150,7 @@ class PaymentMethodVC: UIViewController, GMSMapViewDelegate {
         paramaters["vendorId"] = SharedData.SharedInstans.getVendorId()
         paramaters["orderId"] = 0
         paramaters["areaId"] = SharedData.SharedInstans.getAreaId()
-        paramaters["coupon"] = coupon
+        paramaters["coupon"] = SharedData.SharedInstans.getCoupon()
         paramaters["paymentMethod"] = paymentMethodId
         paramaters["generalRequest"] = ""
         paramaters["items"] = items
@@ -171,12 +170,25 @@ class PaymentMethodVC: UIViewController, GMSMapViewDelegate {
             submitOrderVM.submitOrder(params: paramaters) { (errMsg, errRes, status) in
                 switch status {
                 case .populated:
-                    let thankVc = ThanksPageVC.instantiate(fromAppStoryboard: .CheckOut)
-                    thankVc.address = self.address
-                    thankVc.orderNumber = self.submitOrderVM.submitResult?.data?.order?.id ?? 0
-                    thankVc.payment = self.paymentName
-                    thankVc.modalPresentationStyle = .fullScreen
-                    self.present(thankVc, animated: true, completion: nil)
+                    SharedData.SharedInstans.setDeliveryCharge(0)
+                    SharedData.SharedInstans.setCoupon("")
+                    SharedData.SharedInstans.setVoucherAmount(0.0)
+                    SharedData.SharedInstans.setIsFixedAmount(false)
+                    if self.submitOrderVM.submitResult?.requiredRedirect ?? false {
+                        let openURLVC = ShowPaymentURLVC.instantiate(fromAppStoryboard: .CheckOut)
+                        openURLVC.link =  self.submitOrderVM.submitResult?.redirectURL ?? ""
+                        openURLVC.address = self.address
+                        openURLVC.orderNumber = self.submitOrderVM.submitResult?.data?.order?.id ?? 0
+                        openURLVC.paymentName = self.paymentName
+                        self.present(openURLVC, animated: true, completion: nil)
+                    } else {
+                        let thankVc = ThanksPageVC.instantiate(fromAppStoryboard: .CheckOut)
+                        thankVc.address = self.address
+                        thankVc.orderNumber = self.submitOrderVM.submitResult?.data?.order?.id ?? 0
+                        thankVc.payment = self.paymentName
+                        thankVc.modalPresentationStyle = .fullScreen
+                        self.present(thankVc, animated: true, completion: nil)
+                    }
                 case .error:
                     AppCommon.sharedInstance.showBanner(title: self.submitOrderVM.baseReponse?.message ?? "", subtitle: "", style: .danger)
                 default:
@@ -215,7 +227,20 @@ extension PaymentMethodVC: RealmViewModelDelegate {
         }
         subtotalLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice)
         serviceChargeLAbel.text = "KWD".localized() + " " + String(format: "%.2f", SharedData.SharedInstans.getDeliveryCharge())
-        totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge())
+
+        let voucherAmount = SharedData.SharedInstans.getVoucherAmount()
+        let isFixed = SharedData.SharedInstans.getIsFixedAmount()
+
+        if voucherAmount > 0 {
+            if isFixed {
+                totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge() - voucherAmount)
+            } else {
+                let discount = 1 - (voucherAmount / 100)
+                totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", (totalPrice + SharedData.SharedInstans.getDeliveryCharge()) * discount)
+            }
+        } else {
+            totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge())
+        }
     }
 }
 

@@ -90,3 +90,26 @@ extension UserDefaults {
         defaults.set(encodedData, forKey: key)
     }
 }
+
+extension UIViewController {
+
+    func presentDetail(_ viewControllerToPresent: UIViewController, transitionSubtype: CATransitionSubtype) {
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = CATransitionType.push
+        transition.subtype = transitionSubtype
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+
+        present(viewControllerToPresent, animated: false)
+    }
+
+    func dismissDetail(transitionSubtype: CATransitionSubtype) {
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = CATransitionType.push
+        transition.subtype = transitionSubtype
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+
+        dismiss(animated: false)
+    }
+}

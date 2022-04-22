@@ -1,21 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "Group 2935.png",
+      "filename" : "out-of-stock.png",
       "idiom" : "universal",
-      "language-direction" : "left-to-right",
       "scale" : "1x"
     },
     {
-      "filename" : "Group 2935@2x.png",
       "idiom" : "universal",
-      "language-direction" : "left-to-right",
       "scale" : "2x"
     },
     {
-      "filename" : "Group 2935@3x.png",
       "idiom" : "universal",
-      "language-direction" : "left-to-right",
       "scale" : "3x"
     }
   ],

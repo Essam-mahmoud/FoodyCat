@@ -76,7 +76,7 @@ class GetUserLocationVC: UIViewController {
                 if self.isFromHomePage {
                     self.dismiss(animated: true, completion: nil)
                 } else {
-                    guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
+                    guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? HomeVC else {return}
                     UIApplication.shared.windows.first?.rootViewController = homeVC
                     UIApplication.shared.windows.first?.makeKeyAndVisible()
                 }

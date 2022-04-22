@@ -59,8 +59,11 @@ class ThanksPageVC: UIViewController {
             self.realmModel.realm.deleteAll()
         }
         SharedData.SharedInstans.setDeliveryCharge(0)
+        SharedData.SharedInstans.setCoupon("")
+        SharedData.SharedInstans.setVoucherAmount(0.0)
+        SharedData.SharedInstans.setIsFixedAmount(false)
         SharedData.SharedInstans.setVendorId("")
-        guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
+        guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? HomeVC else {return}
         UIApplication.shared.windows.first?.rootViewController = homeVC
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
@@ -85,7 +88,20 @@ extension ThanksPageVC: RealmViewModelDelegate {
         for item in items {
             totalPrice += item.itemtotalPrice
         }
-        orderAmountLabel.text = "KWD".localized() + " \(totalPrice + SharedData.SharedInstans.getDeliveryCharge())"
+
+        let voucherAmount = SharedData.SharedInstans.getVoucherAmount()
+        let isFixed = SharedData.SharedInstans.getIsFixedAmount()
+
+        if voucherAmount > 0 {
+            if isFixed {
+                orderAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge() - voucherAmount)
+            } else {
+                let discount = 1 - (voucherAmount / 100)
+                orderAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", (totalPrice + SharedData.SharedInstans.getDeliveryCharge()) * discount)
+            }
+        } else {
+            orderAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge())
+        }
         orderTableView.reloadData()
     }
 }

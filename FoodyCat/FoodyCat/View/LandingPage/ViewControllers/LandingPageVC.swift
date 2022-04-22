@@ -19,7 +19,7 @@ class LandingPageVC: UIViewController {
     func routeViewController() {
         if SharedData.SharedInstans.getIsFinishOnboarding() {
             if SharedData.SharedInstans.GetShowMap() {
-                guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController else {return}
+                guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? HomeVC else {return}
                 UIApplication.shared.windows.first?.rootViewController = homeVC
                 UIApplication.shared.windows.first?.makeKeyAndVisible()
             } else {

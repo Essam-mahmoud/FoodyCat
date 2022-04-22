@@ -28,7 +28,7 @@
                                     <action selector="selectedButtonDidPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xXU-s9-OH4"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dji-uw-euh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dji-uw-euh">
                                 <rect key="frame" x="41" y="8.5" width="37" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="AFY-ch-bOk"/>

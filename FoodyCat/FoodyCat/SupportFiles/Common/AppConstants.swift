@@ -96,5 +96,13 @@ class AppConstant: NSObject {
         static public var getDiscount: String {
             return "\(apiDomain)Voucher/"
         }
+
+        static public var getUserInfo: String {
+            return "\(apiDomain)Customer"
+        }
+
+        static public var changeUserPassword: String {
+            return "\(apiDomain)Customer/password/change"
+        }
     }
 }
