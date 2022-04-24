@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="71" width="182" height="229"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mused Burger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggw-fP-wse">
-                                        <rect key="frame" x="12" y="89" width="99" height="18"/>
+                                        <rect key="frame" x="12" y="89" width="158" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -56,6 +56,7 @@
                                     <constraint firstAttribute="height" constant="229" id="0dh-e9-EDo"/>
                                     <constraint firstAttribute="trailing" secondItem="oOl-fe-XNf" secondAttribute="trailing" constant="11" id="BQV-eF-nwu"/>
                                     <constraint firstAttribute="trailing" secondItem="sx5-wr-Gmn" secondAttribute="trailing" constant="12" id="JkX-j4-Cit"/>
+                                    <constraint firstAttribute="trailing" secondItem="ggw-fP-wse" secondAttribute="trailing" constant="12" id="LEc-4N-Df6"/>
                                     <constraint firstItem="Auz-F8-6W8" firstAttribute="leading" secondItem="oOl-fe-XNf" secondAttribute="leading" id="PA2-9G-QKm"/>
                                     <constraint firstAttribute="bottom" secondItem="Auz-F8-6W8" secondAttribute="bottom" constant="12" id="Z89-mK-10R"/>
                                     <constraint firstItem="oOl-fe-XNf" firstAttribute="leading" secondItem="5cJ-mu-cuF" secondAttribute="leading" constant="11" id="onE-s5-7IH"/>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28B19FB30883B3B1F1284AA6 /* Pods_FoodyCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19170A054FA3A7C0BCDB3291 /* Pods_FoodyCat.framework */; };
+		64C8CCF31E1CF41B8FBEFDD1 /* Pods_FoodyCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7955E1FDE65394C6B79509 /* Pods_FoodyCat.framework */; };
 		960BA16427665C7900AF1A4B /* CelebritiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960BA16227665C7900AF1A4B /* CelebritiesCell.swift */; };
 		960BA16527665C7900AF1A4B /* CelebritiesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960BA16327665C7900AF1A4B /* CelebritiesCell.xib */; };
 		960BA16A2766665200AF1A4B /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960BA1692766665200AF1A4B /* HomeVM.swift */; };
@@ -15,6 +15,8 @@
 		960D77FE280AF453008DF35A /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D77FC280AF453008DF35A /* SideMenuCell.swift */; };
 		960D77FF280AF453008DF35A /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960D77FD280AF453008DF35A /* SideMenuCell.xib */; };
 		960DF51827D3B7D200BB4660 /* openImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960DF51727D3B7D200BB4660 /* openImageVC.swift */; };
+		9614A9FE2814A0620092A614 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9614A9FD2814A0620092A614 /* NotificationService.swift */; };
+		9614AA022814A0620092A614 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9614A9FB2814A0620092A614 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		962233162765394B00E09B97 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962233142765394B00E09B97 /* SliderCell.swift */; };
 		962233172765394B00E09B97 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962233152765394B00E09B97 /* SliderCell.xib */; };
 		962449AC276FF2EA005781D8 /* GetUserLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */; };
@@ -179,11 +181,17 @@
 		96FBBCF327694F3D00C30E55 /* MenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBBCF227694F3D00C30E55 /* MenuItemModel.swift */; };
 		96FBBCF8276951D100C30E55 /* VendorVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBBCF7276951D100C30E55 /* VendorVM.swift */; };
 		96FBBCFD27695C3900C30E55 /* AllCelebrityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBBCFC27695C3900C30E55 /* AllCelebrityVC.swift */; };
-		DD7EF0F3D3DA9DC7C6EA3649 /* Pods_FoodyCatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38482B9284058554376DB84F /* Pods_FoodyCatTests.framework */; };
-		EA368885838DFBCC2687762D /* Pods_FoodyCat_FoodyCatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593CB988FA8E1AC52E25EE04 /* Pods_FoodyCat_FoodyCatUITests.framework */; };
+		973440D4A28DAEA31340CD2A /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E81078B55E6E2FDBD67F872 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9614AA002814A0620092A614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 965BEB87276247C400952500 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9614A9FA2814A0620092A614;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 		965BEBA6276247CF00952500 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 965BEB87276247C400952500 /* Project object */;
@@ -200,14 +208,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9614AA032814A0630092A614 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9614AA022814A0620092A614 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		19170A054FA3A7C0BCDB3291 /* Pods_FoodyCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38482B9284058554376DB84F /* Pods_FoodyCatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyCatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53BCC3FC9043DF40E7EB029B /* Pods-FoodyCat-FoodyCatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCat-FoodyCatUITests.release.xcconfig"; path = "Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests.release.xcconfig"; sourceTree = "<group>"; };
-		593CB988FA8E1AC52E25EE04 /* Pods_FoodyCat_FoodyCatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyCat_FoodyCatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		670273CF7B9A1BF0B169A60E /* Pods-FoodyCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCat.release.xcconfig"; path = "Target Support Files/Pods-FoodyCat/Pods-FoodyCat.release.xcconfig"; sourceTree = "<group>"; };
-		76968296F9AFBC1A6B1AA75F /* Pods-FoodyCatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCatTests.debug.xcconfig"; path = "Target Support Files/Pods-FoodyCatTests/Pods-FoodyCatTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9479F8BCEE6B0F996C30CF48 /* Pods-FoodyCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCat.debug.xcconfig"; path = "Target Support Files/Pods-FoodyCat/Pods-FoodyCat.debug.xcconfig"; sourceTree = "<group>"; };
+		3E81078B55E6E2FDBD67F872 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56A228C6463C5AE50E8A1861 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		89DFCDCF6C3C950A13CBF714 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		960BA16227665C7900AF1A4B /* CelebritiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebritiesCell.swift; sourceTree = "<group>"; };
 		960BA16327665C7900AF1A4B /* CelebritiesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CelebritiesCell.xib; sourceTree = "<group>"; };
 		960BA1692766665200AF1A4B /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
@@ -215,6 +233,10 @@
 		960D77FC280AF453008DF35A /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		960D77FD280AF453008DF35A /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		960DF51727D3B7D200BB4660 /* openImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openImageVC.swift; sourceTree = "<group>"; };
+		9614A9FB2814A0620092A614 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9614A9FD2814A0620092A614 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		9614A9FF2814A0620092A614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9614AA072814A9520092A614 /* FoodyCat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodyCat.entitlements; sourceTree = "<group>"; };
 		962233142765394B00E09B97 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		962233152765394B00E09B97 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		962449AB276FF2EA005781D8 /* GetUserLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserLocationVC.swift; sourceTree = "<group>"; };
@@ -386,16 +408,25 @@
 		96FBBCF227694F3D00C30E55 /* MenuItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemModel.swift; sourceTree = "<group>"; };
 		96FBBCF7276951D100C30E55 /* VendorVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorVM.swift; sourceTree = "<group>"; };
 		96FBBCFC27695C3900C30E55 /* AllCelebrityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCelebrityVC.swift; sourceTree = "<group>"; };
-		D2FFC76C8D32B5706D263B59 /* Pods-FoodyCatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCatTests.release.xcconfig"; path = "Target Support Files/Pods-FoodyCatTests/Pods-FoodyCatTests.release.xcconfig"; sourceTree = "<group>"; };
-		D31397C0F159CD4EF69A65F2 /* Pods-FoodyCat-FoodyCatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCat-FoodyCatUITests.debug.xcconfig"; path = "Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF7955E1FDE65394C6B79509 /* Pods_FoodyCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D94E801496BA322C4537683A /* Pods-FoodyCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCat.release.xcconfig"; path = "Target Support Files/Pods-FoodyCat/Pods-FoodyCat.release.xcconfig"; sourceTree = "<group>"; };
+		FD0D73EB4272E5CE46AA7A69 /* Pods-FoodyCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyCat.debug.xcconfig"; path = "Target Support Files/Pods-FoodyCat/Pods-FoodyCat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9614A9F82814A0620092A614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973440D4A28DAEA31340CD2A /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		965BEB8C276247C400952500 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28B19FB30883B3B1F1284AA6 /* Pods_FoodyCat.framework in Frameworks */,
+				64C8CCF31E1CF41B8FBEFDD1 /* Pods_FoodyCat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +434,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD7EF0F3D3DA9DC7C6EA3649 /* Pods_FoodyCatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +441,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA368885838DFBCC2687762D /* Pods_FoodyCat_FoodyCatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,24 +450,21 @@
 		3F0E7E1FA098F0D40FCD0C6B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9479F8BCEE6B0F996C30CF48 /* Pods-FoodyCat.debug.xcconfig */,
-				670273CF7B9A1BF0B169A60E /* Pods-FoodyCat.release.xcconfig */,
-				D31397C0F159CD4EF69A65F2 /* Pods-FoodyCat-FoodyCatUITests.debug.xcconfig */,
-				53BCC3FC9043DF40E7EB029B /* Pods-FoodyCat-FoodyCatUITests.release.xcconfig */,
-				76968296F9AFBC1A6B1AA75F /* Pods-FoodyCatTests.debug.xcconfig */,
-				D2FFC76C8D32B5706D263B59 /* Pods-FoodyCatTests.release.xcconfig */,
+				FD0D73EB4272E5CE46AA7A69 /* Pods-FoodyCat.debug.xcconfig */,
+				D94E801496BA322C4537683A /* Pods-FoodyCat.release.xcconfig */,
+				56A228C6463C5AE50E8A1861 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				89DFCDCF6C3C950A13CBF714 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		5184E8389679D94504A422BD /* Frameworks */ = {
+		9614A9FC2814A0620092A614 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
-				19170A054FA3A7C0BCDB3291 /* Pods_FoodyCat.framework */,
-				593CB988FA8E1AC52E25EE04 /* Pods_FoodyCat_FoodyCatUITests.framework */,
-				38482B9284058554376DB84F /* Pods_FoodyCatTests.framework */,
+				9614A9FD2814A0620092A614 /* NotificationService.swift */,
+				9614A9FF2814A0620092A614 /* Info.plist */,
 			);
-			name = Frameworks;
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		962233122765391600E09B97 /* HomeCells */ = {
@@ -493,9 +519,10 @@
 				965BEB91276247C400952500 /* FoodyCat */,
 				965BEBA8276247CF00952500 /* FoodyCatTests */,
 				965BEBB3276247CF00952500 /* FoodyCatUITests */,
+				9614A9FC2814A0620092A614 /* OneSignalNotificationServiceExtension */,
 				965BEB90276247C400952500 /* Products */,
 				3F0E7E1FA098F0D40FCD0C6B /* Pods */,
-				5184E8389679D94504A422BD /* Frameworks */,
+				9984210457FE43068D0F10C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -505,6 +532,7 @@
 				965BEB8F276247C400952500 /* FoodyCat.app */,
 				965BEBA5276247CF00952500 /* FoodyCatTests.xctest */,
 				965BEBB0276247CF00952500 /* FoodyCatUITests.xctest */,
+				9614A9FB2814A0620092A614 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -512,6 +540,7 @@
 		965BEB91276247C400952500 /* FoodyCat */ = {
 			isa = PBXGroup;
 			children = (
+				9614AA072814A9520092A614 /* FoodyCat.entitlements */,
 				965BEBC5276248A900952500 /* Model */,
 				965BEBC6276248B900952500 /* View */,
 				965BEBC7276248C400952500 /* ViewModel */,
@@ -906,23 +935,52 @@
 			path = LocalDataModel;
 			sourceTree = "<group>";
 		};
+		9984210457FE43068D0F10C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF7955E1FDE65394C6B79509 /* Pods_FoodyCat.framework */,
+				3E81078B55E6E2FDBD67F872 /* Pods_OneSignalNotificationServiceExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		965BEB8E276247C400952500 /* FoodyCat */ = {
+		9614A9FA2814A0620092A614 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 965BEBB9276247D000952500 /* Build configuration list for PBXNativeTarget "FoodyCat" */;
+			buildConfigurationList = 9614AA062814A0630092A614 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
 			buildPhases = (
-				F1D1E386FBBD682E40B7851F /* [CP] Check Pods Manifest.lock */,
-				965BEB8B276247C400952500 /* Sources */,
-				965BEB8C276247C400952500 /* Frameworks */,
-				965BEB8D276247C400952500 /* Resources */,
-				16C656D13EAAA6C2785BF892 /* [CP] Embed Pods Frameworks */,
-				B26C9C31660E7CC2D576A0F8 /* [CP] Copy Pods Resources */,
+				EE2FF7DA5762D2057832EE04 /* [CP] Check Pods Manifest.lock */,
+				9614A9F72814A0620092A614 /* Sources */,
+				9614A9F82814A0620092A614 /* Frameworks */,
+				9614A9F92814A0620092A614 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 9614A9FB2814A0620092A614 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		965BEB8E276247C400952500 /* FoodyCat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 965BEBB9276247D000952500 /* Build configuration list for PBXNativeTarget "FoodyCat" */;
+			buildPhases = (
+				D8BDA46D99ACF829877F1B22 /* [CP] Check Pods Manifest.lock */,
+				965BEB8B276247C400952500 /* Sources */,
+				965BEB8C276247C400952500 /* Frameworks */,
+				965BEB8D276247C400952500 /* Resources */,
+				9614AA032814A0630092A614 /* Embed App Extensions */,
+				F112B21A5C091BAA318EEF73 /* [CP] Embed Pods Frameworks */,
+				461D4E0B156237F0B40A5AD3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9614AA012814A0620092A614 /* PBXTargetDependency */,
 			);
 			name = FoodyCat;
 			productName = FoodyCat;
@@ -933,7 +991,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 965BEBBC276247D000952500 /* Build configuration list for PBXNativeTarget "FoodyCatTests" */;
 			buildPhases = (
-				67363EC829A85E90799EC2E2 /* [CP] Check Pods Manifest.lock */,
 				965BEBA1276247CF00952500 /* Sources */,
 				965BEBA2276247CF00952500 /* Frameworks */,
 				965BEBA3276247CF00952500 /* Resources */,
@@ -952,12 +1009,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 965BEBBF276247D000952500 /* Build configuration list for PBXNativeTarget "FoodyCatUITests" */;
 			buildPhases = (
-				A62ECA6A3ED73E442B14EE8A /* [CP] Check Pods Manifest.lock */,
 				965BEBAC276247CF00952500 /* Sources */,
 				965BEBAD276247CF00952500 /* Frameworks */,
 				965BEBAE276247CF00952500 /* Resources */,
-				3D1CB448CD200BB7C5BC6753 /* [CP] Embed Pods Frameworks */,
-				131403949F241CC87E93A03D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -975,9 +1029,12 @@
 		965BEB87276247C400952500 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					9614A9FA2814A0620092A614 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 					965BEB8E276247C400952500 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -1008,11 +1065,19 @@
 				965BEB8E276247C400952500 /* FoodyCat */,
 				965BEBA4276247CF00952500 /* FoodyCatTests */,
 				965BEBAF276247CF00952500 /* FoodyCatUITests */,
+				9614A9FA2814A0620092A614 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9614A9F92814A0620092A614 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		965BEB8D276247C400952500 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1071,102 +1136,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		131403949F241CC87E93A03D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		16C656D13EAAA6C2785BF892 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat/Pods-FoodyCat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat/Pods-FoodyCat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodyCat/Pods-FoodyCat-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3D1CB448CD200BB7C5BC6753 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodyCat-FoodyCatUITests/Pods-FoodyCat-FoodyCatUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		67363EC829A85E90799EC2E2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FoodyCatTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A62ECA6A3ED73E442B14EE8A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FoodyCat-FoodyCatUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B26C9C31660E7CC2D576A0F8 /* [CP] Copy Pods Resources */ = {
+		461D4E0B156237F0B40A5AD3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1183,7 +1153,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodyCat/Pods-FoodyCat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F1D1E386FBBD682E40B7851F /* [CP] Check Pods Manifest.lock */ = {
+		D8BDA46D99ACF829877F1B22 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1205,9 +1175,56 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE2FF7DA5762D2057832EE04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F112B21A5C091BAA318EEF73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat/Pods-FoodyCat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodyCat/Pods-FoodyCat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodyCat/Pods-FoodyCat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9614A9F72814A0620092A614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9614A9FE2814A0620092A614 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		965BEB8B276247C400952500 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1369,6 +1386,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9614AA012814A0620092A614 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9614A9FA2814A0620092A614 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 9614AA002814A0620092A614 /* PBXContainerItemProxy */;
+		};
 		965BEBA7276247CF00952500 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 965BEB8E276247C400952500 /* FoodyCat */;
@@ -1410,6 +1432,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9614AA042814A0630092A614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56A228C6463C5AE50E8A1861 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 8A8J99K7X5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FoodyCat2.ex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9614AA052814A0630092A614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89DFCDCF6C3C950A13CBF714 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 8A8J99K7X5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FoodyCat2.ex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		965BEBB7276247D000952500 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1528,12 +1606,14 @@
 		};
 		965BEBBA276247D000952500 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9479F8BCEE6B0F996C30CF48 /* Pods-FoodyCat.debug.xcconfig */;
+			baseConfigurationReference = FD0D73EB4272E5CE46AA7A69 /* Pods-FoodyCat.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodyCat/FoodyCat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 8A8J99K7X5;
 				INFOPLIST_FILE = FoodyCat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1550,12 +1630,14 @@
 		};
 		965BEBBB276247D000952500 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 670273CF7B9A1BF0B169A60E /* Pods-FoodyCat.release.xcconfig */;
+			baseConfigurationReference = D94E801496BA322C4537683A /* Pods-FoodyCat.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodyCat/FoodyCat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 8A8J99K7X5;
 				INFOPLIST_FILE = FoodyCat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1572,7 +1654,6 @@
 		};
 		965BEBBD276247D000952500 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76968296F9AFBC1A6B1AA75F /* Pods-FoodyCatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1594,7 +1675,6 @@
 		};
 		965BEBBE276247D000952500 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2FFC76C8D32B5706D263B59 /* Pods-FoodyCatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1616,7 +1696,6 @@
 		};
 		965BEBC0276247D000952500 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D31397C0F159CD4EF69A65F2 /* Pods-FoodyCat-FoodyCatUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1636,7 +1715,6 @@
 		};
 		965BEBC1276247D000952500 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53BCC3FC9043DF40E7EB029B /* Pods-FoodyCat-FoodyCatUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1657,6 +1735,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9614AA062814A0630092A614 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9614AA042814A0630092A614 /* Debug */,
+				9614AA052814A0630092A614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		965BEB8A276247C400952500 /* Build configuration list for PBXProject "FoodyCat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

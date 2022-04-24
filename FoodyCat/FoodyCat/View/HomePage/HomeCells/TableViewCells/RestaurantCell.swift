@@ -7,6 +7,7 @@
 
 import UIKit
 import Cosmos
+import SwiftUI
 
 class RestaurantCell: UITableViewCell {
 
@@ -15,9 +16,9 @@ class RestaurantCell: UITableViewCell {
     @IBOutlet weak var vendorSpecialityLabel: UILabel!
     @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var statusView: CardView!
     @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var statusView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,18 +32,19 @@ class RestaurantCell: UITableViewCell {
         deliveryLabel.text = String(format: "%.2f", data.deliveryCharge ?? 0) + " " + "KWD".localized()
         ratingView.rating = Double(data.rating ?? 0)
         ratingView.isUserInteractionEnabled = false
-        if data.busy ?? false{
+        guard let open = data.vendorOpen else {return}
+        if !open {
             statusView.isHidden = false
-            statusLabel.text = "Busy".localized()
-        } else {
-            statusView.isHidden = true
-        }
-
-        if data.openingStatus != 2 {
-            statusView.isHidden = false
+            statusView.backgroundColor = UIColor.red
             statusLabel.text = "Closed".localized()
         } else {
-            statusView.isHidden = true
+            if data.busy ?? false{
+                statusView.isHidden = false
+                statusView.backgroundColor = UIColor.init(named: "mango")
+                statusLabel.text = "Busy".localized()
+            } else {
+                statusView.isHidden = true
+            }
         }
     }
 }

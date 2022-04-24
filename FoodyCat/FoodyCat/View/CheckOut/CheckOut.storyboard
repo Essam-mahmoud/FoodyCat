@@ -666,10 +666,10 @@ Salmiya, Kuwait.</string>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="ZC8-eI-exS">
-                                                <rect key="frame" x="15" y="55.5" width="337" height="106.5"/>
+                                                <rect key="frame" x="15" y="55.5" width="337" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="yug-le-ko7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="116" height="106.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="116" height="150"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtotal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4f-cd-u6c">
                                                                 <rect key="frame" x="0.0" y="0.0" width="116" height="19.5"/>
@@ -680,12 +680,6 @@ Salmiya, Kuwait.</string>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Subtotal"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qd-G8-sYn">
-                                                                <rect key="frame" x="0.0" y="31.5" width="116" height="0.0"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <color key="textColor" name="blueyGrey"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bp4-iz-aTl">
                                                                 <rect key="frame" x="0.0" y="43.5" width="116" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -695,8 +689,17 @@ Salmiya, Kuwait.</string>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Delivery charge"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nG-Qg-e0u">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qd-G8-sYn">
                                                                 <rect key="frame" x="0.0" y="87" width="116" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Discount"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nG-Qg-e0u">
+                                                                <rect key="frame" x="0.0" y="130.5" width="116" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -707,16 +710,10 @@ Salmiya, Kuwait.</string>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="frh-Ux-waE">
-                                                        <rect key="frame" x="285" y="0.0" width="52" height="106.5"/>
+                                                        <rect key="frame" x="285" y="0.0" width="52" height="150"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWD 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Keh-dc-Nul">
                                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="19.5"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <color key="textColor" name="blueyGrey"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWD 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emf-Im-YhP">
-                                                                <rect key="frame" x="0.0" y="31.5" width="52" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                 <color key="textColor" name="blueyGrey"/>
                                                                 <nil key="highlightedColor"/>
@@ -727,8 +724,14 @@ Salmiya, Kuwait.</string>
                                                                 <color key="textColor" name="blueyGrey"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWD 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gj-5w-msR">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWD 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emf-Im-YhP">
                                                                 <rect key="frame" x="0.0" y="87" width="52" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWD 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gj-5w-msR">
+                                                                <rect key="frame" x="0.0" y="130.5" width="52" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -814,6 +817,7 @@ Salmiya, Kuwait.</string>
                     <connections>
                         <outlet property="addressLabel" destination="0g5-82-k07" id="Jnh-1G-a1r"/>
                         <outlet property="discountLabel" destination="Emf-Im-YhP" id="7OH-Av-RCe"/>
+                        <outlet property="discountStaticLabel" destination="4qd-G8-sYn" id="y7Z-6I-SZi"/>
                         <outlet property="mapViewCard" destination="im3-8t-d6G" id="81g-ey-zb0"/>
                         <outlet property="methodsTableView" destination="USH-wr-4Rr" id="eJw-kc-o5j"/>
                         <outlet property="nameLabel" destination="AFO-2W-oIR" id="mX5-AR-RI0"/>
@@ -2207,30 +2211,41 @@ Salmiya, Kuwait.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JiU-wK-1X9">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="772"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="td7-ge-7wy">
+                                <rect key="frame" x="0.0" y="44" width="56" height="46"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="error"/>
+                                <connections>
+                                    <action selector="closeButtondidPress:" destination="znC-Tg-6ub" eventType="touchUpInside" id="Bue-1k-Xb3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="glX-xt-NeM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JiU-wK-1X9" firstAttribute="leading" secondItem="glX-xt-NeM" secondAttribute="leading" id="5ht-sX-VdC"/>
-                            <constraint firstItem="JiU-wK-1X9" firstAttribute="top" secondItem="glX-xt-NeM" secondAttribute="top" id="5oL-aT-HsE"/>
                             <constraint firstItem="glX-xt-NeM" firstAttribute="bottom" secondItem="JiU-wK-1X9" secondAttribute="bottom" id="Hkc-kt-ra4"/>
+                            <constraint firstItem="td7-ge-7wy" firstAttribute="top" secondItem="glX-xt-NeM" secondAttribute="top" id="U04-v8-evm"/>
+                            <constraint firstItem="td7-ge-7wy" firstAttribute="leading" secondItem="glX-xt-NeM" secondAttribute="leading" id="UeT-nP-SDd"/>
+                            <constraint firstItem="JiU-wK-1X9" firstAttribute="top" secondItem="td7-ge-7wy" secondAttribute="bottom" id="gfb-MF-qaF"/>
                             <constraint firstItem="glX-xt-NeM" firstAttribute="trailing" secondItem="JiU-wK-1X9" secondAttribute="trailing" id="lxE-AK-bJ2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="td7-ge-7wy" id="BDL-Gr-hef"/>
                         <outlet property="webView" destination="JiU-wK-1X9" id="idB-OE-iea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeH-i5-xb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6942" y="150"/>
+            <point key="canvasLocation" x="6940.579710144928" y="150"/>
         </scene>
     </scenes>
     <resources>
@@ -2238,6 +2253,7 @@ Salmiya, Kuwait.</string>
         <image name="Delivery1" width="454" height="454"/>
         <image name="Group 16" width="20.666666030883789" height="20.666666030883789"/>
         <image name="backWithBackground" width="28" height="28"/>
+        <image name="error" width="32" height="32"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
@@ -2268,6 +2284,9 @@ Salmiya, Kuwait.</string>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

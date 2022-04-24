@@ -14,20 +14,31 @@ class SideMenuVC: UIViewController {
 
     fileprivate let cellName = "SideMenuCell"
     var direction: CATransitionSubtype!
-    let titles = ["Personal information".localized(),"My addresses".localized(), "My orders".localized(),"Terms & conditions".localized(),"Language".localized(), "Log out".localized()]
+    var titles = ["Personal information".localized(),"My addresses".localized(), "My orders".localized(),"Terms & conditions".localized(),"Language".localized(), "Log out".localized()]
     let images = ["info.circle", "location.circle", "takeoutbag.and.cup.and.straw", "newspaper","globe","rectangle.portrait.and.arrow.right"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if SharedData.SharedInstans.GetIsLogin() {
             welcomeLabel.text = "Hi".localized() + " " + SharedData.SharedInstans.getUserName()
+            titles.removeLast()
+            titles.append("Log out".localized())
         } else {
             welcomeLabel.text = "Hi Guest".localized()
+            titles.removeLast()
+            titles.append("Log in".localized())
+            menuTableView.reloadData()
         }
-
-
-        // Do any additional setup after loading the view.
+        if LanguageManager.isArabic() {
+            direction = .fromRight
+        } else {
+            direction = .fromLeft
+        }
     }
 
     func registerXib() {
@@ -47,12 +58,21 @@ class SideMenuVC: UIViewController {
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
-    @IBAction func backButtonDidPress(_ sender: UIButton) {
-        if LanguageManager.isArabic() {
-            direction = .fromRight
-        } else {
-            direction = .fromLeft
+
+    func logOut() {
+        let alert = UIAlertController(title: "Warning".localized(), message: "Do you want to log out?".localized(), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok".localized(), style: .default) { action in
+            SharedData.SharedInstans.SetIsLogin(false)
+            SharedData.SharedInstans.settoken("")
+            self.dismissDetail(transitionSubtype: self.direction)
         }
+
+        let cancelAction = UIAlertAction(title: "Cancel".localized(), style: .destructive, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    @IBAction func backButtonDidPress(_ sender: UIButton) {
         self.dismissDetail(transitionSubtype: direction)
     }
 
@@ -96,7 +116,14 @@ extension SideMenuVC: UITableViewDelegate, UITableViewDataSource {
             changeLanguage()
             break
         case 5:
-
+            if SharedData.SharedInstans.GetIsLogin() {
+                logOut()
+            } else {
+                let loginVC = SignInVC.instantiate(fromAppStoryboard: .Auth)
+                loginVC.cameFromOrder = true
+                loginVC.modalPresentationStyle = .fullScreen
+                self.present(loginVC, animated: true, completion: nil)
+            }
             break
         default:
             break

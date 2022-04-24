@@ -104,6 +104,8 @@ extension CelebritiesVC: UITableViewDelegate, UITableViewDataSource {
             vendorVc.vendorImageURL = vendor.logo ?? ""
             vendorVc.vendorId = vendor.id ?? 0
             vendorVc.celebrityId = self.celebrityId
+            vendorVc.open = vendor.vendorOpen ?? false
+            vendorVc.busy = vendor.busy ?? false
             vendorVc.deliveryCharge = vendor.deliveryCharge ?? 0.0
             vendorVc.vendorSpeciality = vendor.cuisines ?? ""
             vendorVc.vendorNameLable = vendor.name ?? ""

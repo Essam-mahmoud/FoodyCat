@@ -21,6 +21,7 @@ class PaymentMethodVC: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var topTitleLabel: UILabel!
     @IBOutlet weak var mapViewCard: CardWithShadow!
+    @IBOutlet weak var discountStaticLabel: UILabel!
     
     //MARK:- Properties
     var locationManager = CLLocationManager()
@@ -123,7 +124,7 @@ class PaymentMethodVC: UIViewController, GMSMapViewDelegate {
             var input = [String: Any]()
             input["id"] = item.Id
             input["quantity"] = item.quantity
-            input["specialRequest"] = item.itemDescription
+            input["specialRequest"] = item.itemNote
             input["celebrityId"] = SharedData.SharedInstans.getCelebrityId()
             if item.topping.count > 0 {
                 var extra = [[String: Any]]()
@@ -170,10 +171,6 @@ class PaymentMethodVC: UIViewController, GMSMapViewDelegate {
             submitOrderVM.submitOrder(params: paramaters) { (errMsg, errRes, status) in
                 switch status {
                 case .populated:
-                    SharedData.SharedInstans.setDeliveryCharge(0)
-                    SharedData.SharedInstans.setCoupon("")
-                    SharedData.SharedInstans.setVoucherAmount(0.0)
-                    SharedData.SharedInstans.setIsFixedAmount(false)
                     if self.submitOrderVM.submitResult?.requiredRedirect ?? false {
                         let openURLVC = ShowPaymentURLVC.instantiate(fromAppStoryboard: .CheckOut)
                         openURLVC.link =  self.submitOrderVM.submitResult?.redirectURL ?? ""
@@ -232,11 +229,15 @@ extension PaymentMethodVC: RealmViewModelDelegate {
         let isFixed = SharedData.SharedInstans.getIsFixedAmount()
 
         if voucherAmount > 0 {
+            self.discountStaticLabel.isHidden = false
+            self.discountLabel.isHidden = false
             if isFixed {
                 totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge() - voucherAmount)
+                discountLabel.text = "KWD".localized() + " " + String(format: "%.2f", voucherAmount)
             } else {
                 let discount = 1 - (voucherAmount / 100)
                 totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", (totalPrice + SharedData.SharedInstans.getDeliveryCharge()) * discount)
+                discountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice * voucherAmount / 100)
             }
         } else {
             totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge())

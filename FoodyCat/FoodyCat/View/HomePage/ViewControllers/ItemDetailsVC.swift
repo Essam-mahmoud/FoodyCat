@@ -120,7 +120,7 @@ class ItemDetailsVC: UIViewController {
 
 extension ItemDetailsVC: RealmViewModelDelegate {
     func recordSaved() {
-        AppCommon.sharedInstance.showBanner(title: "Item added".localized(), subtitle: "", style: .success)
+        Vibration.success.vibrate()
     }
 
     func recordFetch(items: [ItemOrderModel]) {

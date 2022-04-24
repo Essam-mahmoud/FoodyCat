@@ -415,6 +415,7 @@ class SharedData{
     func getHeader() -> HTTPHeaders {
         let lang = LanguageManager.isArabic() ? "1" : "0"
         let token = SharedData.SharedInstans.gettoken()
-        return HTTPHeaders(["Content-Type":"application/json", "Authorization":"Bearer \(token)", "device": "1", "lang": lang])
+        let playerId = UserDefaults.standard.string(forKey: "GT_PLAYER_ID") ?? ""
+        return HTTPHeaders(["Content-Type":"application/json", "Authorization":"Bearer \(token)", "device": "0", "lang": lang, "playerid": playerId])
     }
 }

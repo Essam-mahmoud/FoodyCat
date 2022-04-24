@@ -17,7 +17,9 @@ class CartVC: UIViewController {
     @IBOutlet weak var serviceChageLabel: UILabel!
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var checkOutButton: UIButton!
-
+    @IBOutlet weak var discountStaticLabel: UILabel!
+    @IBOutlet weak var discountLabel: UILabel!
+    
     var itemsCellName = "CartItemsCell"
     var totalPrice = 0.0
     var realmModel = LocalCartItemsVM()
@@ -84,14 +86,20 @@ class CartVC: UIViewController {
         isFixed = result.fixedAmount ?? false
         SharedData.SharedInstans.setVoucherAmount(voucherAmount)
         SharedData.SharedInstans.setIsFixedAmount(isFixed)
-        if isFixed {
-            totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge() - voucherAmount)
+        if voucherAmount > 0 {
+            self.discountStaticLabel.isHidden = false
+            self.discountLabel.isHidden = false
+            if isFixed {
+                totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge() - voucherAmount)
+                discountLabel.text = "KWD".localized() + " " + String(format: "%.2f", voucherAmount)
+            } else {
+                let discount = 1 - (voucherAmount / 100)
+                totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", (totalPrice + SharedData.SharedInstans.getDeliveryCharge()) * discount)
+                discountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice * voucherAmount / 100)
+            }
         } else {
-            let discount = 1 - (voucherAmount / 100)
-            totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", (totalPrice + SharedData.SharedInstans.getDeliveryCharge()) * discount)
+            totalAmountLabel.text = "KWD".localized() + " " + String(format: "%.2f", totalPrice + SharedData.SharedInstans.getDeliveryCharge())
         }
-
-
     }
 
     @IBAction func addItemsButtonDidPress(_ sender: UIButton) {
@@ -122,6 +130,7 @@ class CartVC: UIViewController {
                 switch status {
                 case .populated:
                     self.changeTotalPrice()
+                    AppCommon.sharedInstance.showBanner(title: "Voucher Added".localized(), subtitle: "", style: .danger)
                     SharedData.SharedInstans.setCoupon(voucher)
                 case .error:
                     AppCommon.sharedInstance.showBanner(title: self.voucherVM.baseReponse?.message ?? "", subtitle: "", style: .danger)

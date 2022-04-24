@@ -74,7 +74,8 @@ class ExtraToppingVC: UIViewController {
     }
 
     func getToppingData() {
-        extraToppingVM.getExtraToopingData(itemId: 34886) { (errMsg, errRes, status) in
+        guard let id = item?.id else {return}
+        extraToppingVM.getExtraToopingData(itemId: id) { (errMsg, errRes, status) in
             switch status {
             case .populated:
                 self.toppingTableView.reloadData()
@@ -202,7 +203,7 @@ extension ExtraToppingVC: UITableViewDelegate, UITableViewDataSource {
 
 extension ExtraToppingVC: RealmViewModelDelegate {
     func recordSaved() {
-        AppCommon.sharedInstance.showBanner(title: "Item added".localized(), subtitle: "", style: .success)
+        Vibration.success.vibrate()
     }
 
     func recordFetch(items: [ItemOrderModel]) {

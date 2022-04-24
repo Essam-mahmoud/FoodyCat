@@ -11,6 +11,7 @@ import WebKit
 class ShowPaymentURLVC: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var closeButton: UIButton!
     var link = ""
     let sucessPart  = "success=true"
     let faliurePart = "success=false"
@@ -20,9 +21,11 @@ class ShowPaymentURLVC: UIViewController {
     var paymentName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        closeButton.setTitle("", for: .normal)
         let trimmedLink = link.trimmingCharacters(in: .whitespaces)
         let url = URL(string: trimmedLink)!
         let urlRequest = URLRequest(url: url)
+        webView.scrollView.bounces = false
         webView.navigationDelegate = self
         webView.load(urlRequest)
         // Do any additional setup after loading the view.
@@ -62,6 +65,10 @@ class ShowPaymentURLVC: UIViewController {
         thankVc.payment = self.paymentName
         thankVc.modalPresentationStyle = .fullScreen
         self.present(thankVc, animated: true, completion: nil)
+    }
+
+    @IBAction func closeButtondidPress(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

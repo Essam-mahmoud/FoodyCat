@@ -319,9 +319,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         if let vendor = celebritiesRestaurantVM.vendors?.data?[indexPath.row] {
             let vendorVc = VendorVC.instantiate(fromAppStoryboard: .Home)
-//            vendorVc.celebrityImageURL = self.celebrityImageURL
-//            vendorVc.celebrityName = self.celebrityName
-//            vendorVc.celebrityId = self.celebrityId
+            vendorVc.open = vendor.vendorOpen ?? false
+            vendorVc.busy = vendor.busy ?? false
             vendorVc.isComeFromHome = true
             vendorVc.vendorImageURL = vendor.logo ?? ""
             vendorVc.vendorId = vendor.id ?? 0

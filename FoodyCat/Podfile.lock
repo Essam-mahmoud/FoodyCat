@@ -26,6 +26,7 @@ PODS:
   - NVActivityIndicatorView/Base (5.1.1)
   - NVActivityIndicatorView/Extended (5.1.1):
     - NVActivityIndicatorView/Base
+  - OneSignalXCFramework (3.10.2)
   - Realm (10.20.0):
     - Realm/Headers (= 10.20.0)
   - Realm/Headers (10.20.0)
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - MOLH
   - NotificationBannerSwift (~> 3.0.0)
   - NVActivityIndicatorView/Extended
+  - OneSignalXCFramework (< 4.0, >= 3.0.0)
   - RealmSwift (~> 10)
   - SwiftyJSON
   - TransitionButton
@@ -71,6 +73,7 @@ SPEC REPOS:
     - MOLH
     - NotificationBannerSwift
     - NVActivityIndicatorView
+    - OneSignalXCFramework
     - Realm
     - RealmSwift
     - SnapKit
@@ -93,6 +96,7 @@ SPEC CHECKSUMS:
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
   NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  OneSignalXCFramework: 3939b13538b442b6c63c5304c70f03033bf9a2f6
   Realm: ae32bdc1da7d19c7617e0400201a77acd4a211b9
   RealmSwift: c95eec6a712924870b2e36c4c081d63ec07e5414
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
@@ -100,6 +104,6 @@ SPEC CHECKSUMS:
   TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 92877b769cea532f85ace555b9f9165bb4b6d3d6
+PODFILE CHECKSUM: 727d718a76311d4a8430666e9b5ad50a18e72714
 
 COCOAPODS: 1.10.1

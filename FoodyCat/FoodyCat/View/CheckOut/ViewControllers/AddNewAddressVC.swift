@@ -31,6 +31,8 @@ class AddNewAddressVC: UIViewController, GMSMapViewDelegate {
         areaTF.text = SharedData.SharedInstans.getAreaName()
         areaTF.isEnabled = false
         areaTF.textColor = UIColor.lightGray
+        additionDirectionsTV.textColor = UIColor.lightGray
+        additionDirectionsTV.delegate = self
     }
 
     func setupLocationManager() {
@@ -102,5 +104,24 @@ extension AddNewAddressVC: CLLocationManagerDelegate {
         marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
         marker.map = mapView
         mapViewCard.isUserInteractionEnabled = false
+    }
+}
+
+
+extension AddNewAddressVC: UITextViewDelegate{
+    func textViewDidBeginEditing(_ textView: UITextView) {
+
+        if additionDirectionsTV.textColor == UIColor.lightGray {
+            additionDirectionsTV.text = nil
+            additionDirectionsTV.textColor = UIColor.black
+        }
+
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if additionDirectionsTV.text.isEmpty {
+            additionDirectionsTV.text = "Additional Direction".localized()
+            additionDirectionsTV.textColor = UIColor.lightGray
+        }
     }
 }

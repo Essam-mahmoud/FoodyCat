@@ -24,10 +24,11 @@ class VendorVC: UIViewController {
     @IBOutlet weak var tabsCollectionView: UICollectionView!
     @IBOutlet weak var menuTableView: ContentSizedTableView!
     @IBOutlet weak var menuTableViewHightConstrains: NSLayoutConstraint!
+    @IBOutlet weak var statusView: CardView!
     @IBOutlet weak var totalPriceCartLabel: UILabel!
     @IBOutlet weak var numberOfItemsInCardLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var openImageButton: UIButton!
-    
     @IBOutlet weak var celebrityView: UIView!
     //MARK:- Properity
     var isComeFromHome = false
@@ -38,6 +39,8 @@ class VendorVC: UIViewController {
     var vendorSpeciality = ""
     var vendorRating = 0
     var vendorId = 0
+    var busy = false
+    var open = false
     var celebrityId = 0
     var deliveryCharge = 0.0
     var vendorVM = VendorVM()
@@ -65,13 +68,6 @@ class VendorVC: UIViewController {
         }
     }
 
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        DispatchQueue.main.async {
-//            self.tabsCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
-//        }
-//    }
-
     func setupUI() {
         openImageButton.setTitle("", for: .normal)
         vendorImage.loadImageFromUrl(imgUrl: vendorImageURL, defString: "")
@@ -84,6 +80,20 @@ class VendorVC: UIViewController {
         registerCells()
         if isComeFromHome {
             celebrityView.isHidden = true
+        }
+
+        if !open {
+            statusView.isHidden = false
+            statusView.backgroundColor = UIColor.red
+            statusLabel.text = "Closed".localized()
+        } else {
+            if busy {
+                statusView.isHidden = false
+                statusView.backgroundColor = UIColor.init(named: "mango")
+                statusLabel.text = "Busy".localized()
+            } else {
+                statusView.isHidden = true
+            }
         }
     }
 
