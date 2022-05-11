@@ -40,7 +40,6 @@ class ResultViewController: UIViewController {
     public func update(with places: [Place]) {
         tableView.isHidden = false
         self.places = places
-        print(places.count)
         tableView.reloadData()
     }
 }

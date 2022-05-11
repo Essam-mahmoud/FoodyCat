@@ -14,8 +14,8 @@ class SideMenuVC: UIViewController {
 
     fileprivate let cellName = "SideMenuCell"
     var direction: CATransitionSubtype!
-    var titles = ["Personal information".localized(),"My addresses".localized(), "My orders".localized(),"Terms & conditions".localized(),"Language".localized(), "Log out".localized()]
-    let images = ["info.circle", "location.circle", "takeoutbag.and.cup.and.straw", "newspaper","globe","rectangle.portrait.and.arrow.right"]
+    var titles = ["Personal information".localized(),"My addresses".localized(), "My orders".localized(),"Terms & conditions".localized(),"Need help ?".localized(),"Language".localized(), "Log out".localized()]
+    let images = ["info.circle", "location.circle", "takeoutbag.and.cup.and.straw", "newspaper","message.and.waveform","globe","rectangle.portrait.and.arrow.right"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,9 +113,12 @@ extension SideMenuVC: UITableViewDelegate, UITableViewDataSource {
             //LanguageManager.switchLanguage()
             break
         case 4:
-            changeLanguage()
+            
             break
         case 5:
+            changeLanguage()
+            break
+        case 6:
             if SharedData.SharedInstans.GetIsLogin() {
                 logOut()
             } else {

@@ -76,7 +76,7 @@ class GetUserLocationVC: UIViewController {
                 if self.isFromHomePage {
                     self.dismiss(animated: true, completion: nil)
                 } else {
-                    guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? HomeVC else {return}
+                    guard let homeVC = UIStoryboard.init(name:"Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? HomeVC else {return}
                     UIApplication.shared.windows.first?.rootViewController = homeVC
                     UIApplication.shared.windows.first?.makeKeyAndVisible()
                 }
@@ -96,6 +96,10 @@ extension GetUserLocationVC: CLLocationManagerDelegate {
         let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 15)
         mapView = GMSMapView.map(withFrame: mainView.frame, camera: camera)
         mapView.delegate = self
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 200, right: 32)
+
         mainView.addSubview(mapView)
         long = coordinate.longitude
         lat = coordinate.latitude
@@ -143,6 +147,45 @@ extension GetUserLocationVC: GMSMapViewDelegate {
                marker.map = mapView
            }
        }
+    }
+    func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
+        mapView.clear()
+        guard let lat = mapView.myLocation?.coordinate.latitude,
+                let lng = mapView.myLocation?.coordinate.longitude,
+        let coordinate =  mapView.myLocation?.coordinate else { return false }
+        let marker = GMSMarker(position: coordinate)
+        let decoder = CLGeocoder()
+        decoder.reverseGeocodeLocation(CLLocation(latitude: lat, longitude: lng)) { placemarks, err in
+           if let placeMark = placemarks?.first {
+
+               let placeName = placeMark.name ?? placeMark.subThoroughfare ?? placeMark.thoroughfare!   ///Title of Marker
+               //Formatting for Marker Snippet/Subtitle
+               var address : String! = ""
+               if let subLocality = placeMark.subLocality ?? placeMark.name {
+                   address.append(subLocality)
+                   address.append(", ")
+               }
+               if let city = placeMark.locality ?? placeMark.subAdministrativeArea {
+                   address.append(city)
+                   address.append(", ")
+               }
+               if let state = placeMark.administrativeArea, let country = placeMark.country {
+                   address.append(state)
+                   address.append(", ")
+                   address.append(country)
+               }
+
+               // Adding Marker Details
+               self.addressLabel.text = placeName + "," + address
+               self.lat = coordinate.latitude
+               self.long = coordinate.longitude
+               marker.title = placeName
+               marker.snippet = address
+               marker.appearAnimation = .pop
+               marker.map = mapView
+           }
+       }
+        return true
     }
 }
 

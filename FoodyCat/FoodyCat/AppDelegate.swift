@@ -10,6 +10,8 @@ import IQKeyboardManagerSwift
 import GoogleMaps
 import GooglePlaces
 import OneSignal
+import SupportSDK
+import ZendeskCoreSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

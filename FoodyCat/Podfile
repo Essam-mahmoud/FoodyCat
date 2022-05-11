@@ -25,6 +25,7 @@ target 'FoodyCat' do
   pod 'GooglePlaces'
   pod 'FSPagerView'
   pod 'OneSignalXCFramework', '>= 3.0.0', '< 4.0'
+  pod 'ZendeskSupportSDK'
 
   post_install do |installer|
     installer.pods_project.build_configurations.each do |config|
